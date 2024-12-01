@@ -91,6 +91,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F67A4652CFC48AA003FEAB2 /* Fahad */ = {
+			isa = PBXGroup;
+			children = (
+				3F7FFED42CF72BF200391A5F /* Fahad.storyboard */,
+			);
+			path = Fahad;
+			sourceTree = "<group>";
+		};
+		3F67A4662CFC48B7003FEAB2 /* Marwa */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Marwa;
+			sourceTree = "<group>";
+		};
+		3F67A4672CFC48D4003FEAB2 /* Yusuf */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Yusuf;
+			sourceTree = "<group>";
+		};
+		3F67A4682CFC48E2003FEAB2 /* Ali */ = {
+			isa = PBXGroup;
+			children = (
+				3F7FFED62CF72C9A00391A5F /* Ali.storyboard */,
+			);
+			path = Ali;
+			sourceTree = "<group>";
+		};
+		3F67A4692CFC48EB003FEAB2 /* Abdulllah */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Abdulllah;
+			sourceTree = "<group>";
+		};
 		3F7FFE812CF7281900391A5F = {
 			isa = PBXGroup;
 			children = (
@@ -110,12 +147,15 @@
 		3F7FFE8C2CF7281900391A5F /* EventGuru02 */ = {
 			isa = PBXGroup;
 			children = (
-				3F7FFED62CF72C9A00391A5F /* Ali.storyboard */,
+				3F67A4692CFC48EB003FEAB2 /* Abdulllah */,
+				3F67A4682CFC48E2003FEAB2 /* Ali */,
+				3F67A4672CFC48D4003FEAB2 /* Yusuf */,
+				3F67A4662CFC48B7003FEAB2 /* Marwa */,
+				3F67A4652CFC48AA003FEAB2 /* Fahad */,
 				3F7FFE8D2CF7281900391A5F /* AppDelegate.swift */,
 				3F7FFE8F2CF7281900391A5F /* SceneDelegate.swift */,
 				3F7FFE912CF7281900391A5F /* ViewController.swift */,
 				3F7FFE932CF7281900391A5F /* Main.storyboard */,
-				3F7FFED42CF72BF200391A5F /* Fahad.storyboard */,
 				3F7FFE962CF7281A00391A5F /* Assets.xcassets */,
 				3F7FFE982CF7281A00391A5F /* LaunchScreen.storyboard */,
 				3F7FFE9B2CF7281A00391A5F /* Info.plist */,
