@@ -42,6 +42,7 @@
 		3F7FFED72CF72C9A00391A5F /* Ali.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7FFED62CF72C9A00391A5F /* Ali.storyboard */; };
 		83FA8D9E2D005FF90012E4B5 /* Abdullah-Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83FA8D9D2D005FF90012E4B5 /* Abdullah-Login.storyboard */; };
 		83FA8DA02D0068100012E4B5 /* Abdullah-Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83FA8D9F2D0068100012E4B5 /* Abdullah-Settings.storyboard */; };
+		C322730E2D00BB02007CB134 /* ChooseScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C322730D2D00BB02007CB134 /* ChooseScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		3F7FFED62CF72C9A00391A5F /* Ali.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ali.storyboard; sourceTree = "<group>"; };
 		83FA8D9D2D005FF90012E4B5 /* Abdullah-Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Abdullah-Login.storyboard"; sourceTree = "<group>"; };
 		83FA8D9F2D0068100012E4B5 /* Abdullah-Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Abdullah-Settings.storyboard"; sourceTree = "<group>"; };
+		C322730D2D00BB02007CB134 /* ChooseScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChooseScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 			children = (
 				83FA8D9D2D005FF90012E4B5 /* Abdullah-Login.storyboard */,
 				83FA8D9F2D0068100012E4B5 /* Abdullah-Settings.storyboard */,
+				C322730D2D00BB02007CB134 /* ChooseScreen.storyboard */,
 			);
 			path = Abdullah;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				3F7FFED52CF72BF200391A5F /* Fahad.storyboard in Resources */,
 				3F7FFE9A2CF7281A00391A5F /* LaunchScreen.storyboard in Resources */,
 				3F7FFEA22CF7288E00391A5F /* GoogleService-Info.plist in Resources */,
+				C322730E2D00BB02007CB134 /* ChooseScreen.storyboard in Resources */,
 				83FA8DA02D0068100012E4B5 /* Abdullah-Settings.storyboard in Resources */,
 				3F7FFE972CF7281A00391A5F /* Assets.xcassets in Resources */,
 				3F7FFE952CF7281900391A5F /* Main.storyboard in Resources */,
