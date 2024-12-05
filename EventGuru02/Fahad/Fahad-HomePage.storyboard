@@ -142,10 +142,10 @@
             </objects>
             <point key="canvasLocation" x="1723" y="1070"/>
         </scene>
-        <!--Fahad-HomePage-->
+        <!--Fahad-Event Posting-->
         <scene sceneID="hRk-7B-TWk">
             <objects>
-                <viewControllerPlaceholder storyboardName="Fahad-HomePage" id="eRO-aM-hme" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Fahad-Event Posting" id="eRO-aM-hme" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="XT7-an-RmD"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SkN-3r-ggX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
