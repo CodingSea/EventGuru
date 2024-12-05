@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6ec-JU-RCW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6ec-JU-RCW">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +11,7 @@
         <!--Home-->
         <scene sceneID="0fe-1d-YZ8">
             <objects>
-                <viewController id="RhS-tR-DXT" sceneMemberID="viewController">
+                <viewController id="RhS-tR-DXT" customClass="HomeViewController" customModule="EventGuru02" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a4G-QK-cjw">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,6 +41,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="tAx-9w-VNC"/>
+                    <connections>
+                        <outlet property="tableView" destination="CGx-9c-dyl" id="QH1-yp-I25"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GFe-jZ-epb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -85,10 +88,10 @@
             </objects>
             <point key="canvasLocation" x="1722.9007633587785" y="369.71830985915494"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--Fahad-HomePage-->
         <scene sceneID="63b-3N-Kk1">
             <objects>
-                <viewControllerPlaceholder id="mzt-nx-yLU" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Fahad-HomePage" id="mzt-nx-yLU" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="EAn-JV-A0O"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mFV-vD-5N4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -112,10 +115,10 @@
             </objects>
             <point key="canvasLocation" x="1724" y="1730"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--Fahad-HomePage-->
         <scene sceneID="nHF-Jz-FZU">
             <objects>
-                <viewControllerPlaceholder id="lYq-ex-iTf" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Fahad-HomePage" id="lYq-ex-iTf" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="c2U-Za-IIy"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ct-qt-dAG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -139,10 +142,10 @@
             </objects>
             <point key="canvasLocation" x="1723" y="1070"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--Fahad-HomePage-->
         <scene sceneID="hRk-7B-TWk">
             <objects>
-                <viewControllerPlaceholder id="eRO-aM-hme" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Fahad-HomePage" id="eRO-aM-hme" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="XT7-an-RmD"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SkN-3r-ggX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
