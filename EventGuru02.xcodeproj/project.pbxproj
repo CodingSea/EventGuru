@@ -40,6 +40,10 @@
 		3F7FFED32CF7290A00391A5F /* FirebaseVertexAI in Frameworks */ = {isa = PBXBuildFile; productRef = 3F7FFED22CF7290A00391A5F /* FirebaseVertexAI */; };
 		3F7FFED52CF72BF200391A5F /* Fahad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7FFED42CF72BF200391A5F /* Fahad.storyboard */; };
 		3F7FFED72CF72C9A00391A5F /* Ali.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7FFED62CF72C9A00391A5F /* Ali.storyboard */; };
+		83FA8D9E2D005FF90012E4B5 /* Abdullah-Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83FA8D9D2D005FF90012E4B5 /* Abdullah-Login.storyboard */; };
+		83FA8DA02D0068100012E4B5 /* Abdullah-Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83FA8D9F2D0068100012E4B5 /* Abdullah-Settings.storyboard */; };
+		C322730E2D00BB02007CB134 /* ChooseScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C322730D2D00BB02007CB134 /* ChooseScreen.storyboard */; };
+		D4C1CA9F2D01D22100555861 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4C1CA9E2D01D22100555861 /* Register.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,10 @@
 		3F7FFEA12CF7288E00391A5F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3F7FFED42CF72BF200391A5F /* Fahad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Fahad.storyboard; sourceTree = "<group>"; };
 		3F7FFED62CF72C9A00391A5F /* Ali.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ali.storyboard; sourceTree = "<group>"; };
+		83FA8D9D2D005FF90012E4B5 /* Abdullah-Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Abdullah-Login.storyboard"; sourceTree = "<group>"; };
+		83FA8D9F2D0068100012E4B5 /* Abdullah-Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Abdullah-Settings.storyboard"; sourceTree = "<group>"; };
+		C322730D2D00BB02007CB134 /* ChooseScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChooseScreen.storyboard; sourceTree = "<group>"; };
+		D4C1CA9E2D01D22100555861 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +134,7 @@
 		3F7FFE8C2CF7281900391A5F /* EventGuru02 */ = {
 			isa = PBXGroup;
 			children = (
+				83FA8D9C2D005FE30012E4B5 /* Abdullah */,
 				3F67A4682CFC48E2003FEAB2 /* Ali */,
 				3F67A4652CFC48AA003FEAB2 /* Fahad */,
 				3F7FFE8D2CF7281900391A5F /* AppDelegate.swift */,
@@ -138,6 +147,17 @@
 				3F7FFEA12CF7288E00391A5F /* GoogleService-Info.plist */,
 			);
 			path = EventGuru02;
+			sourceTree = "<group>";
+		};
+		83FA8D9C2D005FE30012E4B5 /* Abdullah */ = {
+			isa = PBXGroup;
+			children = (
+				83FA8D9D2D005FF90012E4B5 /* Abdullah-Login.storyboard */,
+				83FA8D9F2D0068100012E4B5 /* Abdullah-Settings.storyboard */,
+				C322730D2D00BB02007CB134 /* ChooseScreen.storyboard */,
+				D4C1CA9E2D01D22100555861 /* Register.storyboard */,
+			);
+			path = Abdullah;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,9 +250,13 @@
 				3F7FFED52CF72BF200391A5F /* Fahad.storyboard in Resources */,
 				3F7FFE9A2CF7281A00391A5F /* LaunchScreen.storyboard in Resources */,
 				3F7FFEA22CF7288E00391A5F /* GoogleService-Info.plist in Resources */,
+				C322730E2D00BB02007CB134 /* ChooseScreen.storyboard in Resources */,
+				83FA8DA02D0068100012E4B5 /* Abdullah-Settings.storyboard in Resources */,
 				3F7FFE972CF7281A00391A5F /* Assets.xcassets in Resources */,
 				3F7FFE952CF7281900391A5F /* Main.storyboard in Resources */,
+				83FA8D9E2D005FF90012E4B5 /* Abdullah-Login.storyboard in Resources */,
 				3F7FFED72CF72C9A00391A5F /* Ali.storyboard in Resources */,
+				D4C1CA9F2D01D22100555861 /* Register.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
