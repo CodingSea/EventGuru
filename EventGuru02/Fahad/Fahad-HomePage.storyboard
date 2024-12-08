@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6ec-JU-RCW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RhS-tR-DXT">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nYI-wl-7gJ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nYI-wl-7gJ">
                                 <rect key="frame" x="16" y="59" width="50" height="50"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Exh-YK-Grb">
@@ -49,115 +49,9 @@
             </objects>
             <point key="canvasLocation" x="1724.4274809160304" y="-279.57746478873241"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="xjn-Xf-cf2">
-            <objects>
-                <tabBarController id="6ec-JU-RCW" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Nmx-SR-02W">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="RhS-tR-DXT" kind="relationship" relationship="viewControllers" id="WP0-Jd-ACM"/>
-                        <segue destination="gVy-lI-U0o" kind="relationship" relationship="viewControllers" id="FjR-c4-tO9"/>
-                        <segue destination="qio-yv-gce" kind="relationship" relationship="viewControllers" id="Vbz-9x-ziO"/>
-                        <segue destination="5Uw-El-6pB" kind="relationship" relationship="viewControllers" id="QIP-EH-BtU"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zII-PA-iMQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="689" y="18"/>
-        </scene>
-        <!--Explore-->
-        <scene sceneID="eeZ-Vo-uIP">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gVy-lI-U0o" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Explore" image="magnifyingglass" catalog="system" id="Rre-19-nLE"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hxG-lB-zkF">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="mzt-nx-yLU" kind="relationship" relationship="rootViewController" id="qcz-nj-dWT"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zOe-Km-Q4B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1722.9007633587785" y="369.71830985915494"/>
-        </scene>
-        <!--Fahad-HomePage-->
-        <scene sceneID="63b-3N-Kk1">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Fahad-HomePage" id="mzt-nx-yLU" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="EAn-JV-A0O"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mFV-vD-5N4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2448" y="370"/>
-        </scene>
-        <!--Profile-->
-        <scene sceneID="iGm-jl-8J0">
-            <objects>
-                <navigationController id="5Uw-El-6pB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="person.crop.circle" catalog="system" id="YRg-6S-pQx"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FtG-Ge-VNv">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="lYq-ex-iTf" kind="relationship" relationship="rootViewController" id="wDq-Os-hQr"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hOG-W5-XMK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1724" y="1730"/>
-        </scene>
-        <!--Fahad-HomePage-->
-        <scene sceneID="nHF-Jz-FZU">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Fahad-HomePage" id="lYq-ex-iTf" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="c2U-Za-IIy"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0ct-qt-dAG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2587" y="1730"/>
-        </scene>
-        <!--Bookmark-->
-        <scene sceneID="d90-Y3-dcd">
-            <objects>
-                <navigationController id="qio-yv-gce" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Bookmark" image="bookmark" catalog="system" id="mGi-Q8-bfc"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qjE-Q6-Mmn">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="eRO-aM-hme" kind="relationship" relationship="rootViewController" id="2G5-Km-J3p"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vc1-uO-WrQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1723" y="1070"/>
-        </scene>
-        <!--Fahad-Event Posting-->
-        <scene sceneID="hRk-7B-TWk">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Fahad-Event Posting" id="eRO-aM-hme" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="XT7-an-RmD"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SkN-3r-ggX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2495" y="1070"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="bookmark" catalog="system" width="110" height="128"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
-        <image name="person.crop.circle" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
