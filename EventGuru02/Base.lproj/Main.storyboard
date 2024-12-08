@@ -45,11 +45,11 @@
             </objects>
             <point key="canvasLocation" x="77" y="2"/>
         </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="pT0-Mp-KqD">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ebb-1K-Kq8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Fn0-Ng-5Xl"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="Fn0-Ng-5Xl"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Sq8-wv-Omf">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -64,11 +64,11 @@
             </objects>
             <point key="canvasLocation" x="1400.7633587786258" y="-266.19718309859155"/>
         </scene>
-        <!--Item-->
+        <!--Explore-->
         <scene sceneID="P3o-zg-w7T">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="z7d-ie-1tW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="jeK-Et-Iqd"/>
+                    <tabBarItem key="tabBarItem" title="Explore" image="magnifyingglass" catalog="system" id="jeK-Et-Iqd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="w2V-De-M8b">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -84,4 +84,8 @@
             <point key="canvasLocation" x="1421" y="385"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="house.fill" catalog="system" width="128" height="104"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+    </resources>
 </document>
