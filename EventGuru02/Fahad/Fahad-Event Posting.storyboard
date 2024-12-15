@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Post View Controller-->
         <scene sceneID="eT2-QP-aL0">
             <objects>
-                <viewController id="TaN-va-PD1" sceneMemberID="viewController">
+                <viewController id="TaN-va-PD1" customClass="PostViewController" customModule="EventGuru02" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BD8-tx-ubh">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -89,8 +89,6 @@
                             <constraint firstItem="e87-W9-ebQ" firstAttribute="trailing" secondItem="i6R-1G-RRp" secondAttribute="trailing" constant="16" id="6vc-ky-WXN"/>
                             <constraint firstItem="tmz-G0-L70" firstAttribute="top" secondItem="e87-W9-ebQ" secondAttribute="top" id="77Q-ab-foD"/>
                             <constraint firstItem="e87-W9-ebQ" firstAttribute="bottom" secondItem="STP-dv-cqU" secondAttribute="bottom" constant="60" id="9qU-6C-0g0"/>
-                            <constraint firstItem="r7p-WQ-sX3" firstAttribute="leading" secondItem="7Wl-DB-RfV" secondAttribute="trailing" constant="40" id="AqB-mh-2VT"/>
-                            <constraint firstItem="H4Q-rn-d73" firstAttribute="leading" secondItem="1by-WY-cZp" secondAttribute="trailing" constant="40" id="CmN-3l-97q"/>
                             <constraint firstItem="1by-WY-cZp" firstAttribute="top" secondItem="L7F-KW-pvn" secondAttribute="bottom" constant="122" id="DtX-r1-K7I"/>
                             <constraint firstItem="L7F-KW-pvn" firstAttribute="leading" secondItem="e87-W9-ebQ" secondAttribute="leading" constant="16" id="FV6-ih-9pi"/>
                             <constraint firstItem="H4Q-rn-d73" firstAttribute="top" secondItem="vGb-64-eO7" secondAttribute="bottom" constant="8" symbolic="YES" id="GEK-aW-OYH"/>
@@ -120,20 +118,23 @@
                             <constraint firstItem="vGb-64-eO7" firstAttribute="leading" secondItem="L7F-KW-pvn" secondAttribute="trailing" constant="45" id="xbQ-mo-Rf8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="vGb-64-eO7" id="y7z-Y0-7Yk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qci-tz-KCr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-145.80152671755724" y="-116.19718309859155"/>
         </scene>
-        <!--View Controller-->
+        <!--Post2 View Controller-->
         <scene sceneID="Xx9-fh-a3J">
             <objects>
-                <viewController id="nKO-cO-T0M" sceneMemberID="viewController">
+                <viewController id="nKO-cO-T0M" customClass="Post2ViewController" customModule="EventGuru02" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hsb-rO-DyM">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Tickets Available:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xf1-tR-lr7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tickets Available:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xf1-tR-lr7">
                                 <rect key="frame" x="16" y="81" width="131" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -151,7 +152,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the number of Tickets Available" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dMr-Zf-3Fn">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the number of Tickets Available" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dMr-Zf-3Fn">
                                 <rect key="frame" x="177" y="74" width="200" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -168,11 +169,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Nfu-HC-Vxt">
-                                <rect key="frame" x="106" y="318" width="256" height="38"/>
+                            <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Nfu-HC-Vxt">
+                                <rect key="frame" x="177" y="318" width="185" height="38"/>
                             </datePicker>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="iy7-ew-l7n">
-                                <rect key="frame" x="106" y="364" width="256" height="38"/>
+                            <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="iy7-ew-l7n">
+                                <rect key="frame" x="177" y="364" width="185" height="38"/>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAQ-rg-IDg">
                                 <rect key="frame" x="135" y="420" width="122" height="38.333333333333314"/>
@@ -198,7 +199,6 @@
                             <constraint firstItem="dMr-Zf-3Fn" firstAttribute="top" secondItem="kZU-Lm-7yW" secondAttribute="top" constant="74" id="1At-Hn-HPm"/>
                             <constraint firstItem="kZU-Lm-7yW" firstAttribute="trailing" secondItem="dMr-Zf-3Fn" secondAttribute="trailing" constant="16" id="6dP-1z-VHZ"/>
                             <constraint firstItem="4zg-iy-tLq" firstAttribute="top" secondItem="kd0-F2-ENx" secondAttribute="bottom" constant="123" id="7FV-xB-c5f"/>
-                            <constraint firstItem="iy7-ew-l7n" firstAttribute="leading" secondItem="XpE-Xf-IN9" secondAttribute="trailing" constant="16" id="9Iz-6R-5xE"/>
                             <constraint firstItem="hHY-7l-d6P" firstAttribute="top" secondItem="dMr-Zf-3Fn" secondAttribute="bottom" constant="16" id="GNO-ze-KOh"/>
                             <constraint firstItem="iy7-ew-l7n" firstAttribute="top" secondItem="Nfu-HC-Vxt" secondAttribute="bottom" constant="8" symbolic="YES" id="GrI-8c-7qI"/>
                             <constraint firstItem="NKr-gC-eKg" firstAttribute="top" secondItem="4zg-iy-tLq" secondAttribute="bottom" constant="41" id="J1f-DQ-VR7"/>
@@ -209,7 +209,7 @@
                             <constraint firstItem="eAQ-rg-IDg" firstAttribute="top" secondItem="iy7-ew-l7n" secondAttribute="bottom" constant="18" id="TCm-UE-JbQ"/>
                             <constraint firstItem="eAQ-rg-IDg" firstAttribute="leading" secondItem="kZU-Lm-7yW" secondAttribute="leading" constant="135" id="Tfg-Pt-sdW"/>
                             <constraint firstItem="kZU-Lm-7yW" firstAttribute="trailing" secondItem="eAQ-rg-IDg" secondAttribute="trailing" constant="136" id="WGM-Gf-W27"/>
-                            <constraint firstItem="dMr-Zf-3Fn" firstAttribute="leading" secondItem="xf1-tR-lr7" secondAttribute="trailing" constant="6" id="Z4x-2J-6Vm"/>
+                            <constraint firstItem="dMr-Zf-3Fn" firstAttribute="leading" secondItem="xf1-tR-lr7" secondAttribute="trailing" constant="30" id="WjS-yO-QB1"/>
                             <constraint firstItem="xf1-tR-lr7" firstAttribute="top" secondItem="kZU-Lm-7yW" secondAttribute="top" constant="81" id="Zdu-Ks-3wQ"/>
                             <constraint firstItem="kd0-F2-ENx" firstAttribute="top" secondItem="xf1-tR-lr7" secondAttribute="bottom" constant="22" id="cvF-kh-PSF"/>
                             <constraint firstItem="iy7-ew-l7n" firstAttribute="top" secondItem="Nfu-HC-Vxt" secondAttribute="bottom" constant="8" symbolic="YES" id="lJO-lE-6uT"/>
@@ -217,14 +217,15 @@
                             <constraint firstItem="hHY-7l-d6P" firstAttribute="leading" secondItem="kd0-F2-ENx" secondAttribute="trailing" constant="8" symbolic="YES" id="pmS-b5-gZC"/>
                             <constraint firstItem="xf1-tR-lr7" firstAttribute="leading" secondItem="kZU-Lm-7yW" secondAttribute="leading" constant="16" id="r5M-eY-ekv"/>
                             <constraint firstItem="4zg-iy-tLq" firstAttribute="leading" secondItem="kZU-Lm-7yW" secondAttribute="leading" constant="16" id="sIm-24-fwq"/>
-                            <constraint firstItem="Nfu-HC-Vxt" firstAttribute="leading" secondItem="NKr-gC-eKg" secondAttribute="trailing" constant="8" symbolic="YES" id="thj-12-G54"/>
-                            <constraint firstItem="dMr-Zf-3Fn" firstAttribute="leading" secondItem="xf1-tR-lr7" secondAttribute="trailing" constant="40" id="u8S-Fu-Z0n"/>
                             <constraint firstItem="XpE-Xf-IN9" firstAttribute="leading" secondItem="kZU-Lm-7yW" secondAttribute="leading" constant="16" id="whd-dG-fhH"/>
                             <constraint firstItem="NKr-gC-eKg" firstAttribute="leading" secondItem="kZU-Lm-7yW" secondAttribute="leading" constant="16" id="z2M-J5-h9y"/>
                             <constraint firstItem="Nfu-HC-Vxt" firstAttribute="top" secondItem="hHY-7l-d6P" secondAttribute="bottom" constant="66" id="zCA-3i-YgO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xpm-db-6Vd"/>
+                    <connections>
+                        <outlet property="textView" destination="hHY-7l-d6P" id="mto-Nk-QRN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rr9-Bf-1Iq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
