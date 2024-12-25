@@ -20,6 +20,10 @@
 		3F7FFEA22CF7288E00391A5F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F7FFEA12CF7288E00391A5F /* GoogleService-Info.plist */; };
 		3F7FFED52CF72BF200391A5F /* Fahad-HomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7FFED42CF72BF200391A5F /* Fahad-HomePage.storyboard */; };
 		3F7FFED72CF72C9A00391A5F /* Ali.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7FFED62CF72C9A00391A5F /* Ali.storyboard */; };
+		3FAD45C72D1C24410086476D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD45C62D1C24410086476D /* LoginViewController.swift */; };
+		3FAD45C92D1C2D660086476D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD45C82D1C2D660086476D /* RegisterViewController.swift */; };
+		3FAD45CB2D1C44AA0086476D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD45CA2D1C44AA0086476D /* SettingsViewController.swift */; };
+		3FAD45CD2D1C5FB40086476D /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD45CC2D1C5FB40086476D /* TestViewController.swift */; };
 		83FA8D9E2D005FF90012E4B5 /* Abdullah-Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83FA8D9D2D005FF90012E4B5 /* Abdullah-Login.storyboard */; };
 		83FA8DA02D0068100012E4B5 /* Abdullah-Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83FA8D9F2D0068100012E4B5 /* Abdullah-Settings.storyboard */; };
 		C322730E2D00BB02007CB134 /* ChooseScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C322730D2D00BB02007CB134 /* ChooseScreen.storyboard */; };
@@ -42,6 +46,10 @@
 		3F7FFEA12CF7288E00391A5F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3F7FFED42CF72BF200391A5F /* Fahad-HomePage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Fahad-HomePage.storyboard"; sourceTree = "<group>"; };
 		3F7FFED62CF72C9A00391A5F /* Ali.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ali.storyboard; sourceTree = "<group>"; };
+		3FAD45C62D1C24410086476D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3FAD45C82D1C2D660086476D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		3FAD45CA2D1C44AA0086476D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		3FAD45CC2D1C5FB40086476D /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		83FA8D9D2D005FF90012E4B5 /* Abdullah-Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Abdullah-Login.storyboard"; sourceTree = "<group>"; };
 		83FA8D9F2D0068100012E4B5 /* Abdullah-Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Abdullah-Settings.storyboard"; sourceTree = "<group>"; };
 		C322730D2D00BB02007CB134 /* ChooseScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChooseScreen.storyboard; sourceTree = "<group>"; };
@@ -126,6 +134,10 @@
 				D0A9EF5F2D1B2F6500CB69BE /* Interest.storyboard */,
 				D0A9EF612D1B2F8C00CB69BE /* TableViewController.swift */,
 				D0A9EF632D1B2F9D00CB69BE /* CellTableViewCell.swift */,
+				3FAD45C62D1C24410086476D /* LoginViewController.swift */,
+				3FAD45C82D1C2D660086476D /* RegisterViewController.swift */,
+				3FAD45CA2D1C44AA0086476D /* SettingsViewController.swift */,
+				3FAD45CC2D1C5FB40086476D /* TestViewController.swift */,
 			);
 			path = Abdullah;
 			sourceTree = "<group>";
@@ -220,9 +232,13 @@
 			files = (
 				D0A9EF642D1B2F9D00CB69BE /* CellTableViewCell.swift in Sources */,
 				3F7FFE922CF7281900391A5F /* ViewController.swift in Sources */,
+				3FAD45C92D1C2D660086476D /* RegisterViewController.swift in Sources */,
 				3F7FFE8E2CF7281900391A5F /* AppDelegate.swift in Sources */,
 				3F7FFE902CF7281900391A5F /* SceneDelegate.swift in Sources */,
 				D0A9EF622D1B2F8C00CB69BE /* TableViewController.swift in Sources */,
+				3FAD45C72D1C24410086476D /* LoginViewController.swift in Sources */,
+				3FAD45CD2D1C5FB40086476D /* TestViewController.swift in Sources */,
+				3FAD45CB2D1C44AA0086476D /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
