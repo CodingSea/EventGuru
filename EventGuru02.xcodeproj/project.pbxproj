@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0489DEFB2D058ED100286194 /* explorepage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0489DEFA2D058ED100286194 /* explorepage.storyboard */; };
+		0489DEFD2D058EF400286194 /* dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0489DEFC2D058EF400286194 /* dashboard.storyboard */; };
+		04F6CEAB2D176BD7009951DB /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6CEAA2D176BD7009951DB /* ExploreViewController.swift */; };
+		04F6CEAD2D1778FF009951DB /* ExploreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6CEAC2D1778FF009951DB /* ExploreTableViewCell.swift */; };
 		29A1A5672D01C68E002009D6 /* Fahad-Event Posting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */; };
 		3F1252552D058A1700E25E5F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3F1252542D058A1700E25E5F /* FirebaseAuth */; };
 		3F1252592D058A1700E25E5F /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 3F1252582D058A1700E25E5F /* FirebaseCore */; };
@@ -27,6 +31,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0489DEFA2D058ED100286194 /* explorepage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = explorepage.storyboard; sourceTree = "<group>"; };
+		0489DEFC2D058EF400286194 /* dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = dashboard.storyboard; sourceTree = "<group>"; };
+		04F6CEAA2D176BD7009951DB /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		04F6CEAC2D1778FF009951DB /* ExploreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTableViewCell.swift; sourceTree = "<group>"; };
 		29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Fahad-Event Posting.storyboard"; sourceTree = "<group>"; };
 		3F7FFE8A2CF7281900391A5F /* EventGuru02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventGuru02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7FFE8D2CF7281900391A5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +67,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0489DEF92D058E9400286194 /* Marwa */ = {
+			isa = PBXGroup;
+			children = (
+				0489DEFA2D058ED100286194 /* explorepage.storyboard */,
+				0489DEFC2D058EF400286194 /* dashboard.storyboard */,
+				04F6CEAA2D176BD7009951DB /* ExploreViewController.swift */,
+				04F6CEAC2D1778FF009951DB /* ExploreTableViewCell.swift */,
+			);
+			path = Marwa;
+			sourceTree = "<group>";
+		};
 		3F67A4652CFC48AA003FEAB2 /* Fahad */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +114,7 @@
 		3F7FFE8C2CF7281900391A5F /* EventGuru02 */ = {
 			isa = PBXGroup;
 			children = (
+				0489DEF92D058E9400286194 /* Marwa */,
 				83FA8D9C2D005FE30012E4B5 /* Abdullah */,
 				3F67A4682CFC48E2003FEAB2 /* Ali */,
 				3F67A4652CFC48AA003FEAB2 /* Fahad */,
@@ -162,7 +182,7 @@
 				};
 			};
 			buildConfigurationList = 3F7FFE852CF7281900391A5F /* Build configuration list for PBXProject "EventGuru02" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 15.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -187,11 +207,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0489DEFD2D058EF400286194 /* dashboard.storyboard in Resources */,
 				3F7FFED52CF72BF200391A5F /* Fahad-HomePage.storyboard in Resources */,
 				3F7FFE9A2CF7281A00391A5F /* LaunchScreen.storyboard in Resources */,
 				3F7FFEA22CF7288E00391A5F /* GoogleService-Info.plist in Resources */,
 				C322730E2D00BB02007CB134 /* ChooseScreen.storyboard in Resources */,
 				83FA8DA02D0068100012E4B5 /* Abdullah-Settings.storyboard in Resources */,
+				0489DEFB2D058ED100286194 /* explorepage.storyboard in Resources */,
 				3F7FFE972CF7281A00391A5F /* Assets.xcassets in Resources */,
 				29A1A5672D01C68E002009D6 /* Fahad-Event Posting.storyboard in Resources */,
 				3F7FFE952CF7281900391A5F /* Main.storyboard in Resources */,
@@ -208,6 +230,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04F6CEAB2D176BD7009951DB /* ExploreViewController.swift in Sources */,
+				04F6CEAD2D1778FF009951DB /* ExploreTableViewCell.swift in Sources */,
 				3F7FFE922CF7281900391A5F /* ViewController.swift in Sources */,
 				3F7FFE8E2CF7281900391A5F /* AppDelegate.swift in Sources */,
 				3F7FFE902CF7281900391A5F /* SceneDelegate.swift in Sources */,
@@ -369,6 +393,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -396,6 +421,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
