@@ -66,8 +66,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Login"/>
                                 <connections>
-                                    <action selector="login:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="4XU-P7-dba"/>
-                                    <segue destination="OXc-uC-8lL" kind="show" identifier="Home" id="2cr-4S-Ma0"/>
+                                    <action selector="login:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="z9c-Gg-Awt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycX-Q1-bpg">
@@ -87,39 +86,23 @@
                     <connections>
                         <outlet property="passwordField" destination="KWI-Tb-2lV" id="cbj-ba-l8I"/>
                         <outlet property="usernameField" destination="WGx-y6-5D4" id="neg-KN-SR1"/>
+                        <segue destination="DJN-PO-Hs1" kind="show" identifier="UserHome" id="nT5-nI-gem"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="wSH-Mi-tcP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="393" y="-11"/>
+            <point key="canvasLocation" x="407" y="-11"/>
         </scene>
-        <!--Test View Controller-->
-        <scene sceneID="NQC-zs-9Y6">
+        <!--Abdullah-Settings-->
+        <scene sceneID="AC9-mH-34p">
             <objects>
-                <viewController id="OXc-uC-8lL" customClass="TestViewController" customModule="EventGuru02" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Bfo-iU-ycH">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIs-cP-lqA">
-                                <rect key="frame" x="144" y="530" width="81" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="signout"/>
-                                <connections>
-                                    <action selector="signout:" destination="OXc-uC-8lL" eventType="touchUpInside" id="cUg-nL-HSr"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="48l-zt-Y2a"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="gXw-jT-HOe"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Dg9-d7-REx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Abdullah-Settings" id="DJN-PO-Hs1" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="tNk-hS-ia8"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U0V-VY-1Zo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1744" y="-43"/>
+            <point key="canvasLocation" x="1153" y="-117"/>
         </scene>
         <!--Register-->
         <scene sceneID="7Sl-2A-Sai">
@@ -129,7 +112,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mbw-jk-qae" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1085" y="218"/>
+            <point key="canvasLocation" x="927" y="239"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lUw-sU-FHp">
