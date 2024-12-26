@@ -24,7 +24,7 @@
 		3FAD45C92D1C2D660086476D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD45C82D1C2D660086476D /* RegisterViewController.swift */; };
 		3FAD45CB2D1C44AA0086476D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD45CA2D1C44AA0086476D /* SettingsViewController.swift */; };
 		3FAD45CD2D1C5FB40086476D /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD45CC2D1C5FB40086476D /* TestViewController.swift */; };
-		83FA8D9E2D005FF90012E4B5 /* Abdullah-Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83FA8D9D2D005FF90012E4B5 /* Abdullah-Login.storyboard */; };
+		83FA8D9E2D005FF90012E4B5 /* UserLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83FA8D9D2D005FF90012E4B5 /* UserLogin.storyboard */; };
 		83FA8DA02D0068100012E4B5 /* Abdullah-Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83FA8D9F2D0068100012E4B5 /* Abdullah-Settings.storyboard */; };
 		C322730E2D00BB02007CB134 /* ChooseScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C322730D2D00BB02007CB134 /* ChooseScreen.storyboard */; };
 		D0A9EF602D1B2F6500CB69BE /* Interest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A9EF5F2D1B2F6500CB69BE /* Interest.storyboard */; };
@@ -50,7 +50,7 @@
 		3FAD45C82D1C2D660086476D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3FAD45CA2D1C44AA0086476D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3FAD45CC2D1C5FB40086476D /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
-		83FA8D9D2D005FF90012E4B5 /* Abdullah-Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Abdullah-Login.storyboard"; sourceTree = "<group>"; };
+		83FA8D9D2D005FF90012E4B5 /* UserLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserLogin.storyboard; sourceTree = "<group>"; };
 		83FA8D9F2D0068100012E4B5 /* Abdullah-Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Abdullah-Settings.storyboard"; sourceTree = "<group>"; };
 		C322730D2D00BB02007CB134 /* ChooseScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChooseScreen.storyboard; sourceTree = "<group>"; };
 		D0A9EF5F2D1B2F6500CB69BE /* Interest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interest.storyboard; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 		83FA8D9C2D005FE30012E4B5 /* Abdullah */ = {
 			isa = PBXGroup;
 			children = (
-				83FA8D9D2D005FF90012E4B5 /* Abdullah-Login.storyboard */,
+				83FA8D9D2D005FF90012E4B5 /* UserLogin.storyboard */,
 				83FA8D9F2D0068100012E4B5 /* Abdullah-Settings.storyboard */,
 				C322730D2D00BB02007CB134 /* ChooseScreen.storyboard */,
 				D4C1CA9E2D01D22100555861 /* Register.storyboard */,
@@ -217,7 +217,7 @@
 				3F7FFE972CF7281A00391A5F /* Assets.xcassets in Resources */,
 				29A1A5672D01C68E002009D6 /* Fahad-Event Posting.storyboard in Resources */,
 				3F7FFE952CF7281900391A5F /* Main.storyboard in Resources */,
-				83FA8D9E2D005FF90012E4B5 /* Abdullah-Login.storyboard in Resources */,
+				83FA8D9E2D005FF90012E4B5 /* UserLogin.storyboard in Resources */,
 				3F7FFED72CF72C9A00391A5F /* Ali.storyboard in Resources */,
 				D4C1CA9F2D01D22100555861 /* Register.storyboard in Resources */,
 			);

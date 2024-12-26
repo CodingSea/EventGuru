@@ -6,10 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Abdullah-Login-->
+        <!--ChooseScreen-->
         <scene sceneID="1ZC-L1-sOj">
             <objects>
-                <viewControllerPlaceholder storyboardName="Abdullah-Login" id="cYg-Hq-8p7" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="ChooseScreen" id="cYg-Hq-8p7" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Ixy-aw-qIm"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DW0-PR-L5z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
