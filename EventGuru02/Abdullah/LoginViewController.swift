@@ -38,12 +38,16 @@ class LoginViewController: UIViewController {
             //functino for handling user redirection
             func handleUserRedirection() {
                 guard let user = Auth.auth().currentUser, let email = user.email else { return }
+                let trimmedEmail = email.trimmingCharacters(in: .whitespacesAndNewlines)
                 
-                if email.contains("@EventGuru.admin.bh") {
-                    self.performSegue(withIdentifier: "goToAdminHome", sender: self)
-                } else if email.contains("@EventGuru.organizer.bh") {
-                    self.performSegue(withIdentifier: "goToOrgHome", sender: self)
+                if trimmedEmail.contains("@eventguru.admin") {
+                    print("Redirecting to Admin Home")
+                    self.performSegue(withIdentifier: "AdminHome", sender: self)
+                } else if trimmedEmail.contains("@eventguru.organizer") {
+                    print("Redirecting to Organizer Home")
+                    self.performSegue(withIdentifier: "OrgHome", sender: self)
                 } else {
+                    print("Redirecting to User Home")
                     self.performSegue(withIdentifier: "UserHome", sender: self)
                 }
             }
