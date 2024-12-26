@@ -11,7 +11,7 @@ import FirebaseAuth
 class LoginViewController: UIViewController {
     
     
-    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
     override func viewDidLoad() {
@@ -22,7 +22,7 @@ class LoginViewController: UIViewController {
     @IBAction func login(_ sender: UIButton) {
         
         if validateFields() {
-                    guard let email = usernameField.text, let password = passwordField.text else { return }
+                    guard let email = emailField.text, let password = passwordField.text else { return }
                     
                     //
                     Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
@@ -50,7 +50,7 @@ class LoginViewController: UIViewController {
             
             //a function for input validation
             func validateFields() -> Bool {
-                guard let email = usernameField.text, !email.isEmpty,
+                guard let email = emailField.text, !email.isEmpty,
                       let password = passwordField.text, !password.isEmpty else {
                     showAlert(title: "Validation Error", message: "Email and Password cannot be empty.")
                     return false
