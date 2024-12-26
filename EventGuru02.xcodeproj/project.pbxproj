@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		29A1A5672D01C68E002009D6 /* Fahad-Event Posting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */; };
-		29E30F402D0EF25400126D5E /* Post2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E30F3F2D0EF25400126D5E /* Post2ViewController.swift */; };
-		29E30F422D0EF36800126D5E /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E30F412D0EF36800126D5E /* PostViewController.swift */; };
 		3F1252552D058A1700E25E5F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3F1252542D058A1700E25E5F /* FirebaseAuth */; };
 		3F1252592D058A1700E25E5F /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 3F1252582D058A1700E25E5F /* FirebaseCore */; };
 		3F1252612D058A1700E25E5F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3F1252602D058A1700E25E5F /* FirebaseFirestore */; };
@@ -22,19 +20,21 @@
 		3F7FFEA22CF7288E00391A5F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F7FFEA12CF7288E00391A5F /* GoogleService-Info.plist */; };
 		3F7FFED52CF72BF200391A5F /* Fahad-HomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7FFED42CF72BF200391A5F /* Fahad-HomePage.storyboard */; };
 		3F7FFED72CF72C9A00391A5F /* Ali.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7FFED62CF72C9A00391A5F /* Ali.storyboard */; };
-		3FDF78F92D09952200586A45 /* Cloudinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDF78F82D09952200586A45 /* Cloudinary.swift */; };
-		3FDF78FC2D0995B900586A45 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = 3FDF78FB2D0995B900586A45 /* Cloudinary */; };
-		3FDF78FE2D0995DB00586A45 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = 3FDF78FD2D0995DB00586A45 /* Cloudinary */; };
+		3FAD45C72D1C24410086476D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD45C62D1C24410086476D /* LoginViewController.swift */; };
+		3FAD45C92D1C2D660086476D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD45C82D1C2D660086476D /* RegisterViewController.swift */; };
+		3FAD45CB2D1C44AA0086476D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD45CA2D1C44AA0086476D /* SettingsViewController.swift */; };
+		3FAD45CD2D1C5FB40086476D /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD45CC2D1C5FB40086476D /* TestViewController.swift */; };
 		83FA8D9E2D005FF90012E4B5 /* Abdullah-Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83FA8D9D2D005FF90012E4B5 /* Abdullah-Login.storyboard */; };
 		83FA8DA02D0068100012E4B5 /* Abdullah-Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83FA8D9F2D0068100012E4B5 /* Abdullah-Settings.storyboard */; };
 		C322730E2D00BB02007CB134 /* ChooseScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C322730D2D00BB02007CB134 /* ChooseScreen.storyboard */; };
+		D0A9EF602D1B2F6500CB69BE /* Interest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A9EF5F2D1B2F6500CB69BE /* Interest.storyboard */; };
+		D0A9EF622D1B2F8C00CB69BE /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A9EF612D1B2F8C00CB69BE /* TableViewController.swift */; };
+		D0A9EF642D1B2F9D00CB69BE /* CellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A9EF632D1B2F9D00CB69BE /* CellTableViewCell.swift */; };
 		D4C1CA9F2D01D22100555861 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4C1CA9E2D01D22100555861 /* Register.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Fahad-Event Posting.storyboard"; sourceTree = "<group>"; };
-		29E30F3F2D0EF25400126D5E /* Post2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post2ViewController.swift; sourceTree = "<group>"; };
-		29E30F412D0EF36800126D5E /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		3F7FFE8A2CF7281900391A5F /* EventGuru02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventGuru02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7FFE8D2CF7281900391A5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F7FFE8F2CF7281900391A5F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,10 +46,16 @@
 		3F7FFEA12CF7288E00391A5F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3F7FFED42CF72BF200391A5F /* Fahad-HomePage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Fahad-HomePage.storyboard"; sourceTree = "<group>"; };
 		3F7FFED62CF72C9A00391A5F /* Ali.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ali.storyboard; sourceTree = "<group>"; };
-		3FDF78F82D09952200586A45 /* Cloudinary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cloudinary.swift; sourceTree = "<group>"; };
+		3FAD45C62D1C24410086476D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3FAD45C82D1C2D660086476D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		3FAD45CA2D1C44AA0086476D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		3FAD45CC2D1C5FB40086476D /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		83FA8D9D2D005FF90012E4B5 /* Abdullah-Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Abdullah-Login.storyboard"; sourceTree = "<group>"; };
 		83FA8D9F2D0068100012E4B5 /* Abdullah-Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Abdullah-Settings.storyboard"; sourceTree = "<group>"; };
 		C322730D2D00BB02007CB134 /* ChooseScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChooseScreen.storyboard; sourceTree = "<group>"; };
+		D0A9EF5F2D1B2F6500CB69BE /* Interest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interest.storyboard; sourceTree = "<group>"; };
+		D0A9EF612D1B2F8C00CB69BE /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		D0A9EF632D1B2F9D00CB69BE /* CellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTableViewCell.swift; sourceTree = "<group>"; };
 		D4C1CA9E2D01D22100555861 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,9 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FDF78FC2D0995B900586A45 /* Cloudinary in Frameworks */,
 				3F1252552D058A1700E25E5F /* FirebaseAuth in Frameworks */,
-				3FDF78FE2D0995DB00586A45 /* Cloudinary in Frameworks */,
 				3F1252612D058A1700E25E5F /* FirebaseFirestore in Frameworks */,
 				3F1252592D058A1700E25E5F /* FirebaseCore in Frameworks */,
 			);
@@ -74,8 +78,6 @@
 			children = (
 				3F7FFED42CF72BF200391A5F /* Fahad-HomePage.storyboard */,
 				29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */,
-				29E30F3F2D0EF25400126D5E /* Post2ViewController.swift */,
-				29E30F412D0EF36800126D5E /* PostViewController.swift */,
 			);
 			path = Fahad;
 			sourceTree = "<group>";
@@ -113,7 +115,6 @@
 				3F7FFE8D2CF7281900391A5F /* AppDelegate.swift */,
 				3F7FFE8F2CF7281900391A5F /* SceneDelegate.swift */,
 				3F7FFE912CF7281900391A5F /* ViewController.swift */,
-				3FDF78F82D09952200586A45 /* Cloudinary.swift */,
 				3F7FFE932CF7281900391A5F /* Main.storyboard */,
 				3F7FFE962CF7281A00391A5F /* Assets.xcassets */,
 				3F7FFE982CF7281A00391A5F /* LaunchScreen.storyboard */,
@@ -130,6 +131,13 @@
 				83FA8D9F2D0068100012E4B5 /* Abdullah-Settings.storyboard */,
 				C322730D2D00BB02007CB134 /* ChooseScreen.storyboard */,
 				D4C1CA9E2D01D22100555861 /* Register.storyboard */,
+				D0A9EF5F2D1B2F6500CB69BE /* Interest.storyboard */,
+				D0A9EF612D1B2F8C00CB69BE /* TableViewController.swift */,
+				D0A9EF632D1B2F9D00CB69BE /* CellTableViewCell.swift */,
+				3FAD45C62D1C24410086476D /* LoginViewController.swift */,
+				3FAD45C82D1C2D660086476D /* RegisterViewController.swift */,
+				3FAD45CA2D1C44AA0086476D /* SettingsViewController.swift */,
+				3FAD45CC2D1C5FB40086476D /* TestViewController.swift */,
 			);
 			path = Abdullah;
 			sourceTree = "<group>";
@@ -154,8 +162,6 @@
 				3F1252542D058A1700E25E5F /* FirebaseAuth */,
 				3F1252582D058A1700E25E5F /* FirebaseCore */,
 				3F1252602D058A1700E25E5F /* FirebaseFirestore */,
-				3FDF78FB2D0995B900586A45 /* Cloudinary */,
-				3FDF78FD2D0995DB00586A45 /* Cloudinary */,
 			);
 			productName = EventGuru02;
 			productReference = 3F7FFE8A2CF7281900391A5F /* EventGuru02.app */;
@@ -187,7 +193,6 @@
 			mainGroup = 3F7FFE812CF7281900391A5F;
 			packageReferences = (
 				3F7FFEA32CF7290A00391A5F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				3FDF78FA2D0995B900586A45 /* XCRemoteSwiftPackageReference "cloudinary_ios" */,
 			);
 			productRefGroup = 3F7FFE8B2CF7281900391A5F /* Products */;
 			projectDirPath = "";
@@ -207,6 +212,7 @@
 				3F7FFE9A2CF7281A00391A5F /* LaunchScreen.storyboard in Resources */,
 				3F7FFEA22CF7288E00391A5F /* GoogleService-Info.plist in Resources */,
 				C322730E2D00BB02007CB134 /* ChooseScreen.storyboard in Resources */,
+				D0A9EF602D1B2F6500CB69BE /* Interest.storyboard in Resources */,
 				83FA8DA02D0068100012E4B5 /* Abdullah-Settings.storyboard in Resources */,
 				3F7FFE972CF7281A00391A5F /* Assets.xcassets in Resources */,
 				29A1A5672D01C68E002009D6 /* Fahad-Event Posting.storyboard in Resources */,
@@ -224,12 +230,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29E30F422D0EF36800126D5E /* PostViewController.swift in Sources */,
+				D0A9EF642D1B2F9D00CB69BE /* CellTableViewCell.swift in Sources */,
 				3F7FFE922CF7281900391A5F /* ViewController.swift in Sources */,
-				29E30F402D0EF25400126D5E /* Post2ViewController.swift in Sources */,
-				3FDF78F92D09952200586A45 /* Cloudinary.swift in Sources */,
+				3FAD45C92D1C2D660086476D /* RegisterViewController.swift in Sources */,
 				3F7FFE8E2CF7281900391A5F /* AppDelegate.swift in Sources */,
 				3F7FFE902CF7281900391A5F /* SceneDelegate.swift in Sources */,
+				D0A9EF622D1B2F8C00CB69BE /* TableViewController.swift in Sources */,
+				3FAD45C72D1C24410086476D /* LoginViewController.swift in Sources */,
+				3FAD45CD2D1C5FB40086476D /* TestViewController.swift in Sources */,
+				3FAD45CB2D1C44AA0086476D /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,14 +469,6 @@
 				minimumVersion = 11.5.0;
 			};
 		};
-		3FDF78FA2D0995B900586A45 /* XCRemoteSwiftPackageReference "cloudinary_ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/cloudinary/cloudinary_ios.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.1.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -485,16 +486,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3F7FFEA32CF7290A00391A5F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
-		};
-		3FDF78FB2D0995B900586A45 /* Cloudinary */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3FDF78FA2D0995B900586A45 /* XCRemoteSwiftPackageReference "cloudinary_ios" */;
-			productName = Cloudinary;
-		};
-		3FDF78FD2D0995DB00586A45 /* Cloudinary */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3FDF78FA2D0995B900586A45 /* XCRemoteSwiftPackageReference "cloudinary_ios" */;
-			productName = Cloudinary;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
