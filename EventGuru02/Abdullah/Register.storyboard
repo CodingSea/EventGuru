@@ -72,15 +72,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="By creating an account, you agree to our " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aca-Rr-rmF">
-                                <rect key="frame" x="40" y="597" width="313" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J56-h6-szD">
-                                <rect key="frame" x="153" y="672" width="87" height="35"/>
+                                <rect key="frame" x="46" y="672" width="299" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Register"/>
@@ -108,6 +101,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="By creating an account, you agree to our " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aca-Rr-rmF">
+                                <rect key="frame" x="40" y="597" width="313" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -118,11 +118,22 @@
                         <outlet property="passwordField" destination="qPM-lL-d5h" id="fim-Sa-44W"/>
                         <outlet property="phonenumberField" destination="Tjp-iV-tKT" id="Are-vy-Kwb"/>
                         <outlet property="usernameField" destination="h9D-AV-znt" id="Qn8-B5-Cvg"/>
+                        <segue destination="NNp-PQ-Lpo" kind="show" identifier="UserHome" id="0pu-2q-nfK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1028.2442748091603" y="-19.014084507042256"/>
+        </scene>
+        <!--Abdullah-Settings-->
+        <scene sceneID="VLa-aD-Bko">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Abdullah-Settings" id="NNp-PQ-Lpo" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="VvJ-xQ-oCg"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IOK-SB-Old" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1800" y="-133"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GaQ-TP-Mhe">
