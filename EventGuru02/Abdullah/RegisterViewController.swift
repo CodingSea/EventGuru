@@ -16,8 +16,12 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var phonenumberField: UITextField!
+    @IBOutlet weak var dateofbirthField: UITextField!
+    
     
     let db = Firestore.firestore()
+    let uid = Auth.auth().currentUser?.uid
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +33,9 @@ class RegisterViewController: UIViewController {
         
         // Validate the input fields
                 if validateFields() {
-                    guard let email = emailField.text, let password = passwordField.text, let username = usernameField.text, let phone = phonenumberField.text else { return }
+                    guard let email = emailField.text, let password = passwordField.text, let username = usernameField.text, let phone = phonenumberField.text,
+                          let dateOfBirth = dateofbirthField.text
+                    else { return }
                     
                     // Convert phone number to a number type (assuming the phone number is numeric)
                     guard let phoneNumber = Int(phone) else {
@@ -51,7 +57,8 @@ class RegisterViewController: UIViewController {
                             "username": username,
                             "email": email,
                             "phone": phoneNumber,  // Storing phone as an integer
-                            "uid": user.uid
+                            "uid": user.uid,
+                            "dateofbirth": dateOfBirth
                         ]
                         
                         // Store data in Firestore
@@ -84,7 +91,8 @@ class RegisterViewController: UIViewController {
                guard let email = emailField.text, !email.isEmpty,
                      let password = passwordField.text, !password.isEmpty,
                      let username = usernameField.text, !username.isEmpty,
-                     let phone = phonenumberField.text, !phone.isEmpty else {
+                     let phone = phonenumberField.text, !phone.isEmpty,
+                    let dateOfBirth = dateofbirthField.text, !dateOfBirth.isEmpty else {
                    showAlert(title: "Validation Error", message: "All fields are required.")
                    return false
                }
@@ -103,6 +111,11 @@ class RegisterViewController: UIViewController {
                    showAlert(title: "Invalid Phone", message: "Please enter a valid phone number.")
                    return false
                }
+            
+            if !isValidDateOfBirth(dateOfBirth) {
+                        showAlert(title: "Invalid Date of Birth", message: "Please enter a valid date of birth.")
+                        return false
+                    }
                
                return true
            }
@@ -125,6 +138,14 @@ class RegisterViewController: UIViewController {
                // You can adjust this to suit your requirements (e.g., check for specific country codes)
                return phone.count >= 10
            }
+            
+            // Function to check if the date of birth is valid (simple format check)
+            func isValidDateOfBirth(_ dateOfBirth: String) -> Bool {
+            // Example check: You can refine this to validate the format more rigorously (e.g., yyyy-mm-dd)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            return dateFormatter.date(from: dateOfBirth) != nil
+        }
            
            // Helper function for showing alerts to make error handling easier
            func showAlert(title: String, message: String) {
