@@ -115,6 +115,7 @@
                                 <buttonConfiguration key="configuration" style="filled" title="signout"/>
                                 <connections>
                                     <action selector="signout:" destination="1or-RT-tHo" eventType="touchUpInside" id="QEt-pU-5RZ"/>
+                                    <segue destination="g1x-Ge-Mtt" kind="show" identifier="Begin" id="sWJ-EU-d6M"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -126,6 +127,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iQh-bK-5R4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1269" y="-277"/>
+        </scene>
+        <!--ChooseScreen-->
+        <scene sceneID="YqD-5T-Tvi">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ChooseScreen" id="g1x-Ge-Mtt" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="4F2-CY-clY"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kbe-qT-Yky" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2020" y="-333"/>
         </scene>
         <!--Register-->
         <scene sceneID="7Sl-2A-Sai">

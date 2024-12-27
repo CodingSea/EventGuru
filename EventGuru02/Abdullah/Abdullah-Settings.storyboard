@@ -210,7 +210,8 @@
                                             <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="Logout:" destination="wZk-RX-goV" eventType="touchUpInside" id="IAM-sM-fFc"/>
+                                            <action selector="logout:" destination="wZk-RX-goV" eventType="touchUpInside" id="6Uj-S6-Ydc"/>
+                                            <segue destination="lSO-qW-QQX" kind="show" identifier="Begin" id="YoT-Md-XLW"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZkU-so-LNN">
@@ -237,7 +238,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kyV-UW-bHn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4100" y="-59.154929577464792"/>
+            <point key="canvasLocation" x="3824" y="-80"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="a6n-dr-nJY">
@@ -344,6 +345,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="raR-8V-Tvi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5542.7480916030536" y="-59.154929577464792"/>
+        </scene>
+        <!--ChooseScreen-->
+        <scene sceneID="L5X-t2-Zme">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ChooseScreen" id="lSO-qW-QQX" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="hqu-bT-FaN"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dIS-Uj-e9E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4152" y="359"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="knM-uQ-koV">

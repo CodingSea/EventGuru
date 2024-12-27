@@ -113,7 +113,7 @@ class RegisterViewController: UIViewController {
                }
             
             if !isValidDateOfBirth(dateOfBirth) {
-                        showAlert(title: "Invalid Date of Birth", message: "Please enter a valid date of birth.")
+                        showAlert(title: "Invalid Date of Birth", message: "Please enter a valid date of birth. YYYY/MM/DD")
                         return false
                     }
                
