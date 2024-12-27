@@ -84,6 +84,7 @@
                         <outlet property="passwordField" destination="KWI-Tb-2lV" id="cbj-ba-l8I"/>
                         <segue destination="DJN-PO-Hs1" kind="show" identifier="UserHome" id="nT5-nI-gem"/>
                         <segue destination="1or-RT-tHo" kind="show" identifier="AdminHome" id="cg7-Gc-FtO"/>
+                        <segue destination="E4n-ep-wzI" kind="show" identifier="OrgHome" id="Lks-P8-AvZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -126,7 +127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iQh-bK-5R4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1269" y="-277"/>
+            <point key="canvasLocation" x="1262" y="-254"/>
         </scene>
         <!--ChooseScreen-->
         <scene sceneID="YqD-5T-Tvi">
@@ -146,7 +147,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mbw-jk-qae" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="934" y="480"/>
+            <point key="canvasLocation" x="715" y="488"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lUw-sU-FHp">
@@ -236,6 +237,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bsO-Mz-UnF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="215" y="718"/>
+        </scene>
+        <!--Test View Controller-->
+        <scene sceneID="ASq-2f-lfv">
+            <objects>
+                <viewController id="E4n-ep-wzI" customClass="TestViewController" customModule="EventGuru02" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="92o-CA-eik">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vp1-56-4Ia">
+                                <rect key="frame" x="244" y="215" width="81" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="signout"/>
+                                <connections>
+                                    <action selector="signout:" destination="E4n-ep-wzI" eventType="touchUpInside" id="Vjq-Zc-zz9"/>
+                                    <segue destination="D3R-cl-q1b" kind="show" identifier="Begin" id="sdU-fk-29e"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="z2c-bR-TMt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="CPd-Zo-WdV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Ha-Xe-PRr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1274" y="404"/>
+        </scene>
+        <!--ChooseScreen-->
+        <scene sceneID="Lzz-we-Mab">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ChooseScreen" id="D3R-cl-q1b" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="v6R-n2-8Iv"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QUA-2o-y5E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1991" y="263"/>
         </scene>
     </scenes>
     <resources>

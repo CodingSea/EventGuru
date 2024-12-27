@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Choose View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="ChooseViewController" customModule="EventGuru02" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,12 +39,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Administrator"/>
+                                <connections>
+                                    <action selector="AdminBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="BCR-qB-CvK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKG-vP-RAJ">
                                 <rect key="frame" x="123" y="514" width="146" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Event Organizer"/>
+                                <connections>
+                                    <action selector="OrganaizerBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="t7c-fK-sMb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFW-n5-wfZ">
                                 <rect key="frame" x="123" y="587" width="146" height="35"/>
@@ -52,7 +58,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="User"/>
                                 <connections>
-                                    <segue destination="xen-Ja-dQl" kind="show" id="Zwk-3r-MF1"/>
+                                    <action selector="UserBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="6hz-It-G3P"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Don't Have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p76-tg-YfK">
@@ -73,20 +79,25 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="PAG-qh-Frg"/>
+                    <connections>
+                        <segue destination="976-ix-Pgf" kind="showDetail" identifier="Admin" id="TA4-VC-9FK"/>
+                        <segue destination="976-ix-Pgf" kind="showDetail" identifier="Organizer" id="43X-TG-KUC"/>
+                        <segue destination="976-ix-Pgf" kind="showDetail" identifier="User" id="xok-iq-lIj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="973.28244274809151" y="-2.1126760563380285"/>
         </scene>
         <!--UserLogin-->
-        <scene sceneID="CaV-sI-ISi">
+        <scene sceneID="4fc-8H-Dzk">
             <objects>
-                <viewControllerPlaceholder storyboardName="UserLogin" id="xen-Ja-dQl" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="CbD-38-bUC"/>
+                <viewControllerPlaceholder storyboardName="UserLogin" id="976-ix-Pgf" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Paz-jN-SHW"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pws-YV-QV8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lr0-g3-hS9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1752" y="-47"/>
+            <point key="canvasLocation" x="1756" y="-115"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="N6j-9P-pZX">
@@ -107,6 +118,9 @@
             <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="xok-iq-lIj"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Logo" width="202" height="162"/>
         <systemColor name="systemBackgroundColor">

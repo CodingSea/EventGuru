@@ -30,6 +30,7 @@
 		D0A9EF602D1B2F6500CB69BE /* Interest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A9EF5F2D1B2F6500CB69BE /* Interest.storyboard */; };
 		D0A9EF622D1B2F8C00CB69BE /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A9EF612D1B2F8C00CB69BE /* TableViewController.swift */; };
 		D0A9EF642D1B2F9D00CB69BE /* CellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A9EF632D1B2F9D00CB69BE /* CellTableViewCell.swift */; };
+		D47FE06F2D1F285400FA928C /* ChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47FE06E2D1F285400FA928C /* ChooseViewController.swift */; };
 		D4C1CA9F2D01D22100555861 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4C1CA9E2D01D22100555861 /* Register.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		D0A9EF5F2D1B2F6500CB69BE /* Interest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interest.storyboard; sourceTree = "<group>"; };
 		D0A9EF612D1B2F8C00CB69BE /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		D0A9EF632D1B2F9D00CB69BE /* CellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTableViewCell.swift; sourceTree = "<group>"; };
+		D47FE06E2D1F285400FA928C /* ChooseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseViewController.swift; sourceTree = "<group>"; };
 		D4C1CA9E2D01D22100555861 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +140,7 @@
 				3FAD45C82D1C2D660086476D /* RegisterViewController.swift */,
 				3FAD45CA2D1C44AA0086476D /* SettingsViewController.swift */,
 				3FAD45CC2D1C5FB40086476D /* TestViewController.swift */,
+				D47FE06E2D1F285400FA928C /* ChooseViewController.swift */,
 			);
 			path = Abdullah;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				D0A9EF642D1B2F9D00CB69BE /* CellTableViewCell.swift in Sources */,
 				3F7FFE922CF7281900391A5F /* ViewController.swift in Sources */,
 				3FAD45C92D1C2D660086476D /* RegisterViewController.swift in Sources */,
+				D47FE06F2D1F285400FA928C /* ChooseViewController.swift in Sources */,
 				3F7FFE8E2CF7281900391A5F /* AppDelegate.swift in Sources */,
 				3F7FFE902CF7281900391A5F /* SceneDelegate.swift in Sources */,
 				D0A9EF622D1B2F8C00CB69BE /* TableViewController.swift in Sources */,
