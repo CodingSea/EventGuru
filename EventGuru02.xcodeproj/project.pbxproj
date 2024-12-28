@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04092DD22D1FFF9300C95B34 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04092DD12D1FFF9300C95B34 /* HomeViewController.swift */; };
+		04092DD42D1FFFAA00C95B34 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04092DD32D1FFFAA00C95B34 /* HomeTableViewCell.swift */; };
 		047DA18F2D1F4D7F0093F717 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DA18E2D1F4D7F0093F717 /* FilterCell.swift */; };
 		0489DEFB2D058ED100286194 /* explorepage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0489DEFA2D058ED100286194 /* explorepage.storyboard */; };
 		0489DEFD2D058EF400286194 /* dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0489DEFC2D058EF400286194 /* dashboard.storyboard */; };
@@ -32,6 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04092DD12D1FFF9300C95B34 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		04092DD32D1FFFAA00C95B34 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		047DA18E2D1F4D7F0093F717 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 		0489DEFA2D058ED100286194 /* explorepage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = explorepage.storyboard; sourceTree = "<group>"; };
 		0489DEFC2D058EF400286194 /* dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = dashboard.storyboard; sourceTree = "<group>"; };
@@ -86,6 +90,8 @@
 			children = (
 				3F7FFED42CF72BF200391A5F /* Fahad-HomePage.storyboard */,
 				29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */,
+				04092DD12D1FFF9300C95B34 /* HomeViewController.swift */,
+				04092DD32D1FFFAA00C95B34 /* HomeTableViewCell.swift */,
 			);
 			path = Fahad;
 			sourceTree = "<group>";
@@ -238,6 +244,8 @@
 				04F6CEAD2D1778FF009951DB /* ExploreTableViewCell.swift in Sources */,
 				3F7FFE922CF7281900391A5F /* ViewController.swift in Sources */,
 				3F7FFE8E2CF7281900391A5F /* AppDelegate.swift in Sources */,
+				04092DD22D1FFF9300C95B34 /* HomeViewController.swift in Sources */,
+				04092DD42D1FFFAA00C95B34 /* HomeTableViewCell.swift in Sources */,
 				3F7FFE902CF7281900391A5F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
