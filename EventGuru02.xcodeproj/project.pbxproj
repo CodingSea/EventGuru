@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		04092DD22D1FFF9300C95B34 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04092DD12D1FFF9300C95B34 /* HomeViewController.swift */; };
 		04092DD42D1FFFAA00C95B34 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04092DD32D1FFFAA00C95B34 /* HomeTableViewCell.swift */; };
-		04CD58D22D2011F200AC0961 /* FilterCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CD58D12D2011F200AC0961 /* FilterCellViewController.swift */; };
 		04E2B4472D203353001189C2 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2B4422D203353001189C2 /* ExploreViewController.swift */; };
 		04E2B4482D203353001189C2 /* ExploreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2B4432D203353001189C2 /* ExploreTableViewCell.swift */; };
 		04E2B4492D203353001189C2 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2B4442D203353001189C2 /* FilterCell.swift */; };
@@ -46,7 +45,6 @@
 /* Begin PBXFileReference section */
 		04092DD12D1FFF9300C95B34 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		04092DD32D1FFFAA00C95B34 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
-		04CD58D12D2011F200AC0961 /* FilterCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCellViewController.swift; sourceTree = "<group>"; };
 		04E2B4402D203353001189C2 /* explorepage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = explorepage.storyboard; sourceTree = "<group>"; };
 		04E2B4412D203353001189C2 /* dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = dashboard.storyboard; sourceTree = "<group>"; };
 		04E2B4422D203353001189C2 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
@@ -96,9 +94,6 @@
 		04E2B43F2D203296001189C2 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				04092DD12D1FFF9300C95B34 /* HomeViewController.swift */,
-				04CD58D12D2011F200AC0961 /* FilterCellViewController.swift */,
-				04092DD32D1FFFAA00C95B34 /* HomeTableViewCell.swift */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -121,6 +116,8 @@
 			children = (
 				29F005EA2D1F041E00F88FFC /* Post2ViewController 2.swift */,
 				29F005EB2D1F041E00F88FFC /* PostViewController 2.swift */,
+				04092DD12D1FFF9300C95B34 /* HomeViewController.swift */,
+				04092DD32D1FFFAA00C95B34 /* HomeTableViewCell.swift */,
 				3F7FFED42CF72BF200391A5F /* Fahad-HomePage.storyboard */,
 				29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */,
 			);
@@ -288,7 +285,6 @@
 				29F005ED2D1F041E00F88FFC /* PostViewController 2.swift in Sources */,
 				3F7FFE8E2CF7281900391A5F /* AppDelegate.swift in Sources */,
 				04092DD22D1FFF9300C95B34 /* HomeViewController.swift in Sources */,
-				04CD58D22D2011F200AC0961 /* FilterCellViewController.swift in Sources */,
 				04092DD42D1FFFAA00C95B34 /* HomeTableViewCell.swift in Sources */,
 				3F7FFE902CF7281900391A5F /* SceneDelegate.swift in Sources */,
 				D0A9EF622D1B2F8C00CB69BE /* TableViewController.swift in Sources */,
