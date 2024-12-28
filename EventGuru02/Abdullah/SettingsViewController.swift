@@ -50,50 +50,61 @@ class SettingsViewController: UIViewController {
                    let password = "********"  // Since password is not stored in Firestore, use a placeholder
                    
                    // Update the UI with the fetched data
-                   self.UsernameLabel.text = username
-                   self.EmailLabel.text = email
-                   self.PhoneNoLabel.text = "\(phone)"  // Convert phone number to String for display
-                   self.PasswordLabel.text = password // Display a placeholder for the password
+                   self.UsernameLabel.text = "  \(username) "
+                   self.EmailLabel.text = "  \(email) "
+                   self.PhoneNoLabel.text = " \(phone)"  // Convert phone number to String for display
+                   self.PasswordLabel.text = "  \(password)" // Display a placeholder for the password
                }
            }
        }
     
     @IBAction func logout(_ sender: Any) {
-        
-        do {
-            try Auth.auth().signOut()
-            // Redirect to Login screen or show a logged-out UI
-            self.performSegue(withIdentifier: "Begin", sender: self)
-        } catch let error {
-            print("Error signing out: \(error.localizedDescription)")
-        }
-        
-    }
-
-}
-
-
-
-
-
-
-
-
-    //func loadData() {
-       // guard let uid = Auth.auth().currentUser?.uid else { return }
-       // db.collection("users").document(uid).getDocument { (document, error) in
-          //  if let error = error {
-              //  print("Error fetching user data: \(error.localizedDescription)")
-             //   return
-          //  }
-           // if let document = document, document.exists {
-             //   let data = document.data()
-            //    self.UsernameLabel.text = data?["username"] as? String ?? "N/A"
-             //   self.EmailLabel.text = data?["email"] as? String ?? "N/A"
-             //   self.PhoneNoLabel.text = String(data?["phone"] as? Int ?? 0) // Since passwords are typically not stored in a retrievable format for security reasons,
-                // consider providing a placeholder or indication of a password reset option instead.
-             //   self.PasswordLabel.text = "******" // Placeholder for the password } }
+        let alert = UIAlertController(title: "Confirm Logout", message: "Are you sure you want to log out?", preferredStyle: .alert)
                 
-         //   }
-      //  }
-//}
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                
+                alert.addAction(UIAlertAction(title: "Logout", style: .destructive, handler: { _ in
+                    do {
+                        try Auth.auth().signOut()
+                        // Redirect to Login screen after successful logout
+                        self.performSegue(withIdentifier: "Begin", sender: self)
+                    } catch let error {
+                        print("Error signing out: \(error.localizedDescription)")
+                    }
+                }))
+                
+                self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func DeleteBtn(_ sender: Any) {
+        let alert = UIAlertController(title: "Confirm Deletion", message: "Are you sure you want to delete your account? This action cannot be undone.", preferredStyle: .alert)
+               
+               alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+               
+               alert.addAction(UIAlertAction(title: "Delete Account", style: .destructive, handler: { _ in
+                   guard let userId = Auth.auth().currentUser?.uid else { return }
+
+                   // First, delete user data from Firestore
+                   self.db.collection("users").document(userId).delete { error in
+                       if let error = error {
+                           print("Error deleting user data from Firestore: \(error.localizedDescription)")
+                           return
+                       }
+                       
+                       // Delete the user from Firebase Authentication
+                       Auth.auth().currentUser?.delete { error in
+                           if let error = error {
+                               print("Error deleting user from Firebase Authentication: \(error.localizedDescription)")
+                               return
+                           }
+                           
+                           // Successfully deleted user, redirect to login screen
+                           self.performSegue(withIdentifier: "Begin", sender: self)
+                       }
+                   }
+               }))
+               
+               self.present(alert, animated: true, completion: nil)
+           }
+    }
