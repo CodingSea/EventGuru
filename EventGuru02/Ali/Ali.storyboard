@@ -404,6 +404,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Cancel reservation">
                                     <color key="baseBackgroundColor" red="0.86078912019999998" green="0.0" blue="0.03159954223" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="CancelReservation:" destination="3Wd-3y-T9h" eventType="touchUpInside" id="S8P-8F-XNZ"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="bookmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="g7x-A2-quk">
                                 <rect key="frame" x="321" y="646" width="57" height="40"/>
@@ -413,15 +416,18 @@
                         <viewLayoutGuide key="safeArea" id="qo5-SU-Rbg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="thumbsUpImageView" destination="c1d-IO-svp" id="b7Q-Vc-c7g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KYj-MS-jp5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1437" y="-2"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controllerr-->
         <scene sceneID="KVz-wt-XuK">
             <objects>
-                <viewController id="Vdd-zO-sRH" sceneMemberID="viewController">
+                <viewController id="Vdd-zO-sRH" customClass="ViewControllerr" customModule="EventGuru02" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BzM-HK-GMR">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -561,11 +567,17 @@
                                 <buttonConfiguration key="configuration" style="filled" title="NOTIFY if available">
                                     <color key="baseBackgroundColor" systemColor="tintColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="Notify:" destination="Vdd-zO-sRH" eventType="touchUpInside" id="iw0-zN-d5q"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="p7g-dD-ZGH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="thumbsUpImageView" destination="w9u-tz-OBi" id="SYW-uC-E9I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cJ6-ae-bUe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -719,6 +731,8 @@
                     </view>
                     <connections>
                         <outlet property="BuyTicket" destination="8PI-7c-llj" id="OCH-RB-WXA"/>
+                        <outlet property="Report" destination="Mto-4E-dRB" id="Y7j-bI-6wJ"/>
+                        <outlet property="thumbsUpImageView" destination="Qt3-dV-UEG" id="Si2-jZ-xia"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9k8-Sv-dei" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1029,6 +1043,9 @@
                         <viewLayoutGuide key="safeArea" id="2DJ-ph-DgP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="thumbsUpImageView" destination="uuh-l9-ldQ" id="XI9-2e-IO9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jSR-1A-Xk8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="N9W-Th-5nO" userLabel="Exit" sceneMemberID="exit"/>

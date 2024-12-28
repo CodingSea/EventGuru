@@ -2,10 +2,7 @@ import UIKit
 
 class ViewControllerr: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
+  
 
     // Buy Ticket Action
     @IBAction func BuyTicket(_ sender: Any) {
@@ -72,4 +69,53 @@ class ViewControllerr: UIViewController {
         
         present(alertController, animated: true, completion: nil)
     }
-}
+    
+    
+  
+
+ 
+
+        
+      @IBOutlet weak var thumbsUpImageView: UIImageView!
+
+      // Boolean to track whether thumbs up is filled or not
+      var isThumbsUpFilled = false
+
+      override func viewDidLoad() {
+          super.viewDidLoad()
+
+          // Set the initial image (unfilled thumbs up)
+          thumbsUpImageView.image = UIImage(systemName: "hand.thumbsup")  // Unfilled thumbs-up symbol
+
+          // Enable user interaction on the UIImageView
+          thumbsUpImageView.isUserInteractionEnabled = true
+
+          // Add tap gesture recognizer to handle the tap
+          let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleThumbsUpTap))
+          thumbsUpImageView.addGestureRecognizer(tapGestureRecognizer)
+      }
+
+      // Handle the tap event
+      @objc func handleThumbsUpTap() {
+          // Toggle between filled and unfilled thumbs up
+          isThumbsUpFilled.toggle()
+
+          // Update the image based on the state
+          if isThumbsUpFilled {
+              thumbsUpImageView.image = UIImage(systemName: "hand.thumbsup.fill")  // Filled thumbs-up symbol
+          } else {
+              thumbsUpImageView.image = UIImage(systemName: "hand.thumbsup")  // Unfilled thumbs-up symbol
+          }
+      }
+  }
+
+    
+    
+    
+    
+
+
+    
+    
+    
+
