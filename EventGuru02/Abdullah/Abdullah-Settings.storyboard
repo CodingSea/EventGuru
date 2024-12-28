@@ -165,10 +165,6 @@
                                         </menu>
                                         <state key="normal" title="English (Default)"/>
                                     </button>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DvS-OB-5b9">
-                                        <rect key="frame" x="137" y="114" width="49" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dark Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUZ-yN-zWZ">
                                         <rect key="frame" x="8" y="114" width="84" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -195,6 +191,10 @@
                                         </menu>
                                         <state key="normal" title="Bhraini Dinar (BD)"/>
                                     </button>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DvS-OB-5b9">
+                                        <rect key="frame" x="137" y="109" width="49" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </switch>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                             </view>
@@ -254,6 +254,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="3ao-k3-69A"/>
+                    <connections>
+                        <outlet property="EmailLabel" destination="SLM-X6-Cek" id="7Ph-sN-z9g"/>
+                        <outlet property="PasswordLabel" destination="Xo7-V0-Rai" id="3mN-ri-FIU"/>
+                        <outlet property="PhoneNoLabel" destination="XNe-9M-Zku" id="svn-ZX-PtM"/>
+                        <outlet property="UsernameLabel" destination="Ftd-ad-KcN" id="L0G-De-YDj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kyV-UW-bHn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
