@@ -7,16 +7,21 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class SettingsViewController: UIViewController {
 
-    @IBAction func Logout(_ sender: Any) {
+    
+    @IBAction func logout(_ sender: Any) {
+        
         do {
-            try FirebaseAuth.Auth.auth().signOut()
-            navigationController?.popViewController(animated: true)
-        } catch {
-            print("Error Signing Out")
+            try Auth.auth().signOut()
+            // Redirect to Login screen or show a logged-out UI
+            self.performSegue(withIdentifier: "Begin", sender: self)
+        } catch let error {
+            print("Error signing out: \(error.localizedDescription)")
         }
+        
     }
     
     override func viewDidLoad() {

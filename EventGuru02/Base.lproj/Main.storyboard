@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uPS-xG-b18">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uKK-se-Ku4">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Fahad-Event Posting-->
+        <!--ChooseScreen-->
         <scene sceneID="1ZC-L1-sOj">
             <objects>
-                <viewControllerPlaceholder storyboardName="Fahad-Event Posting" id="cYg-Hq-8p7" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="ChooseScreen" id="cYg-Hq-8p7" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Ixy-aw-qIm"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DW0-PR-L5z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -45,11 +45,11 @@
             </objects>
             <point key="canvasLocation" x="77" y="2"/>
         </scene>
-        <!--Home-->
+        <!--Item-->
         <scene sceneID="pT0-Mp-KqD">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ebb-1K-Kq8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="Fn0-Ng-5Xl"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="Fn0-Ng-5Xl"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Sq8-wv-Omf">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -64,11 +64,21 @@
             </objects>
             <point key="canvasLocation" x="1400.7633587786258" y="-266.19718309859155"/>
         </scene>
-        <!--Explore-->
+        <!--UserLogin-->
+        <scene sceneID="RpV-we-rQC">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UserLogin" id="zsa-qS-dBf" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="aHd-Tz-afu"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mxa-Od-9PY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1327.4809160305342" y="566.90140845070425"/>
+        </scene>
+        <!--Item-->
         <scene sceneID="P3o-zg-w7T">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="z7d-ie-1tW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Explore" image="magnifyingglass" catalog="system" id="jeK-Et-Iqd"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="jeK-Et-Iqd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="w2V-De-M8b">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -81,11 +91,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vyb-hT-FLK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1421" y="385"/>
+            <point key="canvasLocation" x="1833" y="321"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="48L-eV-8x3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uKK-se-Ku4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GWC-Fx-4Be">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zsa-qS-dBf" kind="relationship" relationship="rootViewController" id="xAD-xK-A3U"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iok-cY-nOa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="543" y="781"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="house.fill" catalog="system" width="128" height="104"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
-    </resources>
 </document>
