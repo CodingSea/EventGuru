@@ -12,6 +12,7 @@
 		047DA18F2D1F4D7F0093F717 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DA18E2D1F4D7F0093F717 /* FilterCell.swift */; };
 		0489DEFB2D058ED100286194 /* explorepage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0489DEFA2D058ED100286194 /* explorepage.storyboard */; };
 		0489DEFD2D058EF400286194 /* dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0489DEFC2D058EF400286194 /* dashboard.storyboard */; };
+		04CD58D22D2011F200AC0961 /* FilterCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CD58D12D2011F200AC0961 /* FilterCellViewController.swift */; };
 		04F6CEAB2D176BD7009951DB /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6CEAA2D176BD7009951DB /* ExploreViewController.swift */; };
 		04F6CEAD2D1778FF009951DB /* ExploreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6CEAC2D1778FF009951DB /* ExploreTableViewCell.swift */; };
 		29A1A5672D01C68E002009D6 /* Fahad-Event Posting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */; };
@@ -39,6 +40,7 @@
 		047DA18E2D1F4D7F0093F717 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 		0489DEFA2D058ED100286194 /* explorepage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = explorepage.storyboard; sourceTree = "<group>"; };
 		0489DEFC2D058EF400286194 /* dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = dashboard.storyboard; sourceTree = "<group>"; };
+		04CD58D12D2011F200AC0961 /* FilterCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCellViewController.swift; sourceTree = "<group>"; };
 		04F6CEAA2D176BD7009951DB /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		04F6CEAC2D1778FF009951DB /* ExploreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTableViewCell.swift; sourceTree = "<group>"; };
 		29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Fahad-Event Posting.storyboard"; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				04F6CEAA2D176BD7009951DB /* ExploreViewController.swift */,
 				04F6CEAC2D1778FF009951DB /* ExploreTableViewCell.swift */,
 				047DA18E2D1F4D7F0093F717 /* FilterCell.swift */,
+				04CD58D12D2011F200AC0961 /* FilterCellViewController.swift */,
 			);
 			path = Marwa;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				3F7FFE922CF7281900391A5F /* ViewController.swift in Sources */,
 				3F7FFE8E2CF7281900391A5F /* AppDelegate.swift in Sources */,
 				04092DD22D1FFF9300C95B34 /* HomeViewController.swift in Sources */,
+				04CD58D22D2011F200AC0961 /* FilterCellViewController.swift in Sources */,
 				04092DD42D1FFFAA00C95B34 /* HomeTableViewCell.swift in Sources */,
 				3F7FFE902CF7281900391A5F /* SceneDelegate.swift in Sources */,
 			);
