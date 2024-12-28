@@ -732,7 +732,9 @@
                     <connections>
                         <outlet property="BuyTicket" destination="8PI-7c-llj" id="OCH-RB-WXA"/>
                         <outlet property="Report" destination="Mto-4E-dRB" id="Y7j-bI-6wJ"/>
-                        <outlet property="thumbsUpImageView" destination="Qt3-dV-UEG" id="Si2-jZ-xia"/>
+                        <outlet property="bookmark" destination="Q7z-qT-euS" id="CKa-ht-Xtz"/>
+                        <outlet property="reportIcon" destination="Mto-4E-dRB" id="ITj-fQ-vJk"/>
+                        <outlet property="thumbsUpImageView" destination="Qt3-dV-UEG" id="Y14-8p-gs3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9k8-Sv-dei" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1037,6 +1039,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="Notify:" destination="N9W-Th-5nO" eventType="touchUpInside" id="5xg-Ey-h76"/>
+                                    <action selector="Notify:" destination="Kw7-eE-sw8" eventType="touchUpInside" id="8yl-2T-ooh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1044,7 +1047,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="thumbsUpImageView" destination="uuh-l9-ldQ" id="XI9-2e-IO9"/>
+                        <outlet property="reportIcon" destination="I3A-FH-zfl" id="YfX-z5-Qog"/>
+                        <outlet property="thumbsUpImageView" destination="uuh-l9-ldQ" id="P2N-Aq-TDf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jSR-1A-Xk8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

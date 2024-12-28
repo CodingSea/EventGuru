@@ -1,10 +1,68 @@
 import UIKit
 
 class ViewControllerr: UIViewController {
+    
+    
+    @IBOutlet weak var thumbsUpImageView: UIImageView!
+    
+    @IBOutlet weak var bookmark: UIImageView!
+    
+    
+    var isThumbsUpFilled = false
+    var isBookmarkFilled = false
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        thumbsUpImageView.image = UIImage(systemName: "hand.thumbsup")
+        thumbsUpImageView.isUserInteractionEnabled = true
+        
+        
+        let thumbsUpTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleThumbsUpTap))
+        thumbsUpImageView.addGestureRecognizer(thumbsUpTapGestureRecognizer)
+        
+        
+        bookmark.image = UIImage(systemName: "bookmark")
+        bookmark.isUserInteractionEnabled = true
+        
+        let bookmarkTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleBookmarkTap))
+        bookmark.addGestureRecognizer(bookmarkTapGestureRecognizer)
+        
+        reportIcon.isUserInteractionEnabled = true
+        
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(reportIconTapped))
+        reportIcon.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+
 
   
+    @objc func handleThumbsUpTap() {
+        
+        isThumbsUpFilled.toggle()
 
-    // Buy Ticket Action
+    
+        if isThumbsUpFilled {
+            thumbsUpImageView.image = UIImage(systemName: "hand.thumbsup.fill")
+        } else {
+            thumbsUpImageView.image = UIImage(systemName: "hand.thumbsup")
+        }
+    }
+
+    @objc func handleBookmarkTap() {
+      
+        isBookmarkFilled.toggle()
+
+        
+        if isBookmarkFilled {
+            bookmark.image = UIImage(systemName: "bookmark.fill")
+        } else {
+            bookmark.image = UIImage(systemName: "bookmark")  //
+        }
+    }
+
     @IBAction func BuyTicket(_ sender: Any) {
         let alertController = UIAlertController(
             title: "Ticket Purchase",
@@ -26,7 +84,6 @@ class ViewControllerr: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
 
-    // Cancel Reservation Action
     @IBAction func CancelReservation(_ sender: Any) {
         let alertController = UIAlertController(
             title: "Cancel Reservation",
@@ -47,7 +104,7 @@ class ViewControllerr: UIViewController {
         
         present(alertController, animated: true, completion: nil)
     }
-    
+
     // Notify User Action
     @IBAction func Notify(_ sender: Any) {
         let alertController = UIAlertController(
@@ -71,51 +128,36 @@ class ViewControllerr: UIViewController {
     }
     
     
-  
-
- 
-
-        
-      @IBOutlet weak var thumbsUpImageView: UIImageView!
-
-      // Boolean to track whether thumbs up is filled or not
-      var isThumbsUpFilled = false
-
-      override func viewDidLoad() {
-          super.viewDidLoad()
-
-          // Set the initial image (unfilled thumbs up)
-          thumbsUpImageView.image = UIImage(systemName: "hand.thumbsup")  // Unfilled thumbs-up symbol
-
-          // Enable user interaction on the UIImageView
-          thumbsUpImageView.isUserInteractionEnabled = true
-
-          // Add tap gesture recognizer to handle the tap
-          let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleThumbsUpTap))
-          thumbsUpImageView.addGestureRecognizer(tapGestureRecognizer)
-      }
-
-      // Handle the tap event
-      @objc func handleThumbsUpTap() {
-          // Toggle between filled and unfilled thumbs up
-          isThumbsUpFilled.toggle()
-
-          // Update the image based on the state
-          if isThumbsUpFilled {
-              thumbsUpImageView.image = UIImage(systemName: "hand.thumbsup.fill")  // Filled thumbs-up symbol
-          } else {
-              thumbsUpImageView.image = UIImage(systemName: "hand.thumbsup")  // Unfilled thumbs-up symbol
-          }
-      }
-  }
-
     
+    @IBOutlet weak var reportIcon: UIImageView!
     
-    
-    
-
-
-    
+    @objc func reportIconTapped() {
+           
+            let alertController = UIAlertController(title: "Report Issue", message: "Please describe the issue you want to report:", preferredStyle: .alert)
+            
+            let textView = UITextView(frame: CGRect(x: 10, y: 60, width: 250, height: 50))
+            textView.font = UIFont.systemFont(ofSize: 14)
+            textView.layer.borderColor = UIColor.lightGray.cgColor
+            textView.layer.borderWidth = 1
+            textView.layer.cornerRadius = 5
+            alertController.view.addSubview(textView)
+            
+            
+            let submitAction = UIAlertAction(title: "Submit", style: .default) { _ in
+                let reportText = textView.text
+                print("User submitted a report: \(reportText ?? "")")
+                
+            }
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            
+            alertController.addAction(submitAction)
+            alertController.addAction(cancelAction)
+            
+            
+            present(alertController, animated: true, completion: nil)
+        }
+    }
     
     
 
