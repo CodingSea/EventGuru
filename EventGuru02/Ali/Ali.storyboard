@@ -128,10 +128,10 @@
             </objects>
             <point key="canvasLocation" x="60" y="-2"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controllerr-->
         <scene sceneID="Gft-zg-szX">
             <objects>
-                <viewController id="ce7-Qc-qDi" sceneMemberID="viewController">
+                <viewController id="ce7-Qc-qDi" customClass="ViewControllerr" customModule="EventGuru02" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ika-fA-9Rj">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -273,10 +273,10 @@
             </objects>
             <point key="canvasLocation" x="770" y="-2"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controllerr-->
         <scene sceneID="gBi-eI-Pwt">
             <objects>
-                <viewController id="3Wd-3y-T9h" sceneMemberID="viewController">
+                <viewController id="3Wd-3y-T9h" customClass="ViewControllerr" customModule="EventGuru02" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nJ3-BM-6Su">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -571,10 +571,10 @@
             </objects>
             <point key="canvasLocation" x="2077" y="-2"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controllerr-->
         <scene sceneID="kp5-2d-yZ7">
             <objects>
-                <viewController id="PtM-kD-nT2" sceneMemberID="viewController">
+                <viewController id="PtM-kD-nT2" customClass="ViewControllerr" customModule="EventGuru02" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AdB-D4-oPC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -695,22 +695,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="bookmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Q7z-qT-euS">
+                                <rect key="frame" x="321" y="646" width="57" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" image="YES"/>
+                                </accessibility>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8PI-7c-llj">
-                                <rect key="frame" x="18" y="698" width="355" height="39"/>
+                                <rect key="frame" x="22" y="698" width="355" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Buy TICKET">
                                     <color key="baseBackgroundColor" red="0.18498767290000001" green="0.76942896839999997" blue="0.0011390516510000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="BuyTicket:" destination="PtM-kD-nT2" eventType="touchUpInside" id="M8e-1v-Rqm"/>
+                                </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="bookmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Q7z-qT-euS">
-                                <rect key="frame" x="321" y="646" width="57" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hdL-8u-lsw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="BuyTicket" destination="8PI-7c-llj" id="OCH-RB-WXA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9k8-Sv-dei" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -840,31 +849,36 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="bookmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Tzu-nP-WLi">
+                                <rect key="frame" x="321" y="646" width="57" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5h-2d-rlr">
-                                <rect key="frame" x="18" y="698" width="355" height="39"/>
+                                <rect key="frame" x="16" y="698" width="355" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Cancel reservation">
                                     <color key="baseBackgroundColor" red="0.86078912019999998" green="0.0" blue="0.03159954223" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="Cancel:" destination="8ce-bV-vie" eventType="touchUpInside" id="MwN-8S-obf"/>
+                                    <action selector="CancelReservation:" destination="8ce-bV-vie" eventType="touchUpInside" id="3Vc-sq-jJ4"/>
+                                </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="bookmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Tzu-nP-WLi">
-                                <rect key="frame" x="321" y="646" width="57" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4J4-T6-Ccj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NKa-Tg-eu9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="8ce-bV-vie" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1437" y="-2"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controllerr-->
         <scene sceneID="JKY-dB-HhW">
             <objects>
-                <viewController id="Kw7-eE-sw8" sceneMemberID="viewController">
+                <viewController id="Kw7-eE-sw8" customClass="ViewControllerr" customModule="EventGuru02" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="toO-BF-eF5">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -992,6 +1006,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Fully booked">
                                     <color key="baseBackgroundColor" red="0.86078912019999998" green="0.0" blue="0.03159954223" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="FullyBooked:" destination="N9W-Th-5nO" eventType="touchUpInside" id="0f9-mG-tlV"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="bookmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="OcJ-VB-iUc">
                                 <rect key="frame" x="321" y="646" width="57" height="40"/>
@@ -1004,6 +1021,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="NOTIFY if available">
                                     <color key="baseBackgroundColor" systemColor="tintColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="Notify:" destination="N9W-Th-5nO" eventType="touchUpInside" id="5xg-Ey-h76"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2DJ-ph-DgP"/>
@@ -1011,6 +1031,7 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jSR-1A-Xk8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="N9W-Th-5nO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2077" y="-2"/>
         </scene>
@@ -1037,13 +1058,13 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
