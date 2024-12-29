@@ -17,6 +17,7 @@ class ExploreTableViewCell: UITableViewCell {
 
     @IBOutlet weak var EventPrice: UILabel!
     
+    
    
     override func awakeFromNib() {
         super.awakeFromNib()

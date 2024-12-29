@@ -52,8 +52,8 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                 .setWidth(360).setHeight(180))
          */
         
-        let uploader = cloudinary.createUploader()
-        uploader.upload(data: image.pngData() ?? <#default value#>, uploadPreset: "presetName")
+   //     let uploader = cloudinary.createUploader()
+       // uploader.upload(data: image.pngData() ?? <#default value#>, uploadPreset: "presetName")
     }
     
     func fetchImage(url: String)

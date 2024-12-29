@@ -9,12 +9,11 @@
 /* Begin PBXBuildFile section */
 		04092DD22D1FFF9300C95B34 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04092DD12D1FFF9300C95B34 /* HomeViewController.swift */; };
 		04092DD42D1FFFAA00C95B34 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04092DD32D1FFFAA00C95B34 /* HomeTableViewCell.swift */; };
-		04E2B4472D203353001189C2 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2B4422D203353001189C2 /* ExploreViewController.swift */; };
-		04E2B4482D203353001189C2 /* ExploreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2B4432D203353001189C2 /* ExploreTableViewCell.swift */; };
-		04E2B4492D203353001189C2 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2B4442D203353001189C2 /* FilterCell.swift */; };
-		04E2B44A2D203353001189C2 /* FilterCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2B4452D203353001189C2 /* FilterCellViewController.swift */; };
-		04E2B44B2D203353001189C2 /* dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E2B4412D203353001189C2 /* dashboard.storyboard */; };
-		04E2B44C2D203353001189C2 /* explorepage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E2B4402D203353001189C2 /* explorepage.storyboard */; };
+		04E48D2B2D203F3900A08F87 /* explorepage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E48D252D203F3900A08F87 /* explorepage.storyboard */; };
+		04E48D2C2D203F3900A08F87 /* dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E48D232D203F3900A08F87 /* dashboard.storyboard */; };
+		04E48D2D2D203F3900A08F87 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E48D272D203F3900A08F87 /* ExploreViewController.swift */; };
+		04E48D302D203F3900A08F87 /* ExploreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E48D262D203F3900A08F87 /* ExploreTableViewCell.swift */; };
+		04E48D342D2043EF00A08F87 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = 04E48D332D2043EF00A08F87 /* Cloudinary */; };
 		29A1A5672D01C68E002009D6 /* Fahad-Event Posting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */; };
 		29F005EC2D1F041E00F88FFC /* Post2ViewController 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F005EA2D1F041E00F88FFC /* Post2ViewController 2.swift */; };
 		29F005ED2D1F041E00F88FFC /* PostViewController 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F005EB2D1F041E00F88FFC /* PostViewController 2.swift */; };
@@ -45,12 +44,10 @@
 /* Begin PBXFileReference section */
 		04092DD12D1FFF9300C95B34 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		04092DD32D1FFFAA00C95B34 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
-		04E2B4402D203353001189C2 /* explorepage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = explorepage.storyboard; sourceTree = "<group>"; };
-		04E2B4412D203353001189C2 /* dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = dashboard.storyboard; sourceTree = "<group>"; };
-		04E2B4422D203353001189C2 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
-		04E2B4432D203353001189C2 /* ExploreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTableViewCell.swift; sourceTree = "<group>"; };
-		04E2B4442D203353001189C2 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
-		04E2B4452D203353001189C2 /* FilterCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCellViewController.swift; sourceTree = "<group>"; };
+		04E48D232D203F3900A08F87 /* dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = dashboard.storyboard; sourceTree = "<group>"; };
+		04E48D252D203F3900A08F87 /* explorepage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = explorepage.storyboard; sourceTree = "<group>"; };
+		04E48D262D203F3900A08F87 /* ExploreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTableViewCell.swift; sourceTree = "<group>"; };
+		04E48D272D203F3900A08F87 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Fahad-Event Posting.storyboard"; sourceTree = "<group>"; };
 		29F005EA2D1F041E00F88FFC /* Post2ViewController 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post2ViewController 2.swift"; sourceTree = "<group>"; };
 		29F005EB2D1F041E00F88FFC /* PostViewController 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostViewController 2.swift"; sourceTree = "<group>"; };
@@ -82,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04E48D342D2043EF00A08F87 /* Cloudinary in Frameworks */,
 				3F1252552D058A1700E25E5F /* FirebaseAuth in Frameworks */,
 				3F1252612D058A1700E25E5F /* FirebaseFirestore in Frameworks */,
 				3F1252592D058A1700E25E5F /* FirebaseCore in Frameworks */,
@@ -98,17 +96,15 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
-		04E2B4462D203353001189C2 /* Marwa 2 */ = {
+		04E48D2A2D203F3900A08F87 /* Marwa */ = {
 			isa = PBXGroup;
 			children = (
-				04E2B4402D203353001189C2 /* explorepage.storyboard */,
-				04E2B4412D203353001189C2 /* dashboard.storyboard */,
-				04E2B4422D203353001189C2 /* ExploreViewController.swift */,
-				04E2B4432D203353001189C2 /* ExploreTableViewCell.swift */,
-				04E2B4442D203353001189C2 /* FilterCell.swift */,
-				04E2B4452D203353001189C2 /* FilterCellViewController.swift */,
+				04E48D232D203F3900A08F87 /* dashboard.storyboard */,
+				04E48D252D203F3900A08F87 /* explorepage.storyboard */,
+				04E48D262D203F3900A08F87 /* ExploreTableViewCell.swift */,
+				04E48D272D203F3900A08F87 /* ExploreViewController.swift */,
 			);
-			path = "Marwa 2";
+			path = Marwa;
 			sourceTree = "<group>";
 		};
 		3F67A4652CFC48AA003FEAB2 /* Fahad */ = {
@@ -152,7 +148,7 @@
 		3F7FFE8C2CF7281900391A5F /* EventGuru02 */ = {
 			isa = PBXGroup;
 			children = (
-				04E2B4462D203353001189C2 /* Marwa 2 */,
+				04E48D2A2D203F3900A08F87 /* Marwa */,
 				83FA8D9C2D005FE30012E4B5 /* Abdullah */,
 				3F67A4682CFC48E2003FEAB2 /* Ali */,
 				3F67A4652CFC48AA003FEAB2 /* Fahad */,
@@ -205,6 +201,7 @@
 				3F1252542D058A1700E25E5F /* FirebaseAuth */,
 				3F1252582D058A1700E25E5F /* FirebaseCore */,
 				3F1252602D058A1700E25E5F /* FirebaseFirestore */,
+				04E48D332D2043EF00A08F87 /* Cloudinary */,
 			);
 			productName = EventGuru02;
 			productReference = 3F7FFE8A2CF7281900391A5F /* EventGuru02.app */;
@@ -236,6 +233,7 @@
 			mainGroup = 3F7FFE812CF7281900391A5F;
 			packageReferences = (
 				3F7FFEA32CF7290A00391A5F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				04E48D322D2043EF00A08F87 /* XCRemoteSwiftPackageReference "cloudinary_ios" */,
 			);
 			productRefGroup = 3F7FFE8B2CF7281900391A5F /* Products */;
 			projectDirPath = "";
@@ -251,8 +249,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04E2B44B2D203353001189C2 /* dashboard.storyboard in Resources */,
-				04E2B44C2D203353001189C2 /* explorepage.storyboard in Resources */,
+				04E48D2B2D203F3900A08F87 /* explorepage.storyboard in Resources */,
+				04E48D2C2D203F3900A08F87 /* dashboard.storyboard in Resources */,
 				3F7FFED52CF72BF200391A5F /* Fahad-HomePage.storyboard in Resources */,
 				3F7FFE9A2CF7281A00391A5F /* LaunchScreen.storyboard in Resources */,
 				3F7FFEA22CF7288E00391A5F /* GoogleService-Info.plist in Resources */,
@@ -274,10 +272,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04E2B4472D203353001189C2 /* ExploreViewController.swift in Sources */,
-				04E2B4482D203353001189C2 /* ExploreTableViewCell.swift in Sources */,
-				04E2B4492D203353001189C2 /* FilterCell.swift in Sources */,
-				04E2B44A2D203353001189C2 /* FilterCellViewController.swift in Sources */,
 				D0A9EF642D1B2F9D00CB69BE /* CellTableViewCell.swift in Sources */,
 				3F7FFE922CF7281900391A5F /* ViewController.swift in Sources */,
 				3FAD45C92D1C2D660086476D /* RegisterViewController.swift in Sources */,
@@ -291,6 +285,8 @@
 				3FAD45C72D1C24410086476D /* LoginViewController.swift in Sources */,
 				3FAD45CD2D1C5FB40086476D /* TestViewController.swift in Sources */,
 				3FAD45CB2D1C44AA0086476D /* SettingsViewController.swift in Sources */,
+				04E48D2D2D203F3900A08F87 /* ExploreViewController.swift in Sources */,
+				04E48D302D203F3900A08F87 /* ExploreTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +509,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		04E48D322D2043EF00A08F87 /* XCRemoteSwiftPackageReference "cloudinary_ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cloudinary/cloudinary_ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
 		3F7FFEA32CF7290A00391A5F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -524,6 +528,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		04E48D332D2043EF00A08F87 /* Cloudinary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04E48D322D2043EF00A08F87 /* XCRemoteSwiftPackageReference "cloudinary_ios" */;
+			productName = Cloudinary;
+		};
 		3F1252542D058A1700E25E5F /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3F7FFEA32CF7290A00391A5F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
