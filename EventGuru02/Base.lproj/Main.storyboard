@@ -6,10 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--ChooseScreen-->
+        <!--Interest-->
         <scene sceneID="1ZC-L1-sOj">
             <objects>
-                <viewControllerPlaceholder storyboardName="ChooseScreen" id="cYg-Hq-8p7" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Interest" id="cYg-Hq-8p7" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Ixy-aw-qIm"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DW0-PR-L5z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -64,10 +64,10 @@
             </objects>
             <point key="canvasLocation" x="1400.7633587786258" y="-266.19718309859155"/>
         </scene>
-        <!--UserLogin-->
+        <!--Interest-->
         <scene sceneID="RpV-we-rQC">
             <objects>
-                <viewControllerPlaceholder storyboardName="UserLogin" id="zsa-qS-dBf" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Interest" id="zsa-qS-dBf" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="aHd-Tz-afu"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mxa-Od-9PY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
