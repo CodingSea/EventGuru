@@ -111,6 +111,15 @@
                                 <rect key="frame" x="307" y="192" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAm-7M-501">
+                                <rect key="frame" x="116" y="713" width="160" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Save"/>
+                                <connections>
+                                    <action selector="Savebtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ie7-oE-TmC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -142,7 +151,6 @@
         <!--Navigation Controller-->
         <scene sceneID="NWw-r2-tin">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wfv-nW-m1B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GbZ-5Y-B0C" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="imX-IF-Ylm">
@@ -154,6 +162,7 @@
                         <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="w5n-Yl-7QU"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wfv-nW-m1B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-163" y="-2"/>
         </scene>
