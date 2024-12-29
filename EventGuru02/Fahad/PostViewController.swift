@@ -37,16 +37,16 @@ class PostViewController: UIViewController {
     {
         let eventData: [String: Any] =
         [
-            "EventName": eventName.text ?? <#default value#>,
-            "Description": textView.text ?? <#default value#>,
-            "Price": price.text ?? <#default value#>,
-            "Location": location.text ?? <#default value#>,
+            "EventName": eventName.text ?? "Name test",
+            "Description": textView.text ?? "Description",
+            "Price": price.text ?? "100 BHD",
+            "Location": location.text ?? "Manama",
             "StartDate": startDatePicker.date,
             "EndDate": endDatePicker.date,
-            "Category": selectedCategory ?? <#default value#>
+            "Category": selectedCategory ?? "None"
         ]
         
-        db.collection("Events").document(uid ?? <#default value#>).setData(eventData)
+        db.collection("Events").document(uid ?? "0").setData(eventData)
     }
     
     /*
