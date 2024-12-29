@@ -46,7 +46,16 @@ class PostViewController: UIViewController {
             "Category": selectedCategory ?? "None"
         ]
         
-        db.collection("Events").document(uid ?? "0").setData(eventData)
+        db.collection("Events").document(UUID().uuidString).setData(eventData)
+        {
+            error in if error != nil{
+                print("Error adding event!!!")
+            }
+            else
+            {
+                print("Event added")
+            }
+        }
     }
     
     /*
