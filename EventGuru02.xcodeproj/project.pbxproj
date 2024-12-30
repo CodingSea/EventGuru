@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		214A9EAC2D21D2890051C15D /* ViewControllerr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214A9EAB2D21D2890051C15D /* ViewControllerr.swift */; };
 		29A1A5672D01C68E002009D6 /* Fahad-Event Posting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */; };
 		29F005EC2D1F041E00F88FFC /* Post2ViewController 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F005EA2D1F041E00F88FFC /* Post2ViewController 2.swift */; };
 		29F005ED2D1F041E00F88FFC /* PostViewController 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F005EB2D1F041E00F88FFC /* PostViewController 2.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		214A9EAB2D21D2890051C15D /* ViewControllerr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerr.swift; sourceTree = "<group>"; };
 		29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Fahad-Event Posting.storyboard"; sourceTree = "<group>"; };
 		29F005EA2D1F041E00F88FFC /* Post2ViewController 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post2ViewController 2.swift"; sourceTree = "<group>"; };
 		29F005EB2D1F041E00F88FFC /* PostViewController 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostViewController 2.swift"; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		3F67A4682CFC48E2003FEAB2 /* Ali */ = {
 			isa = PBXGroup;
 			children = (
+				214A9EAB2D21D2890051C15D /* ViewControllerr.swift */,
 				3F7FFED62CF72C9A00391A5F /* Ali.storyboard */,
 			);
 			path = Ali;
@@ -241,6 +244,7 @@
 				3F7FFE902CF7281900391A5F /* SceneDelegate.swift in Sources */,
 				D0A9EF622D1B2F8C00CB69BE /* TableViewController.swift in Sources */,
 				3FAD45C72D1C24410086476D /* LoginViewController.swift in Sources */,
+				214A9EAC2D21D2890051C15D /* ViewControllerr.swift in Sources */,
 				3FAD45CD2D1C5FB40086476D /* TestViewController.swift in Sources */,
 				3FAD45CB2D1C44AA0086476D /* SettingsViewController.swift in Sources */,
 			);
