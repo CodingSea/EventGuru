@@ -31,6 +31,7 @@
 		D0A9EF602D1B2F6500CB69BE /* Interest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A9EF5F2D1B2F6500CB69BE /* Interest.storyboard */; };
 		D4C1CA9F2D01D22100555861 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4C1CA9E2D01D22100555861 /* Register.storyboard */; };
 		E0D8EF4E2D219D500037A2D5 /* InterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D8EF4D2D219D500037A2D5 /* InterestViewController.swift */; };
+		E41FF7A52D23149E00C18D34 /* BuyTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41FF7A42D23149E00C18D34 /* BuyTicketViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		D0A9EF5F2D1B2F6500CB69BE /* Interest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interest.storyboard; sourceTree = "<group>"; };
 		D4C1CA9E2D01D22100555861 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		E0D8EF4D2D219D500037A2D5 /* InterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestViewController.swift; sourceTree = "<group>"; };
+		E41FF7A42D23149E00C18D34 /* BuyTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyTicketViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				3F7FFED62CF72C9A00391A5F /* Ali.storyboard */,
+				E41FF7A42D23149E00C18D34 /* BuyTicketViewController.swift */,
 			);
 			path = Ali;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				3F7FFE8E2CF7281900391A5F /* AppDelegate.swift in Sources */,
 				3F7FFE902CF7281900391A5F /* SceneDelegate.swift in Sources */,
 				3FAD45C72D1C24410086476D /* LoginViewController.swift in Sources */,
+				E41FF7A52D23149E00C18D34 /* BuyTicketViewController.swift in Sources */,
 				3FAD45CD2D1C5FB40086476D /* TestViewController.swift in Sources */,
 				3FAD45CB2D1C44AA0086476D /* SettingsViewController.swift in Sources */,
 				295C3C802D21970F00A3493E /* PostViewController.swift in Sources */,
