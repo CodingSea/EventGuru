@@ -199,6 +199,15 @@
                                     <segue destination="g1x-Ge-Mtt" kind="presentation" identifier="Begin" modalPresentationStyle="fullScreen" id="sWJ-EU-d6M"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHE-Ci-qFX">
+                                <rect key="frame" x="159" y="562" width="75" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <segue destination="Et0-T7-fjd" kind="presentation" modalPresentationStyle="fullScreen" id="XOo-FI-emS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="njk-uQ-W3h"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -212,12 +221,22 @@
         <!--UserLogin-->
         <scene sceneID="YqD-5T-Tvi">
             <objects>
-                <viewControllerPlaceholder storyboardName="UserLogin" id="g1x-Ge-Mtt" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kbe-qT-Yky" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="Fahad-Event Posting" storyboardName="UserLogin" id="g1x-Ge-Mtt" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="4F2-CY-clY"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kbe-qT-Yky" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2779" y="-121"/>
+            <point key="canvasLocation" x="2892" y="-254"/>
+        </scene>
+        <!--Fahad-Event Posting-->
+        <scene sceneID="p1k-zL-Sjy">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Fahad-Event Posting" id="Et0-T7-fjd" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="5DL-eM-d4R"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9F8-6O-SK8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2959" y="-125"/>
         </scene>
         <!--Test View Controller-->
         <scene sceneID="ASq-2f-lfv">
