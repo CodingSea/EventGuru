@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		04092DD22D1FFF9300C95B34 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04092DD12D1FFF9300C95B34 /* HomeViewController.swift */; };
 		04092DD42D1FFFAA00C95B34 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04092DD32D1FFFAA00C95B34 /* HomeTableViewCell.swift */; };
+		04779CFC2D21A89B004A349F /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04779CFB2D21A89B004A349F /* DashboardViewController.swift */; };
+		04779CFE2D21A8E5004A349F /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04779CFD2D21A8E5004A349F /* DashboardTableViewCell.swift */; };
 		04E48D2B2D203F3900A08F87 /* explorepage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E48D252D203F3900A08F87 /* explorepage.storyboard */; };
 		04E48D2C2D203F3900A08F87 /* dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E48D232D203F3900A08F87 /* dashboard.storyboard */; };
 		04E48D2D2D203F3900A08F87 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E48D272D203F3900A08F87 /* ExploreViewController.swift */; };
@@ -44,6 +46,8 @@
 /* Begin PBXFileReference section */
 		04092DD12D1FFF9300C95B34 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		04092DD32D1FFFAA00C95B34 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		04779CFB2D21A89B004A349F /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		04779CFD2D21A8E5004A349F /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
 		04E48D232D203F3900A08F87 /* dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = dashboard.storyboard; sourceTree = "<group>"; };
 		04E48D252D203F3900A08F87 /* explorepage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = explorepage.storyboard; sourceTree = "<group>"; };
 		04E48D262D203F3900A08F87 /* ExploreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTableViewCell.swift; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				04E48D232D203F3900A08F87 /* dashboard.storyboard */,
+				04779CFD2D21A8E5004A349F /* DashboardTableViewCell.swift */,
+				04779CFB2D21A89B004A349F /* DashboardViewController.swift */,
 				04E48D252D203F3900A08F87 /* explorepage.storyboard */,
 				04E48D262D203F3900A08F87 /* ExploreTableViewCell.swift */,
 				04E48D272D203F3900A08F87 /* ExploreViewController.swift */,
@@ -275,6 +281,7 @@
 				D0A9EF642D1B2F9D00CB69BE /* CellTableViewCell.swift in Sources */,
 				3F7FFE922CF7281900391A5F /* ViewController.swift in Sources */,
 				3FAD45C92D1C2D660086476D /* RegisterViewController.swift in Sources */,
+				04779CFE2D21A8E5004A349F /* DashboardTableViewCell.swift in Sources */,
 				29F005EC2D1F041E00F88FFC /* Post2ViewController 2.swift in Sources */,
 				29F005ED2D1F041E00F88FFC /* PostViewController 2.swift in Sources */,
 				3F7FFE8E2CF7281900391A5F /* AppDelegate.swift in Sources */,
@@ -287,6 +294,7 @@
 				3FAD45CB2D1C44AA0086476D /* SettingsViewController.swift in Sources */,
 				04E48D2D2D203F3900A08F87 /* ExploreViewController.swift in Sources */,
 				04E48D302D203F3900A08F87 /* ExploreTableViewCell.swift in Sources */,
+				04779CFC2D21A89B004A349F /* DashboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
