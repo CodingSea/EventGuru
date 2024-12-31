@@ -5,7 +5,7 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth
 
-class PostViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var db: Firestore!
     var uid = Auth.auth().currentUser?.uid
@@ -41,43 +41,30 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate & UI
         textView.layer.borderColor = UIColor.lightGray.cgColor
     }
     
-    func uploadImage(image: UIImage) {
-        guard let imageData = image.jpegData(compressionQuality: 0.8) else { return }
-
-        cloudinary.createUploader().upload(data: imageData, uploadPreset: "ml_default", completionHandler:  { (result, error) in
-            if error != nil {
-                print("Upload failed: (error)")
-            } else if let result = result {
-                let imageUrl = result.secureUrl
-                EventHelper.updateImagePath(to: imageUrl!)
-                print("Upload successful: \(imageUrl!)")
-                print("Upload successful: (result.secureUrl!)")
-            }
-        })
-    }
-    
     @IBOutlet weak var imageView: UIImageView!
     
     
-    @IBAction func selectPhotoTapped(_ sender: Any) {
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.delegate = self
-        imagePickerController.sourceType = .photoLibrary
-        present(imagePickerController, animated: true, completion: nil)
-    }
+    @IBAction func selectPhotoTapped(_ sender: UIButton) {
+            let imagePickerController = UIImagePickerController()
+            imagePickerController.delegate = self
+            imagePickerController.sourceType = .photoLibrary
+            present(imagePickerController, animated: true, completion: nil)
+        }
     
     
     
-    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             if let selectedImage = info[.originalImage] as? UIImage {
                 imageView.image = selectedImage
             }
             picker.dismiss(animated: true, completion: nil)
         }
 
-    @objc func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
             picker.dismiss(animated: true, completion: nil)
         }
+    
+    
     @IBAction func createEventBtn(_ sender: Any)
     {
         guard validateFields() else { return }
@@ -129,7 +116,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate & UI
             guard let eventName = eventName.text, !eventName.isEmpty,
                   let description = Description.text, !description.isEmpty,
                   let location = location.text, !location.isEmpty,
-                  let priceText = price.text, !priceText.isEmpty,
+                  let priceText = price.text, !priceText.isEmpty,	
                   let category = Category.text, !category.isEmpty else {
                 showAlert(title: "Validation Error", message: "All fields are required.")
                 return false
