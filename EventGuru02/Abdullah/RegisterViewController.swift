@@ -31,11 +31,10 @@ class RegisterViewController: UIViewController {
     
     @IBAction func Register(_ sender: Any) {
         
-        // Validate the input fields
+                // Validate the input fields
                 if validateFields() {
                     guard let email = emailField.text, let password = passwordField.text, let username = usernameField.text, let phone = phonenumberField.text,
-                          let dateOfBirth = dateofbirthField.text
-                    else { return }
+                          let dateOfBirth = dateofbirthField.text else { return }
                     
                     // Convert phone number to a number type (assuming the phone number is numeric)
                     guard let phoneNumber = Int(phone) else {
@@ -58,7 +57,8 @@ class RegisterViewController: UIViewController {
                             "email": email,
                             "phone": phoneNumber,  // Storing phone as an integer
                             "uid": user.uid,
-                            "dateofbirth": dateOfBirth
+                            "dateofbirth": dateOfBirth,
+                            "role": "User" // Adding role to the user data
                         ]
                         
                         // Store data in Firestore
@@ -82,74 +82,72 @@ class RegisterViewController: UIViewController {
                 self.performSegue(withIdentifier: "UserHome", sender: self)
             }
             
+            func validateFields() -> Bool {
+                guard let email = emailField.text, !email.isEmpty,
+                      let password = passwordField.text, !password.isEmpty,
+                      let username = usernameField.text, !username.isEmpty,
+                      let phone = phonenumberField.text, !phone.isEmpty,
+                      let dateOfBirth = dateofbirthField.text, !dateOfBirth.isEmpty else {
+                    showAlert(title: "Validation Error", message: "All fields are required.")
+                    return false
+                }
+                
+                if !isValidEmail(email) {
+                    showAlert(title: "Invalid Email", message: "Please enter a valid email address.")
+                    return false
+                }
+                
+                if !isValidPassword(password) {
+                    showAlert(title: "Invalid Password", message: "Password must be at least 6 characters long.")
+                    return false
+                }
+                
+                if !isValidPhone(phone) {
+                    showAlert(title: "Invalid Phone", message: "Please enter a valid phone number.")
+                    return false
+                }
+                
+                if !isValidDateOfBirth(dateOfBirth) {
+                    showAlert(title: "Invalid Date of Birth", message: "Please enter a valid date of birth. YYYY/MM/DD")
+                    return false
+                }
+                
+                return true
+            }
             
-        func validateFields() -> Bool {
-               guard let email = emailField.text, !email.isEmpty,
-                     let password = passwordField.text, !password.isEmpty,
-                     let username = usernameField.text, !username.isEmpty,
-                     let phone = phonenumberField.text, !phone.isEmpty,
-                    let dateOfBirth = dateofbirthField.text, !dateOfBirth.isEmpty else {
-                   showAlert(title: "Validation Error", message: "All fields are required.")
-                   return false
-               }
-               
-               if !isValidEmail(email) {
-                   showAlert(title: "Invalid Email", message: "Please enter a valid email address.")
-                   return false
-               }
-               
-               if !isValidPassword(password) {
-                   showAlert(title: "Invalid Password", message: "Password must be at least 6 characters long.")
-                   return false
-               }
-               
-               if !isValidPhone(phone) {
-                   showAlert(title: "Invalid Phone", message: "Please enter a valid phone number.")
-                   return false
-               }
+            // Functions to check if the email is valid
+            func isValidEmail(_ email: String) -> Bool {
+                let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+                let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
+                return emailPred.evaluate(with: email)
+            }
             
-            if !isValidDateOfBirth(dateOfBirth) {
-                        showAlert(title: "Invalid Date of Birth", message: "Please enter a valid date of birth. YYYY/MM/DD")
-                        return false
-                    }
-               
-               return true
-           }
-           
-           // Functions to check if the email is valid
-           func isValidEmail(_ email: String) -> Bool {
-               let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-               let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
-               return emailPred.evaluate(with: email)
-           }
-           
-           // Function to check if the password is valid (at least 6 characters)
-           func isValidPassword(_ password: String) -> Bool {
-               return password.count >= 6
-           }
-           
-           // Function to check if the phone number is valid (basic validation for this example)
-           func isValidPhone(_ phone: String) -> Bool {
-               // For simplicity, we can check if the phone number has a reasonable length
-               // You can adjust this to suit your requirements (e.g., check for specific country codes)
-               return phone.count >= 10
-           }
+            // Function to check if the password is valid (at least 6 characters)
+            func isValidPassword(_ password: String) -> Bool {
+                return password.count >= 6
+            }
+            
+            // Function to check if the phone number is valid (basic validation for this example)
+            func isValidPhone(_ phone: String) -> Bool {
+                // For simplicity, we can check if the phone number has a reasonable length
+                // You can adjust this to suit your requirements (e.g., check for specific country codes)
+                return phone.count >= 10
+            }
             
             // Function to check if the date of birth is valid (simple format check)
             func isValidDateOfBirth(_ dateOfBirth: String) -> Bool {
-            // Example check: You can refine this to validate the format more rigorously (e.g., yyyy-mm-dd)
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd"
-            return dateFormatter.date(from: dateOfBirth) != nil
+                // Example check: You can refine this to validate the format more rigorously (e.g., yyyy-mm-dd)
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                return dateFormatter.date(from: dateOfBirth) != nil
+            }
+            
+            // Helper function for showing alerts to make error handling easier
+            func showAlert(title: String, message: String) {
+                let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
         }
-           
-           // Helper function for showing alerts to make error handling easier
-           func showAlert(title: String, message: String) {
-               let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-               alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-               self.present(alert, animated: true, completion: nil)
-           }
-        
-        
-    }
 
+        
