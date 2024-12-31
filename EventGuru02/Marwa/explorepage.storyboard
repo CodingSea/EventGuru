@@ -98,9 +98,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="EventImage" destination="SKW-Ue-MUr" id="VLA-Sl-uGX"/>
-                                            <outlet property="EventName" destination="iIa-HV-WZp" id="AKF-qv-XvB"/>
-                                            <outlet property="EventPrice" destination="FAq-3d-4LN" id="h1S-cj-Oag"/>
+                                            <outlet property="eventImage" destination="SKW-Ue-MUr" id="bZf-Yb-FOy"/>
+                                            <outlet property="eventName" destination="iIa-HV-WZp" id="awC-mH-MaD"/>
+                                            <outlet property="price" destination="FAq-3d-4LN" id="nS9-cV-MfJ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

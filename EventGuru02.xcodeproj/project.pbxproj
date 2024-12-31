@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		04092DD22D1FFF9300C95B34 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04092DD12D1FFF9300C95B34 /* HomeViewController.swift */; };
 		04092DD42D1FFFAA00C95B34 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04092DD32D1FFFAA00C95B34 /* HomeTableViewCell.swift */; };
+		042F3A402D23E53B0076606B /* Cloudinaryfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F3A3F2D23E53B0076606B /* Cloudinaryfile.swift */; };
+		046D4D062D23734B00BEE9AE /* ExploreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D4D052D23734B00BEE9AE /* ExploreTableViewCell.swift */; };
+		046D4D082D2384E600BEE9AE /* EventEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D4D072D2384E600BEE9AE /* EventEditingViewController.swift */; };
 		04779CFC2D21A89B004A349F /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04779CFB2D21A89B004A349F /* DashboardViewController.swift */; };
 		04779CFE2D21A8E5004A349F /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04779CFD2D21A8E5004A349F /* DashboardTableViewCell.swift */; };
 		04E48D2B2D203F3900A08F87 /* explorepage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E48D252D203F3900A08F87 /* explorepage.storyboard */; };
 		04E48D2C2D203F3900A08F87 /* dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E48D232D203F3900A08F87 /* dashboard.storyboard */; };
 		04E48D2D2D203F3900A08F87 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E48D272D203F3900A08F87 /* ExploreViewController.swift */; };
-		04E48D302D203F3900A08F87 /* ExploreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E48D262D203F3900A08F87 /* ExploreTableViewCell.swift */; };
 		04E48D342D2043EF00A08F87 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = 04E48D332D2043EF00A08F87 /* Cloudinary */; };
 		29A1A5672D01C68E002009D6 /* Fahad-Event Posting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */; };
 		29F005EC2D1F041E00F88FFC /* Post2ViewController 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F005EA2D1F041E00F88FFC /* Post2ViewController 2.swift */; };
@@ -46,11 +48,13 @@
 /* Begin PBXFileReference section */
 		04092DD12D1FFF9300C95B34 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		04092DD32D1FFFAA00C95B34 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		042F3A3F2D23E53B0076606B /* Cloudinaryfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cloudinaryfile.swift; sourceTree = "<group>"; };
+		046D4D052D23734B00BEE9AE /* ExploreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTableViewCell.swift; sourceTree = "<group>"; };
+		046D4D072D2384E600BEE9AE /* EventEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditingViewController.swift; sourceTree = "<group>"; };
 		04779CFB2D21A89B004A349F /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		04779CFD2D21A8E5004A349F /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
 		04E48D232D203F3900A08F87 /* dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = dashboard.storyboard; sourceTree = "<group>"; };
 		04E48D252D203F3900A08F87 /* explorepage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = explorepage.storyboard; sourceTree = "<group>"; };
-		04E48D262D203F3900A08F87 /* ExploreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTableViewCell.swift; sourceTree = "<group>"; };
 		04E48D272D203F3900A08F87 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Fahad-Event Posting.storyboard"; sourceTree = "<group>"; };
 		29F005EA2D1F041E00F88FFC /* Post2ViewController 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post2ViewController 2.swift"; sourceTree = "<group>"; };
@@ -107,8 +111,9 @@
 				04779CFD2D21A8E5004A349F /* DashboardTableViewCell.swift */,
 				04779CFB2D21A89B004A349F /* DashboardViewController.swift */,
 				04E48D252D203F3900A08F87 /* explorepage.storyboard */,
-				04E48D262D203F3900A08F87 /* ExploreTableViewCell.swift */,
 				04E48D272D203F3900A08F87 /* ExploreViewController.swift */,
+				046D4D052D23734B00BEE9AE /* ExploreTableViewCell.swift */,
+				046D4D072D2384E600BEE9AE /* EventEditingViewController.swift */,
 			);
 			path = Marwa;
 			sourceTree = "<group>";
@@ -166,6 +171,7 @@
 				3F7FFE982CF7281A00391A5F /* LaunchScreen.storyboard */,
 				3F7FFE9B2CF7281A00391A5F /* Info.plist */,
 				3F7FFEA12CF7288E00391A5F /* GoogleService-Info.plist */,
+				042F3A3F2D23E53B0076606B /* Cloudinaryfile.swift */,
 			);
 			path = EventGuru02;
 			sourceTree = "<group>";
@@ -286,6 +292,7 @@
 				29F005ED2D1F041E00F88FFC /* PostViewController 2.swift in Sources */,
 				3F7FFE8E2CF7281900391A5F /* AppDelegate.swift in Sources */,
 				04092DD22D1FFF9300C95B34 /* HomeViewController.swift in Sources */,
+				046D4D082D2384E600BEE9AE /* EventEditingViewController.swift in Sources */,
 				04092DD42D1FFFAA00C95B34 /* HomeTableViewCell.swift in Sources */,
 				3F7FFE902CF7281900391A5F /* SceneDelegate.swift in Sources */,
 				D0A9EF622D1B2F8C00CB69BE /* TableViewController.swift in Sources */,
@@ -293,8 +300,9 @@
 				3FAD45CD2D1C5FB40086476D /* TestViewController.swift in Sources */,
 				3FAD45CB2D1C44AA0086476D /* SettingsViewController.swift in Sources */,
 				04E48D2D2D203F3900A08F87 /* ExploreViewController.swift in Sources */,
-				04E48D302D203F3900A08F87 /* ExploreTableViewCell.swift in Sources */,
+				046D4D062D23734B00BEE9AE /* ExploreTableViewCell.swift in Sources */,
 				04779CFC2D21A89B004A349F /* DashboardViewController.swift in Sources */,
+				042F3A402D23E53B0076606B /* Cloudinaryfile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

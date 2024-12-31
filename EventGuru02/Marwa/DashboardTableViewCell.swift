@@ -9,6 +9,20 @@ import UIKit
 
 class DashboardTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var eventImage: UIImageView!
+    
+    @IBOutlet weak var eventName: UILabel!
+    
+    @IBOutlet weak var price: UILabel!
+    
+    
+    @IBOutlet weak var reuse: UIButton!
+    
+    
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
