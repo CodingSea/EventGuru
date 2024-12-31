@@ -82,11 +82,7 @@ class RegisterViewController: UIViewController {
                 self.performSegue(withIdentifier: "UserHome", sender: self)
             }
             
-        
-        
-        
-        
-        
+            
         func validateFields() -> Bool {
                guard let email = emailField.text, !email.isEmpty,
                      let password = passwordField.text, !password.isEmpty,
