@@ -19,6 +19,7 @@ func uploadImage(image: UIImage) {
             print("Upload failed: (error)")
         } else if let result = result {
             let imageUrl = result.secureUrl
+            EventHelper.updateImagePath(to: imageUrl!)
             print("Upload successful: \(imageUrl!)")
             print("Upload successful: (result.secureUrl!)")
         }
