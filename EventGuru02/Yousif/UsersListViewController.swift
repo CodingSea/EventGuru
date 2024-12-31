@@ -46,8 +46,6 @@ class UsersListViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
 
-
-
     // MARK: - Add Dropdown UIBarButtonItem
     func addDropdownButton() {
         let dropdownButton = UIBarButtonItem(title: "All", style: .plain, target: self, action: #selector(showDropdown))
@@ -116,9 +114,13 @@ class UsersListViewController: UIViewController, UITableViewDataSource, UITableV
         if segue.identifier == "showUserDetails",
            let destinationVC = segue.destination as? UserDetailsViewController,
            let userId = sender as? String {
+            print("Passing userId: \(userId)") // Debugging
             destinationVC.userId = userId
         }
     }
+
+
+
 
     // MARK: - Search Bar Delegate
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
