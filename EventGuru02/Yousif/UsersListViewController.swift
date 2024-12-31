@@ -83,11 +83,18 @@ class UsersListViewController: UIViewController, UITableViewDataSource, UITableV
     func filterUsers(by role: String) {
         if role == "All" {
             filteredUsers = users
+        } else if role == "Admin" {
+            // Filter for both "Admin" and "Administrator"
+            filteredUsers = users.filter {
+                let userRole = $0["role"] as? String ?? ""
+                return userRole == "Admin" || userRole == "Administrator"
+            }
         } else {
             filteredUsers = users.filter { $0["role"] as? String == role }
         }
         tableView.reloadData()
     }
+
 
     // MARK: - Table View Data Source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
