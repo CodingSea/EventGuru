@@ -19,8 +19,6 @@
 		04E48D2D2D203F3900A08F87 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E48D272D203F3900A08F87 /* ExploreViewController.swift */; };
 		04E48D342D2043EF00A08F87 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = 04E48D332D2043EF00A08F87 /* Cloudinary */; };
 		29A1A5672D01C68E002009D6 /* Fahad-Event Posting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */; };
-		29F005EC2D1F041E00F88FFC /* Post2ViewController 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F005EA2D1F041E00F88FFC /* Post2ViewController 2.swift */; };
-		29F005ED2D1F041E00F88FFC /* PostViewController 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F005EB2D1F041E00F88FFC /* PostViewController 2.swift */; };
 		3F1252552D058A1700E25E5F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3F1252542D058A1700E25E5F /* FirebaseAuth */; };
 		3F1252592D058A1700E25E5F /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 3F1252582D058A1700E25E5F /* FirebaseCore */; };
 		3F1252612D058A1700E25E5F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3F1252602D058A1700E25E5F /* FirebaseFirestore */; };
@@ -37,6 +35,9 @@
 		3FAD45C92D1C2D660086476D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD45C82D1C2D660086476D /* RegisterViewController.swift */; };
 		3FAD45CB2D1C44AA0086476D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD45CA2D1C44AA0086476D /* SettingsViewController.swift */; };
 		3FAD45CD2D1C5FB40086476D /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD45CC2D1C5FB40086476D /* TestViewController.swift */; };
+		66561A592D2406C4007A5DEC /* InterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66561A582D2406C4007A5DEC /* InterestViewController.swift */; };
+		66561A5B2D240742007A5DEC /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66561A5A2D240742007A5DEC /* PostViewController.swift */; };
+		66561A5D2D240746007A5DEC /* Post2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66561A5C2D240746007A5DEC /* Post2ViewController.swift */; };
 		83FA8D9E2D005FF90012E4B5 /* UserLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83FA8D9D2D005FF90012E4B5 /* UserLogin.storyboard */; };
 		83FA8DA02D0068100012E4B5 /* Abdullah-Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83FA8D9F2D0068100012E4B5 /* Abdullah-Settings.storyboard */; };
 		D0A9EF602D1B2F6500CB69BE /* Interest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A9EF5F2D1B2F6500CB69BE /* Interest.storyboard */; };
@@ -57,8 +58,6 @@
 		04E48D252D203F3900A08F87 /* explorepage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = explorepage.storyboard; sourceTree = "<group>"; };
 		04E48D272D203F3900A08F87 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Fahad-Event Posting.storyboard"; sourceTree = "<group>"; };
-		29F005EA2D1F041E00F88FFC /* Post2ViewController 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post2ViewController 2.swift"; sourceTree = "<group>"; };
-		29F005EB2D1F041E00F88FFC /* PostViewController 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostViewController 2.swift"; sourceTree = "<group>"; };
 		3F7FFE8A2CF7281900391A5F /* EventGuru02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventGuru02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7FFE8D2CF7281900391A5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F7FFE8F2CF7281900391A5F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +73,9 @@
 		3FAD45C82D1C2D660086476D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3FAD45CA2D1C44AA0086476D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3FAD45CC2D1C5FB40086476D /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		66561A582D2406C4007A5DEC /* InterestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterestViewController.swift; sourceTree = "<group>"; };
+		66561A5A2D240742007A5DEC /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		66561A5C2D240746007A5DEC /* Post2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post2ViewController.swift; sourceTree = "<group>"; };
 		83FA8D9D2D005FF90012E4B5 /* UserLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserLogin.storyboard; sourceTree = "<group>"; };
 		83FA8D9F2D0068100012E4B5 /* Abdullah-Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Abdullah-Settings.storyboard"; sourceTree = "<group>"; };
 		D0A9EF5F2D1B2F6500CB69BE /* Interest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interest.storyboard; sourceTree = "<group>"; };
@@ -121,8 +123,8 @@
 		3F67A4652CFC48AA003FEAB2 /* Fahad */ = {
 			isa = PBXGroup;
 			children = (
-				29F005EA2D1F041E00F88FFC /* Post2ViewController 2.swift */,
-				29F005EB2D1F041E00F88FFC /* PostViewController 2.swift */,
+				66561A5C2D240746007A5DEC /* Post2ViewController.swift */,
+				66561A5A2D240742007A5DEC /* PostViewController.swift */,
 				04092DD12D1FFF9300C95B34 /* HomeViewController.swift */,
 				04092DD32D1FFFAA00C95B34 /* HomeTableViewCell.swift */,
 				3F7FFED42CF72BF200391A5F /* Fahad-HomePage.storyboard */,
@@ -185,6 +187,7 @@
 				83FA8D9F2D0068100012E4B5 /* Abdullah-Settings.storyboard */,
 				D4C1CA9E2D01D22100555861 /* Register.storyboard */,
 				D0A9EF5F2D1B2F6500CB69BE /* Interest.storyboard */,
+				66561A582D2406C4007A5DEC /* InterestViewController.swift */,
 				3FAD45C62D1C24410086476D /* LoginViewController.swift */,
 				3FAD45C82D1C2D660086476D /* RegisterViewController.swift */,
 				3FAD45CA2D1C44AA0086476D /* SettingsViewController.swift */,
@@ -286,11 +289,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66561A592D2406C4007A5DEC /* InterestViewController.swift in Sources */,
 				3F7FFE922CF7281900391A5F /* ViewController.swift in Sources */,
 				3FAD45C92D1C2D660086476D /* RegisterViewController.swift in Sources */,
+				66561A5B2D240742007A5DEC /* PostViewController.swift in Sources */,
 				04779CFE2D21A8E5004A349F /* DashboardTableViewCell.swift in Sources */,
-				29F005EC2D1F041E00F88FFC /* Post2ViewController 2.swift in Sources */,
-				29F005ED2D1F041E00F88FFC /* PostViewController 2.swift in Sources */,
 				3F7FFE8E2CF7281900391A5F /* AppDelegate.swift in Sources */,
 				04092DD22D1FFF9300C95B34 /* HomeViewController.swift in Sources */,
 				046D4D082D2384E600BEE9AE /* EventEditingViewController.swift in Sources */,
@@ -301,6 +304,7 @@
 				3FAD45CB2D1C44AA0086476D /* SettingsViewController.swift in Sources */,
 				04E48D2D2D203F3900A08F87 /* ExploreViewController.swift in Sources */,
 				046D4D062D23734B00BEE9AE /* ExploreTableViewCell.swift in Sources */,
+				66561A5D2D240746007A5DEC /* Post2ViewController.swift in Sources */,
 				04779CFC2D21A89B004A349F /* DashboardViewController.swift in Sources */,
 				042F3A402D23E53B0076606B /* Cloudinaryfile.swift in Sources */,
 			);
