@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mhl-gJ-Ia2">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
@@ -132,7 +132,7 @@
         <!--Navigation Controller-->
         <scene sceneID="31v-mc-B2e">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mhl-gJ-Ia2" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AAA" automaticallyAdjustsScrollViewInsets="NO" id="mhl-gJ-Ia2" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="adn-iZ-OEm">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>

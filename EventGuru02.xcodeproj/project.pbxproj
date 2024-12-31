@@ -44,6 +44,7 @@
 		D4C1CA9F2D01D22100555861 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4C1CA9E2D01D22100555861 /* Register.storyboard */; };
 		E639D1532D23FF020065F53F /* Ali - Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E639D1522D23FF020065F53F /* Ali - Profile.storyboard */; };
 		E639D1552D2400830065F53F /* Admin-Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E639D1542D2400830065F53F /* Admin-Main.storyboard */; };
+		E639D15D2D240E890065F53F /* User-Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E639D15C2D240E890065F53F /* User-Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		D4C1CA9E2D01D22100555861 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		E639D1522D23FF020065F53F /* Ali - Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Ali - Profile.storyboard"; sourceTree = "<group>"; };
 		E639D1542D2400830065F53F /* Admin-Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Admin-Main.storyboard"; sourceTree = "<group>"; };
+		E639D15C2D240E890065F53F /* User-Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "User-Main.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 				3F7FFE8F2CF7281900391A5F /* SceneDelegate.swift */,
 				3F7FFE912CF7281900391A5F /* ViewController.swift */,
 				3F7FFE932CF7281900391A5F /* Main.storyboard */,
+				E639D15C2D240E890065F53F /* User-Main.storyboard */,
 				E639D1542D2400830065F53F /* Admin-Main.storyboard */,
 				3F7FFE962CF7281A00391A5F /* Assets.xcassets */,
 				3F7FFE982CF7281A00391A5F /* LaunchScreen.storyboard */,
@@ -276,6 +279,7 @@
 				29A1A5672D01C68E002009D6 /* Fahad-Event Posting.storyboard in Resources */,
 				3F7FFE952CF7281900391A5F /* Main.storyboard in Resources */,
 				83FA8D9E2D005FF90012E4B5 /* UserLogin.storyboard in Resources */,
+				E639D15D2D240E890065F53F /* User-Main.storyboard in Resources */,
 				E639D1532D23FF020065F53F /* Ali - Profile.storyboard in Resources */,
 				3F7FFED72CF72C9A00391A5F /* Ali.storyboard in Resources */,
 				D4C1CA9F2D01D22100555861 /* Register.storyboard in Resources */,
