@@ -1,5 +1,4 @@
 import UIKit
-import FirebaseAuth
 import FirebaseFirestore
 
 class UsersListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
@@ -31,6 +30,13 @@ class UsersListViewController: UIViewController, UITableViewDataSource, UITableV
         fetchUsers()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Refresh users list each time the view appears
+        fetchUsers()
+    }
+
+    // MARK: - Fetch Users
     func fetchUsers() {
         db.collection("users").getDocuments { (snapshot, error) in
             if let error = error {
@@ -100,27 +106,29 @@ class UsersListViewController: UIViewController, UITableViewDataSource, UITableV
             roleLabel.text = user["role"] as? String ?? "Unknown"
         }
 
+        if let editButton = cell.viewWithTag(3) as? UIButton {
+            editButton.tag = indexPath.row
+            editButton.addTarget(self, action: #selector(editButtonTapped(_:)), for: .touchUpInside)
+        }
+
         return cell
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let user = filteredUsers[indexPath.row]
+    // MARK: - Edit Button Action
+    @objc func editButtonTapped(_ sender: UIButton) {
+        let rowIndex = sender.tag
+        let user = filteredUsers[rowIndex]
         if let userId = user["uid"] as? String {
-            performSegue(withIdentifier: "showUserDetails", sender: userId)
+            print("Navigating to details with userId: \(userId)")
+
+            // Create and navigate to UserDetailsViewController programmatically
+            let storyboard = UIStoryboard(name: "AdminDash", bundle: nil)
+            if let userDetailsVC = storyboard.instantiateViewController(withIdentifier: "UserDetailsViewController") as? UserDetailsViewController {
+                userDetailsVC.userId = userId
+                self.navigationController?.pushViewController(userDetailsVC, animated: true)
+            }
         }
     }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showUserDetails",
-           let destinationVC = segue.destination as? UserDetailsViewController,
-           let userId = sender as? String {
-            print("Passing userId: \(userId)") // Debugging
-            destinationVC.userId = userId
-        }
-    }
-
-
-
 
     // MARK: - Search Bar Delegate
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

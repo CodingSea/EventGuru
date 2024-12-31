@@ -20,11 +20,9 @@ class UserDetailsViewController: UIViewController {
         super.viewDidLoad()
 
         // Disable editing for specific fields
-        nameTextField.isUserInteractionEnabled = false
-        roleTextField.isUserInteractionEnabled = false
-        locationTextField.isUserInteractionEnabled = false
-        ageTextField.isUserInteractionEnabled = false
-        joinDateTextField.isUserInteractionEnabled = false
+        [nameTextField, roleTextField, locationTextField, ageTextField, joinDateTextField].forEach {
+            $0?.isUserInteractionEnabled = false
+        }
 
         setupActivityIndicator()
         fetchUserDetails()
@@ -36,7 +34,7 @@ class UserDetailsViewController: UIViewController {
         self.view.addSubview(activityIndicator)
     }
 
-    // MARK: - Fetch User Details with Retry
+    // MARK: - Fetch User Details
     func fetchUserDetails(retryCount: Int = 3) {
         guard let userId = userId else {
             print("Error: User ID is nil")
@@ -62,74 +60,24 @@ class UserDetailsViewController: UIViewController {
             }
 
             guard let data = document?.data() else {
-                print("User document not found for ID: \(userId)")
-                if retryCount > 0 {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                        self.fetchUserDetails(retryCount: retryCount - 1)
-                    }
-                } else {
-                    self.showErrorAlert(message: "User data not found.")
-                }
+                print("User document not found.")
+                self.showErrorAlert(message: "User not found.")
                 return
             }
 
             DispatchQueue.main.async {
-                self.nameTextField.text = data["username"] as? String ?? "Unknown"
-                self.roleTextField.text = data["role"] as? String ?? "Unknown"
-                self.locationTextField.text = data["location"] as? String ?? "Unknown"
-                
-                // Handle Date of Birth and calculate age
-                if let dateOfBirth = data["dateofbirth"] as? String {
-                    self.ageTextField.text = self.calculateAge(from: dateOfBirth)
-                } else {
-                    self.ageTextField.text = "Unknown"
-                }
-                
-                self.joinDateTextField.text = data["joinDate"] as? String ?? "Unknown"
+                self.updateUI(with: data)
             }
         }
     }
 
-    // MARK: - Calculate Age
-    func calculateAge(from dateOfBirth: String) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy/MM/dd"
-        guard let birthDate = dateFormatter.date(from: dateOfBirth) else {
-            return "Invalid Date"
-        }
-
-        let calendar = Calendar.current
-        let ageComponents = calendar.dateComponents([.year], from: birthDate, to: Date())
-        return "\(ageComponents.year ?? 0)"
-    }
-
-    // MARK: - Save Changes
-    @IBAction func saveButtonTapped(_ sender: UIButton) {
-        guard let userId = userId else {
-            print("Error: User ID is nil")
-            return
-        }
-
-        let updatedDetails: [String: Any] = [
-            "username": nameTextField.text ?? "",
-            "role": roleTextField.text?.isEmpty == false ? roleTextField.text ?? "Unknown" : "Unknown",
-            "location": locationTextField.text ?? "",
-            "joinDate": joinDateTextField.text ?? ""
-        ]
-
-        activityIndicator.startAnimating()
-
-        db.collection("users").document(userId).updateData(updatedDetails) { error in
-            self.activityIndicator.stopAnimating()
-
-            if let error = error {
-                print("Error updating user details: \(error.localizedDescription)")
-                self.showErrorAlert(message: "Failed to update user details.")
-            } else {
-                print("User details updated successfully.")
-                self.showSuccessAlert(message: "User details updated successfully.")
-            }
-        }
+    // MARK: - Update UI
+    func updateUI(with data: [String: Any]) {
+        nameTextField.text = data["username"] as? String ?? "Unknown"
+        roleTextField.text = data["role"] as? String ?? "Unknown"
+        locationTextField.text = data["location"] as? String ?? "Unknown"
+        ageTextField.text = data["dateofbirth"] as? String ?? "Unknown"
+        joinDateTextField.text = data["joinDate"] as? String ?? "Unknown"
     }
 
     // MARK: - Delete Account
@@ -139,6 +87,20 @@ class UserDetailsViewController: UIViewController {
             return
         }
 
+        // Show confirmation alert
+        let confirmationAlert = UIAlertController(
+            title: "Confirm Deletion",
+            message: "Are you sure you want to delete this account? This action cannot be undone.",
+            preferredStyle: .alert
+        )
+        confirmationAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        confirmationAlert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
+            self.deleteAccount(with: userId)
+        }))
+        present(confirmationAlert, animated: true)
+    }
+
+    func deleteAccount(with userId: String) {
         activityIndicator.startAnimating()
 
         db.collection("users").document(userId).delete { error in
@@ -149,11 +111,10 @@ class UserDetailsViewController: UIViewController {
                 self.showErrorAlert(message: "Failed to delete user.")
             } else {
                 print("User deleted successfully.")
-                let alert = UIAlertController(title: "Success", message: "User deleted successfully.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                NotificationCenter.default.post(name: NSNotification.Name("UserDeleted"), object: nil)
+                self.showSuccessAlert(message: "User deleted successfully.") {
                     self.navigationController?.popViewController(animated: true)
-                }))
-                self.present(alert, animated: true)
+                }
             }
         }
     }
@@ -165,9 +126,11 @@ class UserDetailsViewController: UIViewController {
         self.present(alert, animated: true)
     }
 
-    func showSuccessAlert(message: String) {
+    func showSuccessAlert(message: String, completion: (() -> Void)? = nil) {
         let alert = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            completion?()
+        }))
         self.present(alert, animated: true)
     }
 }
