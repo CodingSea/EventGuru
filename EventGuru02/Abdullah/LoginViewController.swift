@@ -61,7 +61,7 @@ class LoginViewController: UIViewController {
             // Function for handling user redirection based on role
             func handleUserRedirection(role: String) {
                 switch role {
-                case "Admin":
+                case "Administrator":
                     print("Redirecting to Admin Home")
                     self.performSegue(withIdentifier: "AdminHome", sender: self)
                 case "Organizer":
