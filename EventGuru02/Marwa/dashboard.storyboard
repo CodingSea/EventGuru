@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GT2-dR-Q8i">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GT2-dR-Q8i">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -80,6 +80,7 @@
                                                             <buttonConfiguration key="configuration" style="filled" title="Reuse"/>
                                                             <connections>
                                                                 <action selector="handleReuseButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="aqb-25-xRq"/>
+                                                                <action selector="reuseButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="poy-dS-w4I"/>
                                                                 <segue destination="IcH-7P-WoI" kind="show" identifier="EventEditingViewController" id="wEq-nn-3aI"/>
                                                             </connections>
                                                         </button>
@@ -155,7 +156,7 @@
         <!--EventEditingViewController-->
         <scene sceneID="467-22-KaO">
             <objects>
-                <viewController title="EventEditingViewController" id="IcH-7P-WoI" sceneMemberID="viewController">
+                <viewController title="EventEditingViewController" id="IcH-7P-WoI" customClass="EventEditingViewController" customModule="EventGuru02" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iHw-PA-i1K">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -283,7 +284,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Range:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTn-UJ-kjS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTn-UJ-kjS">
                                 <rect key="frame" x="26" y="633" width="108" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="yNN-t5-96q"/>
@@ -343,6 +344,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2Lr-HN-YkS"/>
+                    <connections>
+                        <outlet property="eventCategoryTextField" destination="uQG-eL-p9b" id="QMT-i9-zic"/>
+                        <outlet property="eventDescriptionTextField" destination="Vyg-kI-mPa" id="ItC-LB-rZE"/>
+                        <outlet property="eventImageView" destination="saG-6l-Fn0" id="fx9-gY-Nsx"/>
+                        <outlet property="eventNameTextField" destination="VCA-jR-zL8" id="CiH-sy-7kM"/>
+                        <outlet property="eventPriceTextField" destination="fFt-Hy-fgI" id="IQZ-lr-DKR"/>
+                        <outlet property="eventStartDateTextField" destination="L9W-5D-pjA" id="r4a-Kp-Baz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ISF-HB-pbb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -373,13 +382,13 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiarySystemGroupedBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
