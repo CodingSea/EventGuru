@@ -34,7 +34,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vGb-64-eO7">
-                                <rect key="frame" x="153" y="368" width="224" height="115"/>
+                                <rect key="frame" x="153" y="368.33333333333331" width="224" height="115"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="115" id="lsV-md-LDG"/>
@@ -107,7 +107,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QrB-3N-NcS">
                                 <rect key="frame" x="15" y="57" width="363" height="183"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0r9-nE-R2t">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0r9-nE-R2t">
                                 <rect key="frame" x="135" y="773.33333333333337" width="122" height="38.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Create Event"/>
@@ -156,6 +156,7 @@
                             <constraint firstItem="7Wl-DB-RfV" firstAttribute="top" secondItem="1by-WY-cZp" secondAttribute="bottom" constant="21" id="jKy-WC-W1N"/>
                             <constraint firstItem="Lsg-qe-p0a" firstAttribute="top" secondItem="0Ku-zl-wd7" secondAttribute="bottom" constant="15" id="k3P-XQ-8zF"/>
                             <constraint firstItem="MQS-CD-x0S" firstAttribute="leading" secondItem="e87-W9-ebQ" secondAttribute="leading" constant="17" id="kzq-9B-dIW"/>
+                            <constraint firstItem="e87-W9-ebQ" firstAttribute="trailing" secondItem="0r9-nE-R2t" secondAttribute="trailing" constant="136" id="mdQ-Ip-2og"/>
                             <constraint firstItem="QrB-3N-NcS" firstAttribute="top" secondItem="BD8-tx-ubh" secondAttribute="top" constant="57" id="oal-V1-Oha"/>
                             <constraint firstItem="MQS-CD-x0S" firstAttribute="top" secondItem="g65-WG-0eI" secondAttribute="bottom" constant="41" id="r3W-7b-MLh"/>
                             <constraint firstItem="vGb-64-eO7" firstAttribute="top" secondItem="5Ll-bs-BHC" secondAttribute="bottom" constant="15" id="tgJ-eu-BJd"/>
@@ -166,6 +167,7 @@
                             <constraint firstItem="e87-W9-ebQ" firstAttribute="trailing" secondItem="vGb-64-eO7" secondAttribute="trailing" constant="16" id="vtr-KT-hpV"/>
                             <constraint firstItem="e87-W9-ebQ" firstAttribute="trailing" secondItem="Lsg-qe-p0a" secondAttribute="trailing" constant="35" id="wPE-gw-yNi"/>
                             <constraint firstItem="vGb-64-eO7" firstAttribute="leading" secondItem="L7F-KW-pvn" secondAttribute="trailing" constant="45" id="xbQ-mo-Rf8"/>
+                            <constraint firstItem="0r9-nE-R2t" firstAttribute="leading" secondItem="e87-W9-ebQ" secondAttribute="leading" constant="135" id="zBm-1t-t9H"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zng-qa-Ias"/>

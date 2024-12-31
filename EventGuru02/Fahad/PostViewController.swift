@@ -5,7 +5,7 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth
 
-class PostViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var db: Firestore!
     var uid = Auth.auth().currentUser?.uid
@@ -68,16 +68,18 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate & UI
     
     
     
-    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             if let selectedImage = info[.originalImage] as? UIImage {
                 imageView.image = selectedImage
             }
             picker.dismiss(animated: true, completion: nil)
         }
 
-    @objc func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
             picker.dismiss(animated: true, completion: nil)
         }
+    
+    
     @IBAction func createEventBtn(_ sender: Any)
     {
         guard validateFields() else { return }
@@ -129,7 +131,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate & UI
             guard let eventName = eventName.text, !eventName.isEmpty,
                   let description = Description.text, !description.isEmpty,
                   let location = location.text, !location.isEmpty,
-                  let priceText = price.text, !priceText.isEmpty,
+                  let priceText = price.text, !priceText.isEmpty,	
                   let category = Category.text, !category.isEmpty else {
                 showAlert(title: "Validation Error", message: "All fields are required.")
                 return false
