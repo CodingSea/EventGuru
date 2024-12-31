@@ -41,6 +41,8 @@
 		83FA8DA02D0068100012E4B5 /* Abdullah-Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83FA8D9F2D0068100012E4B5 /* Abdullah-Settings.storyboard */; };
 		D0A9EF602D1B2F6500CB69BE /* Interest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A9EF5F2D1B2F6500CB69BE /* Interest.storyboard */; };
 		D4C1CA9F2D01D22100555861 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4C1CA9E2D01D22100555861 /* Register.storyboard */; };
+		E639D1532D23FF020065F53F /* Ali - Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E639D1522D23FF020065F53F /* Ali - Profile.storyboard */; };
+		E639D1552D2400830065F53F /* Admin-Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E639D1542D2400830065F53F /* Admin-Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,8 @@
 		83FA8D9F2D0068100012E4B5 /* Abdullah-Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Abdullah-Settings.storyboard"; sourceTree = "<group>"; };
 		D0A9EF5F2D1B2F6500CB69BE /* Interest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interest.storyboard; sourceTree = "<group>"; };
 		D4C1CA9E2D01D22100555861 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		E639D1522D23FF020065F53F /* Ali - Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Ali - Profile.storyboard"; sourceTree = "<group>"; };
+		E639D1542D2400830065F53F /* Admin-Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Admin-Main.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				3F7FFED62CF72C9A00391A5F /* Ali.storyboard */,
+				E639D1522D23FF020065F53F /* Ali - Profile.storyboard */,
 			);
 			path = Ali;
 			sourceTree = "<group>";
@@ -163,6 +168,7 @@
 				3F7FFE8F2CF7281900391A5F /* SceneDelegate.swift */,
 				3F7FFE912CF7281900391A5F /* ViewController.swift */,
 				3F7FFE932CF7281900391A5F /* Main.storyboard */,
+				E639D1542D2400830065F53F /* Admin-Main.storyboard */,
 				3F7FFE962CF7281A00391A5F /* Assets.xcassets */,
 				3F7FFE982CF7281A00391A5F /* LaunchScreen.storyboard */,
 				3F7FFE9B2CF7281A00391A5F /* Info.plist */,
@@ -255,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E639D1552D2400830065F53F /* Admin-Main.storyboard in Resources */,
 				04E48D2B2D203F3900A08F87 /* explorepage.storyboard in Resources */,
 				04E48D2C2D203F3900A08F87 /* dashboard.storyboard in Resources */,
 				3F7FFED52CF72BF200391A5F /* Fahad-HomePage.storyboard in Resources */,
@@ -266,6 +273,7 @@
 				29A1A5672D01C68E002009D6 /* Fahad-Event Posting.storyboard in Resources */,
 				3F7FFE952CF7281900391A5F /* Main.storyboard in Resources */,
 				83FA8D9E2D005FF90012E4B5 /* UserLogin.storyboard in Resources */,
+				E639D1532D23FF020065F53F /* Ali - Profile.storyboard in Resources */,
 				3F7FFED72CF72C9A00391A5F /* Ali.storyboard in Resources */,
 				D4C1CA9F2D01D22100555861 /* Register.storyboard in Resources */,
 			);
