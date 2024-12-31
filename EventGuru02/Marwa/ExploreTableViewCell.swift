@@ -2,7 +2,7 @@
 //  ExploreTableViewCell.swift
 //  EventGuru02
 //
-//  Created by Mac on 22/12/2024.
+//  Created by Mac on 31/12/2024.
 //
 
 import UIKit
@@ -10,14 +10,16 @@ import UIKit
 class ExploreTableViewCell: UITableViewCell {
 
     
-    @IBOutlet weak var EventImage: UIImageView!
     
-    @IBOutlet weak var EventName: UILabel!
+    @IBOutlet weak var eventImage: UIImageView!
     
-
-    @IBOutlet weak var EventPrice: UILabel!
+    @IBOutlet weak var eventName: UILabel!
     
-   
+    @IBOutlet weak var price: UILabel!
+    
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -29,5 +31,4 @@ class ExploreTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    
 }

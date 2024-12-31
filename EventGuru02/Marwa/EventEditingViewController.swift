@@ -1,20 +1,18 @@
 //
-//  Post2ViewController.swift
+//  EventEditingViewController.swift
 //  EventGuru02
 //
-//  Created by Fahad on 15/12/2024.
+//  Created by Mac on 31/12/2024.
 //
 
 import UIKit
 
-class Post2ViewController: UIViewController {
+class EventEditingViewController: UIViewController {
 
-    @IBOutlet weak var textView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.textView.layer.borderColor = UIColor.lightGray.cgColor
-        self.textView.layer.borderWidth = 1
+        // Do any additional setup after loading the view.
     }
     
 

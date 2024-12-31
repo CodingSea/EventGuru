@@ -179,7 +179,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U0V-VY-1Zo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1610" y="-545"/>
+            <point key="canvasLocation" x="1621" y="-749"/>
         </scene>
         <!--Test View Controller-->
         <scene sceneID="6X3-Ga-AD5">
@@ -221,10 +221,10 @@
         <!--UserLogin-->
         <scene sceneID="YqD-5T-Tvi">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kbe-qT-Yky" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardIdentifier="Fahad-Event Posting" storyboardName="UserLogin" id="g1x-Ge-Mtt" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="4F2-CY-clY"/>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kbe-qT-Yky" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2892" y="-254"/>
         </scene>

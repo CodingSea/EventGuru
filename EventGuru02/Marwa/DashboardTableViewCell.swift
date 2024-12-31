@@ -1,22 +1,28 @@
 //
-//  ExploreTableViewCell.swift
+//  DashboardTableViewCell.swift
 //  EventGuru02
 //
-//  Created by Mac on 22/12/2024.
+//  Created by Mac on 29/12/2024.
 //
 
 import UIKit
 
-class HomeTableViewCell: UITableViewCell {
+class DashboardTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var EventImage: UIImageView!
+    
+    @IBOutlet weak var eventImage: UIImageView!
+    
+    @IBOutlet weak var eventName: UILabel!
+    
+    @IBOutlet weak var price: UILabel!
     
     
-    @IBOutlet weak var EventName: UILabel!
+    @IBOutlet weak var reuse: UIButton!
     
-    @IBOutlet weak var EventPrice: UILabel!
     
-   
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -28,5 +34,4 @@ class HomeTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    
 }
