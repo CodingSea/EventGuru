@@ -260,7 +260,7 @@
             </objects>
             <point key="canvasLocation" x="744" y="4"/>
         </scene>
-        <!--Users List View Controller-->
+        <!--Users List-->
         <scene sceneID="1rb-35-BJv">
             <objects>
                 <tableViewController storyboardIdentifier="AdminDash" id="Vqw-EH-Rlu" customClass="UsersListViewController" customModule="EventGuru02" customModuleProvider="target" sceneMemberID="viewController">
@@ -342,7 +342,7 @@
                             <outlet property="delegate" destination="Vqw-EH-Rlu" id="9wh-AH-clM"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Sr1-96-6O3">
+                    <navigationItem key="navigationItem" title="Users List" id="Sr1-96-6O3">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="rfj-wQ-ZJV">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="rfS-ye-Ns4">
                                 <rect key="frame" x="334" y="2.6666666666666679" width="43" height="39"/>
