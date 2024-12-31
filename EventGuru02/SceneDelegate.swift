@@ -13,11 +13,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+
+        // Create a new UIWindow for the windowScene
+        window = UIWindow(windowScene: windowScene)
+
+        // Load the AdminDash storyboard
+        let storyboard = UIStoryboard(name: "AdminDash", bundle: nil)
+
+        // Set the initial view controller from AdminDash storyboard
+        let initialViewController = storyboard.instantiateInitialViewController()
+
+        // Set the root view controller to the initial view controller
+        window?.rootViewController = initialViewController
+
+        // Make the window key and visible
+        window?.makeKeyAndVisible()
     }
+
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

@@ -1,4 +1,5 @@
 import UIKit
+import FirebaseAuth
 import FirebaseFirestore
 
 class UsersListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
@@ -6,7 +7,6 @@ class UsersListViewController: UIViewController, UITableViewDataSource, UITableV
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var dropdownButton: UIButton!
 
     // MARK: - Properties
     let db = Firestore.firestore()
@@ -24,8 +24,8 @@ class UsersListViewController: UIViewController, UITableViewDataSource, UITableV
         // Set search bar delegate
         searchBar.delegate = self
 
-        // Style dropdown button
-        styleDropdownButton()
+        // Add the dropdown UIBarButtonItem
+        addDropdownButton()
 
         // Fetch users from Firestore
         fetchUsers()
@@ -46,13 +46,43 @@ class UsersListViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
 
-    // MARK: - Styling
-    func styleDropdownButton() {
-        dropdownButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-        dropdownButton.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
-        dropdownButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        dropdownButton.titleLabel?.minimumScaleFactor = 0.5
-        dropdownButton.setTitle("All", for: .normal)
+
+
+    // MARK: - Add Dropdown UIBarButtonItem
+    func addDropdownButton() {
+        let dropdownButton = UIBarButtonItem(title: "All", style: .plain, target: self, action: #selector(showDropdown))
+        dropdownButton.tintColor = .systemBlue // Set the button text color
+        self.navigationItem.rightBarButtonItem = dropdownButton
+    }
+
+    // MARK: - Dropdown Menu
+    @objc func showDropdown() {
+        let alertController = UIAlertController(title: "Filter Users", message: "Select a role", preferredStyle: .actionSheet)
+
+        let roles = ["All", "Admin", "Event Organizer", "User"]
+        for role in roles {
+            alertController.addAction(UIAlertAction(title: role, style: .default, handler: { _ in
+                self.filterUsers(by: role)
+
+                // Update the UIBarButtonItem title
+                if let barButtonItem = self.navigationItem.rightBarButtonItem {
+                    barButtonItem.title = role
+                }
+            }))
+        }
+
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alertController, animated: true)
+    }
+
+    // MARK: - Filtering Logic
+    func filterUsers(by role: String) {
+        if role == "All" {
+            filteredUsers = users
+        } else {
+            filteredUsers = users.filter { $0["role"] as? String == role }
+        }
+        tableView.reloadData()
     }
 
     // MARK: - Table View Data Source
@@ -88,32 +118,6 @@ class UsersListViewController: UIViewController, UITableViewDataSource, UITableV
            let userId = sender as? String {
             destinationVC.userId = userId
         }
-    }
-
-    // MARK: - Dropdown Menu
-    @IBAction func showDropdown(_ sender: UIButton) {
-        let alertController = UIAlertController(title: "Filter Users", message: "Select a role", preferredStyle: .actionSheet)
-
-        let roles = ["All", "Admin", "Event Organizer", "User"]
-        for role in roles {
-            alertController.addAction(UIAlertAction(title: role, style: .default, handler: { _ in
-                self.filterUsers(by: role)
-                self.dropdownButton.setTitle(role, for: .normal)
-            }))
-        }
-
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        present(alertController, animated: true)
-    }
-
-    // MARK: - Filtering Logic
-    func filterUsers(by role: String) {
-        if role == "All" {
-            filteredUsers = users
-        } else {
-            filteredUsers = users.filter { $0["role"] as? String == role }
-        }
-        tableView.reloadData()
     }
 
     // MARK: - Search Bar Delegate

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="o4J-Cy-xnx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="o4J-Cy-xnx">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -202,7 +203,7 @@
         <!--Users List View Controller-->
         <scene sceneID="1rb-35-BJv">
             <objects>
-                <tableViewController id="Vqw-EH-Rlu" customClass="UsersListViewController" customModule="EventGuru02" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="AdminDash" id="Vqw-EH-Rlu" customClass="UsersListViewController" customModule="EventGuru02" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="aAl-hy-3Df">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -233,7 +234,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWa-Pf-cCh">
-                                            <rect key="frame" x="64" y="19" width="50" height="20"/>
+                                            <rect key="frame" x="64" y="20" width="50" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="1wC-Qn-0j0"/>
                                             </constraints>
@@ -242,7 +243,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Role:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIN-kM-dYt">
-                                            <rect key="frame" x="122" y="19" width="38" height="20"/>
+                                            <rect key="frame" x="122" y="20" width="38" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="qgF-5u-Ahx"/>
                                             </constraints>
@@ -291,17 +292,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="All"/>
-                                <connections>
-                                    <action selector="showDropdown:" destination="Vqw-EH-Rlu" eventType="touchUpInside" id="NMX-zo-ZUz"/>
-                                </connections>
                             </button>
-                            <connections>
-                                <action selector="showDropdown:" destination="Vqw-EH-Rlu" id="St3-Nq-gbw"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="dropdownButton" destination="rfj-wQ-ZJV" id="yBW-wC-NPx"/>
                         <outlet property="searchBar" destination="Iy0-Xc-E8n" id="c6F-5f-RaU"/>
                         <outlet property="tableView" destination="aAl-hy-3Df" id="xF5-4f-lGx"/>
                     </connections>
