@@ -82,21 +82,34 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             cell.eventImage.image = UIImage(named: "default_image") // Placeholder
         }
 
-        // Configure the "Reuse" button if needed
-        cell.reuse.setTitle("Reuse", for: .normal)
-        cell.reuse.addTarget(self, action: #selector(reuseButtonTapped(_:)), for: .touchUpInside)
-        cell.reuse.tag = indexPath.row
+        // Set up the reuse button action using a closure
+        cell.reuseButtonAction = { [weak self] in
+            guard let self = self else { return }
+            self.reuseButtonTapped(for: indexPath.row)
+        }
 
         return cell
     }
 
     // MARK: - Reuse Button Action
-   
-    @IBAction func reuseButtonTapped(_ sender: Any) {
-    
-
-        let selectedEvent = events[(sender as AnyObject).tag]
+    private func reuseButtonTapped(for index: Int) {
+        let selectedEvent = events[index]
         print("Reuse button tapped for event: \(selectedEvent)")
-        // Handle reuse button logic here
+
+        // Perform the segue to the EventListingViewController
+        performSegue(withIdentifier: "showEventListing", sender: selectedEvent)
     }
+
+    // Prepare for segue to pass data
+  /*  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showEventListing" {
+            if let destinationVC = segue.destination as? EventListingViewController,
+               let event = sender as? [String: Any] {
+                // Pass the selected event data to the EventListingViewController
+                destinationVC.eventData = event
+            } else {
+                print("Error: Could not cast destination view controller or sender")
+            }
+        }
+    }*/
 }

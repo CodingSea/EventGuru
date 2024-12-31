@@ -15,33 +15,40 @@ class EventEditingViewController: UIViewController {
     
     // Event ID to fetch the specific event
     var eventId: String!
-
+    
+    var eventData: [String: Any]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchEventData()
-    }
-    
-    func fetchEventData() {
-        // Fetch event data from Firestore
-        db.collection("events").document(eventId).getDocument { (document, error) in
-            if let document = document, document.exists {
-                let data = document.data()
-                self.eventNameTextField.text = data?["eventName"] as? String
-                self.eventPriceTextField.text = "\(data?["eventPrice"] as? Double ?? 0.0)"
-                self.eventDescriptionTextField.text = data?["eventDescription"] as? String
-                self.eventCategoryTextField.text = data?["eventCategory"] as? String
-                self.eventStartDateTextField.text = data?["startDate"] as? String
-                
-                // Load the image from Cloudinary
-                if let imageUrl = data?["eventImageURL"] as? String {
-                    if let image = GetImage(string: imageUrl) {
-                        self.eventImageView.image = image
+        // Use eventData to configure your view
+        if let event = eventData {
+            print("Received event data: \(event)")
+            // Update UI elements with event details
+        }
+        
+        func fetchEventData() {
+            // Fetch event data from Firestore
+            db.collection("events").document(eventId).getDocument { (document, error) in
+                if let document = document, document.exists {
+                    let data = document.data()
+                    self.eventNameTextField.text = data?["eventName"] as? String
+                    self.eventPriceTextField.text = "\(data?["eventPrice"] as? Double ?? 0.0)"
+                    self.eventDescriptionTextField.text = data?["eventDescription"] as? String
+                    self.eventCategoryTextField.text = data?["eventCategory"] as? String
+                    self.eventStartDateTextField.text = data?["startDate"] as? String
+                    
+                    // Load the image from Cloudinary
+                    if let imageUrl = data?["eventImageURL"] as? String {
+                        if let image = GetImage(string: imageUrl) {
+                            self.eventImageView.image = image
+                        }
                     }
+                    
+                } else {
+                    print("Document does not exist")
                 }
-                
-            } else {
-                print("Document does not exist")
             }
         }
-    }
-}
+    }}
+

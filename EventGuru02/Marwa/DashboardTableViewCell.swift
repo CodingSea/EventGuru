@@ -1,37 +1,16 @@
-//
-//  DashboardTableViewCell.swift
-//  EventGuru02
-//
-//  Created by Mac on 29/12/2024.
-//
-
 import UIKit
 
 class DashboardTableViewCell: UITableViewCell {
 
-    
     @IBOutlet weak var eventImage: UIImageView!
-    
     @IBOutlet weak var eventName: UILabel!
-    
     @IBOutlet weak var price: UILabel!
     
-    
-    @IBOutlet weak var reuse: UIButton!
-    
-    
-    
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    // Closure for the reuse button action
+    var reuseButtonAction: (() -> Void)?
+
+    @IBAction func reuseButtonTapped(_ sender: UIButton) {
+        // Call the closure when the button is tapped
+        reuseButtonAction?()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }
