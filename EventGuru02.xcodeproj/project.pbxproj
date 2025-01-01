@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		29A1A5672D01C68E002009D6 /* Fahad-Event Posting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */; };
-		29F005EC2D1F041E00F88FFC /* Post2ViewController 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F005EA2D1F041E00F88FFC /* Post2ViewController 2.swift */; };
-		29F005ED2D1F041E00F88FFC /* PostViewController 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F005EB2D1F041E00F88FFC /* PostViewController 2.swift */; };
 		3F1252552D058A1700E25E5F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3F1252542D058A1700E25E5F /* FirebaseAuth */; };
 		3F1252592D058A1700E25E5F /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 3F1252582D058A1700E25E5F /* FirebaseCore */; };
 		3F1252612D058A1700E25E5F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3F1252602D058A1700E25E5F /* FirebaseFirestore */; };
@@ -20,28 +17,38 @@
 		3F7FFE972CF7281A00391A5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F7FFE962CF7281A00391A5F /* Assets.xcassets */; };
 		3F7FFE9A2CF7281A00391A5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7FFE982CF7281A00391A5F /* LaunchScreen.storyboard */; };
 		3F7FFEA22CF7288E00391A5F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F7FFEA12CF7288E00391A5F /* GoogleService-Info.plist */; };
-		3F7FFED52CF72BF200391A5F /* Fahad-HomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7FFED42CF72BF200391A5F /* Fahad-HomePage.storyboard */; };
-		3F7FFED72CF72C9A00391A5F /* Ali.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7FFED62CF72C9A00391A5F /* Ali.storyboard */; };
-		3FAD45C72D1C24410086476D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD45C62D1C24410086476D /* LoginViewController.swift */; };
-		3FAD45C92D1C2D660086476D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD45C82D1C2D660086476D /* RegisterViewController.swift */; };
-		3FAD45CB2D1C44AA0086476D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD45CA2D1C44AA0086476D /* SettingsViewController.swift */; };
-		3FAD45CD2D1C5FB40086476D /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD45CC2D1C5FB40086476D /* TestViewController.swift */; };
-		83FA8D9E2D005FF90012E4B5 /* UserLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83FA8D9D2D005FF90012E4B5 /* UserLogin.storyboard */; };
-		83FA8DA02D0068100012E4B5 /* Abdullah-Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83FA8D9F2D0068100012E4B5 /* Abdullah-Settings.storyboard */; };
 		D091C6462D20848F002BA14A /* AdminDash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D091C6432D20848F002BA14A /* AdminDash.storyboard */; };
 		D091C6472D20848F002BA14A /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D091C6442D20848F002BA14A /* UserDetailsViewController.swift */; };
 		D091C6482D20848F002BA14A /* UsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D091C6452D20848F002BA14A /* UsersListViewController.swift */; };
-		D0A9EF602D1B2F6500CB69BE /* Interest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A9EF5F2D1B2F6500CB69BE /* Interest.storyboard */; };
-		D0A9EF622D1B2F8C00CB69BE /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A9EF612D1B2F8C00CB69BE /* TableViewController.swift */; };
-		D0A9EF642D1B2F9D00CB69BE /* CellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A9EF632D1B2F9D00CB69BE /* CellTableViewCell.swift */; };
 		D0D2992D2D24413A005BFC78 /* AdminRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D299262D24413A005BFC78 /* AdminRegisterViewController.swift */; };
-		D4C1CA9F2D01D22100555861 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4C1CA9E2D01D22100555861 /* Register.storyboard */; };
+		E01E8DF12D25818600E528E8 /* Ali.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E01E8DD42D25818600E528E8 /* Ali.storyboard */; };
+		E01E8DF22D25818600E528E8 /* HistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E8DD52D25818600E528E8 /* HistoryCollectionViewCell.swift */; };
+		E01E8DF32D25818600E528E8 /* ViewControllerr.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E8DD62D25818600E528E8 /* ViewControllerr.swift */; };
+		E01E8DF42D25818600E528E8 /* Fahad-Event Posting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E01E8DD82D25818600E528E8 /* Fahad-Event Posting.storyboard */; };
+		E01E8DF52D25818600E528E8 /* Fahad-HomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E01E8DD92D25818600E528E8 /* Fahad-HomePage.storyboard */; };
+		E01E8DF62D25818600E528E8 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E8DDA2D25818600E528E8 /* HomeTableViewCell.swift */; };
+		E01E8DF72D25818600E528E8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E8DDB2D25818600E528E8 /* HomeViewController.swift */; };
+		E01E8DF82D25818600E528E8 /* Post2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E8DDC2D25818600E528E8 /* Post2ViewController.swift */; };
+		E01E8DF92D25818600E528E8 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E8DDD2D25818600E528E8 /* PostViewController.swift */; };
+		E01E8DFA2D25818600E528E8 /* Abdullah-Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E01E8DDF2D25818600E528E8 /* Abdullah-Settings.storyboard */; };
+		E01E8DFB2D25818600E528E8 /* Interest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E01E8DE02D25818600E528E8 /* Interest.storyboard */; };
+		E01E8DFC2D25818600E528E8 /* InterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E8DE12D25818600E528E8 /* InterestViewController.swift */; };
+		E01E8DFD2D25818600E528E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E8DE22D25818600E528E8 /* LoginViewController.swift */; };
+		E01E8DFE2D25818600E528E8 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E01E8DE32D25818600E528E8 /* Register.storyboard */; };
+		E01E8DFF2D25818600E528E8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E8DE42D25818600E528E8 /* RegisterViewController.swift */; };
+		E01E8E002D25818600E528E8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E8DE52D25818600E528E8 /* SettingsViewController.swift */; };
+		E01E8E012D25818600E528E8 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E8DE62D25818600E528E8 /* TestViewController.swift */; };
+		E01E8E022D25818600E528E8 /* UserLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E01E8DE72D25818600E528E8 /* UserLogin.storyboard */; };
+		E01E8E032D25818600E528E8 /* dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E01E8DE92D25818600E528E8 /* dashboard.storyboard */; };
+		E01E8E042D25818600E528E8 /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E8DEA2D25818600E528E8 /* DashboardTableViewCell.swift */; };
+		E01E8E052D25818600E528E8 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E8DEB2D25818600E528E8 /* DashboardViewController.swift */; };
+		E01E8E062D25818600E528E8 /* EventEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E8DEC2D25818600E528E8 /* EventEditingViewController.swift */; };
+		E01E8E072D25818600E528E8 /* explorepage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E01E8DED2D25818600E528E8 /* explorepage.storyboard */; };
+		E01E8E082D25818600E528E8 /* ExploreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E8DEE2D25818600E528E8 /* ExploreTableViewCell.swift */; };
+		E01E8E092D25818600E528E8 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E8DEF2D25818600E528E8 /* ExploreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Fahad-Event Posting.storyboard"; sourceTree = "<group>"; };
-		29F005EA2D1F041E00F88FFC /* Post2ViewController 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post2ViewController 2.swift"; sourceTree = "<group>"; };
-		29F005EB2D1F041E00F88FFC /* PostViewController 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostViewController 2.swift"; sourceTree = "<group>"; };
 		3F7FFE8A2CF7281900391A5F /* EventGuru02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventGuru02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7FFE8D2CF7281900391A5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F7FFE8F2CF7281900391A5F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,22 +58,35 @@
 		3F7FFE992CF7281A00391A5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F7FFE9B2CF7281A00391A5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F7FFEA12CF7288E00391A5F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		3F7FFED42CF72BF200391A5F /* Fahad-HomePage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Fahad-HomePage.storyboard"; sourceTree = "<group>"; };
-		3F7FFED62CF72C9A00391A5F /* Ali.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ali.storyboard; sourceTree = "<group>"; };
-		3FAD45C62D1C24410086476D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		3FAD45C82D1C2D660086476D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		3FAD45CA2D1C44AA0086476D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		3FAD45CC2D1C5FB40086476D /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
-		83FA8D9D2D005FF90012E4B5 /* UserLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserLogin.storyboard; sourceTree = "<group>"; };
-		83FA8D9F2D0068100012E4B5 /* Abdullah-Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Abdullah-Settings.storyboard"; sourceTree = "<group>"; };
 		D091C6432D20848F002BA14A /* AdminDash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AdminDash.storyboard; sourceTree = "<group>"; };
 		D091C6442D20848F002BA14A /* UserDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
 		D091C6452D20848F002BA14A /* UsersListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersListViewController.swift; sourceTree = "<group>"; };
-		D0A9EF5F2D1B2F6500CB69BE /* Interest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interest.storyboard; sourceTree = "<group>"; };
-		D0A9EF612D1B2F8C00CB69BE /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		D0A9EF632D1B2F9D00CB69BE /* CellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTableViewCell.swift; sourceTree = "<group>"; };
 		D0D299262D24413A005BFC78 /* AdminRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminRegisterViewController.swift; sourceTree = "<group>"; };
-		D4C1CA9E2D01D22100555861 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		E01E8DD42D25818600E528E8 /* Ali.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Ali.storyboard; sourceTree = "<group>"; };
+		E01E8DD52D25818600E528E8 /* HistoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		E01E8DD62D25818600E528E8 /* ViewControllerr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerr.swift; sourceTree = "<group>"; };
+		E01E8DD82D25818600E528E8 /* Fahad-Event Posting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Fahad-Event Posting.storyboard"; sourceTree = "<group>"; };
+		E01E8DD92D25818600E528E8 /* Fahad-HomePage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Fahad-HomePage.storyboard"; sourceTree = "<group>"; };
+		E01E8DDA2D25818600E528E8 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		E01E8DDB2D25818600E528E8 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E01E8DDC2D25818600E528E8 /* Post2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post2ViewController.swift; sourceTree = "<group>"; };
+		E01E8DDD2D25818600E528E8 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		E01E8DDF2D25818600E528E8 /* Abdullah-Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Abdullah-Settings.storyboard"; sourceTree = "<group>"; };
+		E01E8DE02D25818600E528E8 /* Interest.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Interest.storyboard; sourceTree = "<group>"; };
+		E01E8DE12D25818600E528E8 /* InterestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterestViewController.swift; sourceTree = "<group>"; };
+		E01E8DE22D25818600E528E8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E01E8DE32D25818600E528E8 /* Register.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		E01E8DE42D25818600E528E8 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		E01E8DE52D25818600E528E8 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		E01E8DE62D25818600E528E8 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		E01E8DE72D25818600E528E8 /* UserLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserLogin.storyboard; sourceTree = "<group>"; };
+		E01E8DE92D25818600E528E8 /* dashboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = dashboard.storyboard; sourceTree = "<group>"; };
+		E01E8DEA2D25818600E528E8 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
+		E01E8DEB2D25818600E528E8 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		E01E8DEC2D25818600E528E8 /* EventEditingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventEditingViewController.swift; sourceTree = "<group>"; };
+		E01E8DED2D25818600E528E8 /* explorepage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = explorepage.storyboard; sourceTree = "<group>"; };
+		E01E8DEE2D25818600E528E8 /* ExploreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreTableViewCell.swift; sourceTree = "<group>"; };
+		E01E8DEF2D25818600E528E8 /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,25 +103,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3F67A4652CFC48AA003FEAB2 /* Fahad */ = {
-			isa = PBXGroup;
-			children = (
-				29F005EA2D1F041E00F88FFC /* Post2ViewController 2.swift */,
-				29F005EB2D1F041E00F88FFC /* PostViewController 2.swift */,
-				3F7FFED42CF72BF200391A5F /* Fahad-HomePage.storyboard */,
-				29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */,
-			);
-			path = Fahad;
-			sourceTree = "<group>";
-		};
-		3F67A4682CFC48E2003FEAB2 /* Ali */ = {
-			isa = PBXGroup;
-			children = (
-				3F7FFED62CF72C9A00391A5F /* Ali.storyboard */,
-			);
-			path = Ali;
-			sourceTree = "<group>";
-		};
 		3F7FFE812CF7281900391A5F = {
 			isa = PBXGroup;
 			children = (
@@ -121,10 +122,11 @@
 		3F7FFE8C2CF7281900391A5F /* EventGuru02 */ = {
 			isa = PBXGroup;
 			children = (
+				E01E8DE82D25818600E528E8 /* Abdullah */,
+				E01E8DD72D25818600E528E8 /* Ali */,
+				E01E8DDE2D25818600E528E8 /* Fahad */,
+				E01E8DF02D25818600E528E8 /* Marwa */,
 				D091C6422D20848F002BA14A /* Yousif */,
-				83FA8D9C2D005FE30012E4B5 /* Abdullah */,
-				3F67A4682CFC48E2003FEAB2 /* Ali */,
-				3F67A4652CFC48AA003FEAB2 /* Fahad */,
 				3F7FFE8D2CF7281900391A5F /* AppDelegate.swift */,
 				3F7FFE8F2CF7281900391A5F /* SceneDelegate.swift */,
 				3F7FFE912CF7281900391A5F /* ViewController.swift */,
@@ -137,23 +139,6 @@
 			path = EventGuru02;
 			sourceTree = "<group>";
 		};
-		83FA8D9C2D005FE30012E4B5 /* Abdullah */ = {
-			isa = PBXGroup;
-			children = (
-				83FA8D9D2D005FF90012E4B5 /* UserLogin.storyboard */,
-				83FA8D9F2D0068100012E4B5 /* Abdullah-Settings.storyboard */,
-				D4C1CA9E2D01D22100555861 /* Register.storyboard */,
-				D0A9EF5F2D1B2F6500CB69BE /* Interest.storyboard */,
-				D0A9EF612D1B2F8C00CB69BE /* TableViewController.swift */,
-				D0A9EF632D1B2F9D00CB69BE /* CellTableViewCell.swift */,
-				3FAD45C62D1C24410086476D /* LoginViewController.swift */,
-				3FAD45C82D1C2D660086476D /* RegisterViewController.swift */,
-				3FAD45CA2D1C44AA0086476D /* SettingsViewController.swift */,
-				3FAD45CC2D1C5FB40086476D /* TestViewController.swift */,
-			);
-			path = Abdullah;
-			sourceTree = "<group>";
-		};
 		D091C6422D20848F002BA14A /* Yousif */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +148,63 @@
 				D091C6452D20848F002BA14A /* UsersListViewController.swift */,
 			);
 			path = Yousif;
+			sourceTree = "<group>";
+		};
+		E01E8DD72D25818600E528E8 /* Ali */ = {
+			isa = PBXGroup;
+			children = (
+				E01E8DD42D25818600E528E8 /* Ali.storyboard */,
+				E01E8DD52D25818600E528E8 /* HistoryCollectionViewCell.swift */,
+				E01E8DD62D25818600E528E8 /* ViewControllerr.swift */,
+			);
+			name = Ali;
+			path = ../../Ali;
+			sourceTree = "<group>";
+		};
+		E01E8DDE2D25818600E528E8 /* Fahad */ = {
+			isa = PBXGroup;
+			children = (
+				E01E8DD82D25818600E528E8 /* Fahad-Event Posting.storyboard */,
+				E01E8DD92D25818600E528E8 /* Fahad-HomePage.storyboard */,
+				E01E8DDA2D25818600E528E8 /* HomeTableViewCell.swift */,
+				E01E8DDB2D25818600E528E8 /* HomeViewController.swift */,
+				E01E8DDC2D25818600E528E8 /* Post2ViewController.swift */,
+				E01E8DDD2D25818600E528E8 /* PostViewController.swift */,
+			);
+			name = Fahad;
+			path = ../../Fahad;
+			sourceTree = "<group>";
+		};
+		E01E8DE82D25818600E528E8 /* Abdullah */ = {
+			isa = PBXGroup;
+			children = (
+				E01E8DDF2D25818600E528E8 /* Abdullah-Settings.storyboard */,
+				E01E8DE02D25818600E528E8 /* Interest.storyboard */,
+				E01E8DE12D25818600E528E8 /* InterestViewController.swift */,
+				E01E8DE22D25818600E528E8 /* LoginViewController.swift */,
+				E01E8DE32D25818600E528E8 /* Register.storyboard */,
+				E01E8DE42D25818600E528E8 /* RegisterViewController.swift */,
+				E01E8DE52D25818600E528E8 /* SettingsViewController.swift */,
+				E01E8DE62D25818600E528E8 /* TestViewController.swift */,
+				E01E8DE72D25818600E528E8 /* UserLogin.storyboard */,
+			);
+			name = Abdullah;
+			path = ../../Abdullah;
+			sourceTree = "<group>";
+		};
+		E01E8DF02D25818600E528E8 /* Marwa */ = {
+			isa = PBXGroup;
+			children = (
+				E01E8DE92D25818600E528E8 /* dashboard.storyboard */,
+				E01E8DEA2D25818600E528E8 /* DashboardTableViewCell.swift */,
+				E01E8DEB2D25818600E528E8 /* DashboardViewController.swift */,
+				E01E8DEC2D25818600E528E8 /* EventEditingViewController.swift */,
+				E01E8DED2D25818600E528E8 /* explorepage.storyboard */,
+				E01E8DEE2D25818600E528E8 /* ExploreTableViewCell.swift */,
+				E01E8DEF2D25818600E528E8 /* ExploreViewController.swift */,
+			);
+			name = Marwa;
+			path = ../../Marwa;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,17 +274,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				D091C6462D20848F002BA14A /* AdminDash.storyboard in Resources */,
-				3F7FFED52CF72BF200391A5F /* Fahad-HomePage.storyboard in Resources */,
+				E01E8DFB2D25818600E528E8 /* Interest.storyboard in Resources */,
 				3F7FFE9A2CF7281A00391A5F /* LaunchScreen.storyboard in Resources */,
 				3F7FFEA22CF7288E00391A5F /* GoogleService-Info.plist in Resources */,
-				D0A9EF602D1B2F6500CB69BE /* Interest.storyboard in Resources */,
-				83FA8DA02D0068100012E4B5 /* Abdullah-Settings.storyboard in Resources */,
+				E01E8DFE2D25818600E528E8 /* Register.storyboard in Resources */,
+				E01E8E072D25818600E528E8 /* explorepage.storyboard in Resources */,
+				E01E8DF52D25818600E528E8 /* Fahad-HomePage.storyboard in Resources */,
+				E01E8DF12D25818600E528E8 /* Ali.storyboard in Resources */,
 				3F7FFE972CF7281A00391A5F /* Assets.xcassets in Resources */,
-				29A1A5672D01C68E002009D6 /* Fahad-Event Posting.storyboard in Resources */,
+				E01E8E032D25818600E528E8 /* dashboard.storyboard in Resources */,
+				E01E8DF42D25818600E528E8 /* Fahad-Event Posting.storyboard in Resources */,
 				3F7FFE952CF7281900391A5F /* Main.storyboard in Resources */,
-				83FA8D9E2D005FF90012E4B5 /* UserLogin.storyboard in Resources */,
-				3F7FFED72CF72C9A00391A5F /* Ali.storyboard in Resources */,
-				D4C1CA9F2D01D22100555861 /* Register.storyboard in Resources */,
+				E01E8E022D25818600E528E8 /* UserLogin.storyboard in Resources */,
+				E01E8DFA2D25818600E528E8 /* Abdullah-Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,19 +298,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0D2992D2D24413A005BFC78 /* AdminRegisterViewController.swift in Sources */,
-				D0A9EF642D1B2F9D00CB69BE /* CellTableViewCell.swift in Sources */,
+				E01E8E052D25818600E528E8 /* DashboardViewController.swift in Sources */,
+				E01E8E092D25818600E528E8 /* ExploreViewController.swift in Sources */,
+				E01E8E082D25818600E528E8 /* ExploreTableViewCell.swift in Sources */,
+				E01E8DF32D25818600E528E8 /* ViewControllerr.swift in Sources */,
 				3F7FFE922CF7281900391A5F /* ViewController.swift in Sources */,
+				E01E8DF92D25818600E528E8 /* PostViewController.swift in Sources */,
 				D091C6472D20848F002BA14A /* UserDetailsViewController.swift in Sources */,
-				3FAD45C92D1C2D660086476D /* RegisterViewController.swift in Sources */,
-				29F005EC2D1F041E00F88FFC /* Post2ViewController 2.swift in Sources */,
+				E01E8DF72D25818600E528E8 /* HomeViewController.swift in Sources */,
 				D091C6482D20848F002BA14A /* UsersListViewController.swift in Sources */,
-				29F005ED2D1F041E00F88FFC /* PostViewController 2.swift in Sources */,
+				E01E8E042D25818600E528E8 /* DashboardTableViewCell.swift in Sources */,
+				E01E8E012D25818600E528E8 /* TestViewController.swift in Sources */,
+				E01E8DFD2D25818600E528E8 /* LoginViewController.swift in Sources */,
 				3F7FFE8E2CF7281900391A5F /* AppDelegate.swift in Sources */,
 				3F7FFE902CF7281900391A5F /* SceneDelegate.swift in Sources */,
-				D0A9EF622D1B2F8C00CB69BE /* TableViewController.swift in Sources */,
-				3FAD45C72D1C24410086476D /* LoginViewController.swift in Sources */,
-				3FAD45CD2D1C5FB40086476D /* TestViewController.swift in Sources */,
-				3FAD45CB2D1C44AA0086476D /* SettingsViewController.swift in Sources */,
+				E01E8DFF2D25818600E528E8 /* RegisterViewController.swift in Sources */,
+				E01E8DF22D25818600E528E8 /* HistoryCollectionViewCell.swift in Sources */,
+				E01E8E062D25818600E528E8 /* EventEditingViewController.swift in Sources */,
+				E01E8DF82D25818600E528E8 /* Post2ViewController.swift in Sources */,
+				E01E8DFC2D25818600E528E8 /* InterestViewController.swift in Sources */,
+				E01E8DF62D25818600E528E8 /* HomeTableViewCell.swift in Sources */,
+				E01E8E002D25818600E528E8 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
