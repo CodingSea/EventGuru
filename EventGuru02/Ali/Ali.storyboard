@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Wd-3y-T9h">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
@@ -118,10 +118,10 @@
             </objects>
             <point key="canvasLocation" x="60" y="-2"/>
         </scene>
-        <!--View Controller-->
+        <!--Buy Ticket-->
         <scene sceneID="Gft-zg-szX">
             <objects>
-                <viewController id="ce7-Qc-qDi" sceneMemberID="viewController">
+                <viewController id="ce7-Qc-qDi" customClass="BuyTicket" customModule="EventGuru02" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ika-fA-9Rj">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -242,22 +242,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="bookmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1sI-CH-Zfi">
+                                <rect key="frame" x="321" y="646" width="57" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3L-xj-Mzl">
-                                <rect key="frame" x="18" y="698" width="355" height="39"/>
+                                <rect key="frame" x="19" y="698" width="355" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Buy TICKET">
                                     <color key="baseBackgroundColor" red="0.18498767290000001" green="0.76942896839999997" blue="0.0011390516510000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="buyTicket:" destination="ce7-Qc-qDi" eventType="touchUpInside" id="Cux-wK-KI2"/>
+                                </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="bookmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1sI-CH-Zfi">
-                                <rect key="frame" x="321" y="646" width="57" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1hA-jk-QbN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="BookMark" destination="1sI-CH-Zfi" id="JXq-sZ-IeN"/>
+                        <outlet property="Dislike" destination="2mv-5e-EgV" id="Jv6-J4-iEu"/>
+                        <outlet property="Like" destination="WLo-NM-2AM" id="e4L-oe-ODD"/>
+                        <outlet property="ReportIcon" destination="hE5-up-zUG" id="lBn-OJ-7vx"/>
+                        <outlet property="bookmark" destination="1sI-CH-Zfi" id="eNc-JX-mrn"/>
+                        <outlet property="reportIcon" destination="hE5-up-zUG" id="OyD-aF-GfD"/>
+                        <outlet property="thumbsUpImageView" destination="WLo-NM-2AM" id="MH9-o3-fB0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aUf-vK-xHH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -416,10 +428,10 @@
             </objects>
             <point key="canvasLocation" x="1437" y="-2"/>
         </scene>
-        <!--View Controllerr-->
+        <!--View Controller-->
         <scene sceneID="KVz-wt-XuK">
             <objects>
-                <viewController id="Vdd-zO-sRH" customClass="ViewControllerr" customModule="EventGuru02" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Vdd-zO-sRH" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BzM-HK-GMR">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -563,6 +575,23 @@
                                     <action selector="Notify:" destination="Vdd-zO-sRH" eventType="touchUpInside" id="43C-Xu-Mj4"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="hand.thumbsup" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qqn-vi-V5I">
+                                <rect key="frame" x="174" y="769.66666666666663" width="42" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="hand.thumbsdown" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ehm-I2-whQ">
+                                <rect key="frame" x="214" y="771.66666666666663" width="56" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Note Email will be sent for confirmation with payment link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCw-PE-AEs">
+                                <rect key="frame" x="26" y="742" width="351" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="1" green="0.024480011909999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="p7g-dD-ZGH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -577,10 +606,10 @@
             </objects>
             <point key="canvasLocation" x="2077" y="-2"/>
         </scene>
-        <!--View Controllerr-->
+        <!--Buy Ticket-->
         <scene sceneID="kp5-2d-yZ7">
             <objects>
-                <viewController id="PtM-kD-nT2" customClass="ViewControllerr" customModule="EventGuru02" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BuyTicket" id="PtM-kD-nT2" customClass="BuyTicket" customModule="EventGuru02" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AdB-D4-oPC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -625,13 +654,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="hand.thumbsdown" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="WgX-iA-h8V">
-                                <rect key="frame" x="351" y="413" width="34" height="32"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="hand.thumbsup" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Qt3-dV-UEG">
+                                <rect key="frame" x="157" y="768" width="42" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="hand.thumbsup" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Qt3-dV-UEG">
-                                <rect key="frame" x="317" y="412.66666666666669" width="34" height="31"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="hand.thumbsdown" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="WgX-iA-h8V">
+                                <rect key="frame" x="197" y="770" width="56" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
@@ -661,13 +690,6 @@
                                 <rect key="frame" x="13" y="506.66666666666663" width="34" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Exclusive activities, themed decor, and live performances, all in a vibrant atmosphere dedicated to the color red. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2RK-G5-ETm">
-                                <rect key="frame" x="51" y="385" width="322" height="305"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="pencil.and.list.clipboard" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5ac-or-bKA">
                                 <rect key="frame" x="16" y="571.66666666666663" width="30" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -702,33 +724,48 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8PI-7c-llj">
-                                <rect key="frame" x="18" y="698" width="355" height="39"/>
+                                <rect key="frame" x="23" y="698" width="355" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Buy TICKET">
                                     <color key="baseBackgroundColor" red="0.18498767290000001" green="0.76942896839999997" blue="0.0011390516510000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="BuyTicket:" destination="PtM-kD-nT2" eventType="touchUpInside" id="m7l-4O-7ac"/>
+                                    <action selector="buyTicket:" destination="PtM-kD-nT2" eventType="touchUpInside" id="gGH-hQ-DUm"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="bookmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Q7z-qT-euS">
                                 <rect key="frame" x="321" y="646" width="57" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Note Email will be sent for confirmation with payment link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0co-QW-Wui">
+                                <rect key="frame" x="21" y="745" width="351" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="1" green="0.024480011909999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Exclusive activities, themed decor, and live performances, all in a vibrant atmosphere dedicated to the color red. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2RK-G5-ETm">
+                                <rect key="frame" x="50" y="381" width="322" height="305"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hdL-8u-lsw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="bookmark" destination="Q7z-qT-euS" id="UlW-3g-kRp"/>
-                        <outlet property="reportIcon" destination="Mto-4E-dRB" id="bMo-Sw-P1S"/>
-                        <outlet property="thumbsUpImageView" destination="WgX-iA-h8V" id="ImI-JH-6VX"/>
+                        <outlet property="BookMark" destination="Q7z-qT-euS" id="LHy-xB-sSI"/>
+                        <outlet property="Dislike" destination="WgX-iA-h8V" id="wUt-4s-vGy"/>
+                        <outlet property="Like" destination="Qt3-dV-UEG" id="pfk-wa-Tm2"/>
+                        <outlet property="ReportIcon" destination="Mto-4E-dRB" id="Tcs-8s-sUC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9k8-Sv-dei" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="770" y="-2"/>
+            <point key="canvasLocation" x="768.70229007633588" y="-2.1126760563380285"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Uar-qJ-Jcp">
@@ -778,16 +815,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="hand.thumbsdown" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Uab-6P-GfH">
-                                <rect key="frame" x="351" y="413" width="34" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="hand.thumbsup" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="IqV-5Z-pSn">
-                                <rect key="frame" x="317" y="412.66666666666669" width="34" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="location" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ywh-sV-1aY">
                                 <rect key="frame" x="14" y="422" width="31" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -854,17 +881,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="bookmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Tzu-nP-WLi">
+                                <rect key="frame" x="321" y="646" width="57" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Note Email will be sent for confirmation with payment link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7JQ-Te-0Eq">
+                                <rect key="frame" x="27" y="745" width="351" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="1" green="0.024480011909999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5h-2d-rlr">
-                                <rect key="frame" x="18" y="698" width="355" height="39"/>
+                                <rect key="frame" x="22" y="698" width="355" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Cancel reservation">
                                     <color key="baseBackgroundColor" red="0.86078912019999998" green="0.0" blue="0.03159954223" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="bookmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Tzu-nP-WLi">
-                                <rect key="frame" x="321" y="646" width="57" height="40"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="hand.thumbsup" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6ZT-WE-oQO">
+                                <rect key="frame" x="164" y="773.66666666666663" width="42" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="hand.thumbsdown" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ruI-92-HLS">
+                                <rect key="frame" x="204" y="775.66666666666663" width="56" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4J4-T6-Ccj"/>
@@ -1287,13 +1331,13 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

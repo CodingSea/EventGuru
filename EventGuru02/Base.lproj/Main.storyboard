@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uKK-se-Ku4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uKK-se-Ku4">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -64,10 +64,10 @@
             </objects>
             <point key="canvasLocation" x="1400.7633587786258" y="-266.19718309859155"/>
         </scene>
-        <!--UserLogin-->
+        <!--BuyTicket-->
         <scene sceneID="RpV-we-rQC">
             <objects>
-                <viewControllerPlaceholder storyboardName="UserLogin" id="zsa-qS-dBf" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Ali" referencedIdentifier="BuyTicket" id="zsa-qS-dBf" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="aHd-Tz-afu"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mxa-Od-9PY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
