@@ -1,0 +1,168 @@
+import UIKit
+import Firebase
+
+class BuyTicket: UIViewController {
+    
+    let db = Firestore.firestore()
+    
+    @IBOutlet weak var Like: UIImageView!
+    @IBOutlet weak var Dislike: UIImageView!
+    @IBOutlet weak var BookMark: UIImageView!
+    @IBOutlet weak var ReportIcon: UIImageView!
+    
+    var isThumbsUpFilled = false
+    var isDislikeFilled = false
+    var isBookmarkFilled = false
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Initialize Like (thumbs up) image and gesture
+        Like.image = UIImage(systemName: "hand.thumbsup")
+        Like.isUserInteractionEnabled = true
+        let likeTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleLikeTap))
+        Like.addGestureRecognizer(likeTapGestureRecognizer)
+        
+        // Initialize Dislike image and gesture
+        Dislike.image = UIImage(systemName: "hand.thumbsdown")
+        Dislike.isUserInteractionEnabled = true
+        let dislikeTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleDislikeTap))
+        Dislike.addGestureRecognizer(dislikeTapGestureRecognizer)
+        
+        // Initialize Bookmark image and gesture
+        BookMark.image = UIImage(systemName: "bookmark")
+        BookMark.isUserInteractionEnabled = true
+        let bookmarkTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleBookmarkTap))
+        BookMark.addGestureRecognizer(bookmarkTapGestureRecognizer)
+        
+        // Initialize ReportIcon gesture
+        ReportIcon.isUserInteractionEnabled = true
+        let reportTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(reportIconTapped))
+        ReportIcon.addGestureRecognizer(reportTapGestureRecognizer)
+    }
+    
+    @objc func handleLikeTap() {
+        isThumbsUpFilled.toggle()
+        Like.image = UIImage(systemName: isThumbsUpFilled ? "hand.thumbsup.fill" : "hand.thumbsup")
+        
+        if isThumbsUpFilled {
+            // Unfill Dislike if Like is selected
+            isDislikeFilled = false
+            Dislike.image = UIImage(systemName: "hand.thumbsdown")
+            
+            // Increment like count and decrement dislike count if needed
+            updateCounter(for: "likeCount", increment: true)
+            if isDislikeFilled {
+                updateCounter(for: "dislikeCount", increment: false)
+            }
+        } else {
+            // Decrement like count
+            updateCounter(for: "likeCount", increment: false)
+        }
+    }
+    
+    @objc func handleDislikeTap() {
+        isDislikeFilled.toggle()
+        Dislike.image = UIImage(systemName: isDislikeFilled ? "hand.thumbsdown.fill" : "hand.thumbsdown")
+        
+        if isDislikeFilled {
+            // Unfill Like if Dislike is selected
+            isThumbsUpFilled = false
+            Like.image = UIImage(systemName: "hand.thumbsup")
+            
+            // Increment dislike count and decrement like count if needed
+            updateCounter(for: "dislikeCount", increment: true)
+            if isThumbsUpFilled {
+                updateCounter(for: "likeCount", increment: false)
+            }
+        } else {
+            // Decrement dislike count
+            updateCounter(for: "dislikeCount", increment: false)
+        }
+    }
+    
+    func updateCounter(for field: String, increment: Bool) {
+        let postID = "postID1" // Replace with the actual post ID
+        let postRef = db.collection("posts").document(postID)
+        
+        // Check if the document exists
+        postRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                // If the document exists, update the specified counter
+                postRef.updateData([
+                    field: FieldValue.increment(increment ? Int64(1) : Int64(-1))
+                ]) { error in
+                    if let error = error {
+                        print("Error updating \(field): \(error)")
+                    } else {
+                        print("\(field) successfully updated!")
+                    }
+                }
+            } else {
+                // If the document doesn't exist, create it with an initial likeCount and dislikeCount
+                let initialData: [String: Any] = [
+                    "likeCount": field == "likeCount" && increment ? 1 : 0,
+                    "dislikeCount": field == "dislikeCount" && increment ? 1 : 0
+                ]
+                postRef.setData(initialData) { error in
+                    if let error = error {
+                        print("Error creating document: \(error)")
+                    } else {
+                        print("Document created with initial data: \(initialData)")
+                    }
+                }
+            }
+        }
+    }
+    
+    @objc func handleBookmarkTap() {
+        isBookmarkFilled.toggle()
+        BookMark.image = UIImage(systemName: isBookmarkFilled ? "bookmark.fill" : "bookmark")
+    }
+    
+    @IBAction func buyTicket(_ sender: Any) {
+        let alertController = UIAlertController(
+            title: "Ticket Purchase",
+            message: "Are you sure you want to buy this ticket?",
+            preferredStyle: .alert
+        )
+        
+        let confirmAction = UIAlertAction(title: "Yes", style: .default) { _ in
+            print("Ticket purchased successfully!")
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    @objc func reportIconTapped() {
+        DispatchQueue.main.async {
+            let alertController = UIAlertController(
+                title: "Report Issue",
+                message: "Please describe the issue you want to report:",
+                preferredStyle: .alert
+            )
+            
+            alertController.addTextField { textField in
+                textField.placeholder = "Describe the issue"
+                textField.font = UIFont.systemFont(ofSize: 14)
+            }
+            
+            let submitAction = UIAlertAction(title: "Submit", style: .default) { _ in
+                let reportText = alertController.textFields?.first?.text
+                print("User submitted a report: \(reportText ?? "")")
+            }
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            
+            alertController.addAction(submitAction)
+            alertController.addAction(cancelAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+}

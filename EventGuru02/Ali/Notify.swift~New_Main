@@ -1,16 +1,14 @@
 //
-//  ViewControllerr.swift
+//  Notify.swift
 //  EventGuru02
 //
-//  Created by Ali Juma on 29/12/2024.
+//  Created by Ali Juma on 02/01/2025.
 //
-
 
 import UIKit
 
-class ViewControllerr: UIViewController {
-    
-    
+class Notify: UIViewController {
+
     @IBOutlet weak var thumbsUpImageView: UIImageView!
     
     @IBOutlet weak var bookmark: UIImageView!
@@ -71,72 +69,27 @@ class ViewControllerr: UIViewController {
         }
     }
 
-    @IBAction func BuyTicket(_ sender: Any) {
-        let alertController = UIAlertController(
-            title: "Ticket Purchase",
-            message: "Are you sure you want to buy this ticket?",
-            preferredStyle: .alert
-        )
-        
-        let confirmAction = UIAlertAction(title: "Yes", style: .default) { _ in
-            print("Ticket purchased!")
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
-            print("Purchase cancelled.")
-        }
-        
-        alertController.addAction(confirmAction)
-        alertController.addAction(cancelAction)
-        
-        present(alertController, animated: true, completion: nil)
-    }
-
-    @IBAction func CancelReservation(_ sender: Any) {
-        let alertController = UIAlertController(
-            title: "Cancel Reservation",
-            message: "Are you sure you want to cancel this ticket?",
-            preferredStyle: .alert
-        )
-        
-        let confirmAction = UIAlertAction(title: "Yes", style: .default) { _ in
-            print("Ticket canceled!")
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
-            print("Cancel reservation cancelled.")
-        }
-        
-        alertController.addAction(confirmAction)
-        alertController.addAction(cancelAction)
-        
-        present(alertController, animated: true, completion: nil)
-    }
-
-    // Notify User Action
+    
     @IBAction func Notify(_ sender: Any) {
-        let alertController = UIAlertController(
-            title: "Notify if Available",
-            message: "Are you sure you want an Email to be sent once tickets are available?",
-            preferredStyle: .alert
-        )
-        
-        let confirmAction = UIAlertAction(title: "Yes", style: .default) { _ in
-            print("Email will be sent!")
+            let alertController = UIAlertController(
+                title: "Notify if Available",
+                message: "Are you sure you want an Email to be sent once tickets are available?",
+                preferredStyle: .alert
+            )
+            
+            let confirmAction = UIAlertAction(title: "Yes", style: .default) { _ in
+                print("Email will be sent!")
+            }
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+                print("Email notification cancelled.")
+            }
+            
+            alertController.addAction(confirmAction)
+            alertController.addAction(cancelAction)
+            
+            present(alertController, animated: true, completion: nil)
         }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
-            print("Email notification cancelled.")
-        }
-        
-        alertController.addAction(confirmAction)
-        alertController.addAction(cancelAction)
-        
-        present(alertController, animated: true, completion: nil)
-    }
-    
-    
-    
     @IBOutlet weak var reportIcon: UIImageView!
     
     @objc func reportIconTapped() {
