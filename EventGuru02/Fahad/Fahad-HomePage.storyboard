@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DZO-aS-U00">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DZO-aS-U00">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -28,21 +28,33 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="145"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UpU-YA-n9K">
-                                                    <rect key="frame" x="214" y="35" width="159" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UpU-YA-n9K">
+                                                    <rect key="frame" x="281" y="35" width="92" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tl3-0k-Laq">
-                                                    <rect key="frame" x="214" y="86" width="124" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LDn-ux-ooQ">
+                                                    <rect key="frame" x="20" y="8" width="192" height="129"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tl3-0k-Laq">
+                                                    <rect key="frame" x="281" y="86" width="41.333333333333314" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="tl3-0k-Laq" secondAttribute="trailing" constant="50.666666666666686" id="6Bv-A8-fdq"/>
+                                                <constraint firstItem="UpU-YA-n9K" firstAttribute="leading" secondItem="LDn-ux-ooQ" secondAttribute="trailing" constant="69" id="K9e-ir-XgP"/>
+                                                <constraint firstItem="UpU-YA-n9K" firstAttribute="top" secondItem="ohU-aB-KAu" secondAttribute="topMargin" constant="23" id="KtG-2c-X0Q"/>
+                                                <constraint firstAttribute="bottom" secondItem="LDn-ux-ooQ" secondAttribute="bottom" constant="8" id="NpZ-pK-Fqy"/>
+                                                <constraint firstItem="tl3-0k-Laq" firstAttribute="top" secondItem="UpU-YA-n9K" secondAttribute="bottom" constant="30" id="P4k-nh-xyf"/>
+                                                <constraint firstItem="UpU-YA-n9K" firstAttribute="trailing" secondItem="ohU-aB-KAu" secondAttribute="trailingMargin" id="Zc0-dQ-Yiz"/>
+                                                <constraint firstItem="LDn-ux-ooQ" firstAttribute="top" secondItem="ohU-aB-KAu" secondAttribute="top" constant="8" id="bC1-tz-sPY"/>
+                                                <constraint firstItem="LDn-ux-ooQ" firstAttribute="leading" secondItem="ohU-aB-KAu" secondAttribute="leading" constant="20" symbolic="YES" id="lvB-AI-DBK"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="tl3-0k-Laq" secondAttribute="bottom" constant="26" id="xdN-zi-fjf"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="EventName" destination="UpU-YA-n9K" id="kAl-1C-8C6"/>
@@ -67,10 +79,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kj9-lK-1fo">
-                                <rect key="frame" x="29" y="162" width="157" height="39"/>
+                                <rect key="frame" x="27" y="162" width="161" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Filter By Interests"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Events By Interest"/>
                                 <connections>
                                     <action selector="filterButton:" destination="RhS-tR-DXT" eventType="touchUpInside" id="oiz-DY-ZfB"/>
                                 </connections>
