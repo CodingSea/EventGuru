@@ -57,8 +57,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="EventImage" destination="LDn-ux-ooQ" id="0FB-Sr-waL"/>
                                             <outlet property="EventName" destination="UpU-YA-n9K" id="kAl-1C-8C6"/>
                                             <outlet property="EventPrice" destination="tl3-0k-Laq" id="WZI-dK-6p4"/>
+                                            <outlet property="imageView" destination="LDn-ux-ooQ" id="IzT-ah-Pps"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

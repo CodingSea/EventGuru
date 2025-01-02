@@ -13,6 +13,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var EventTable: UITableView!
     
+    
     var db: Firestore!
        var events = [Event]() // All events
        var filteredEvents = [Event]() // Filtered events
@@ -27,6 +28,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
            EventTable.dataSource = self
            
            fetchEvents() // Fetch all events initially
+           filterEvents() // make it start with the filtered events
        }
        
        // MARK: - Fetch Events from Firestore (All Events Initially)
@@ -42,8 +44,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                    let eventName = data["eventName"] as? String ?? ""
                    let price = data["price"] as? String ?? ""
                    let category = data["category"] as? String ?? ""
+                   let imagePath = data["ImagePath"] as? String ?? ""
                    
-                   return Event(eventName: eventName, price: price, category: category)
+                   return Event(eventName: eventName, price: price, category: category, imagePath: imagePath)
                } ?? []
                
                // Initially, show all events (no filtering yet)
@@ -110,6 +113,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
            
            let event = filteredEvents[indexPath.row]
            
+           // Load the image from Cloudinary
+           if let imageUrl = URL(string: event.imagePath) {
+               fetchImage(from: imageUrl) { image in
+                   DispatchQueue.main.async {
+                       cell?.EventImage.image = image // Assuming you have an IBOutlet for UIImageView
+                   }
+               }
+           }
+           
            cell?.EventName.text = event.eventName
            cell?.EventPrice.text = event.price
            
@@ -133,12 +145,32 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
+    // Function to fetch the image from Cloudinary
+    private func fetchImage(from url: URL, completion: @escaping (UIImage?) -> Void) {
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                print("Error fetching image: \(error.localizedDescription)")
+                completion(nil)
+                return
+            }
+            
+            guard let data = data, let image = UIImage(data: data) else {
+                completion(nil)
+                return
+            }
+            
+            completion(image)
+        }
+        
+        task.resume()
+    }
     
-    
-    struct Event {
-           var eventName: String
-           var price: String
-           var category: String
-       }
+    struct Event
+    {
+        var eventName: String
+        var price: String
+        var category: String
+        var imagePath: String
+   }
 
 }
