@@ -185,10 +185,10 @@
                                         <state key="normal" title="Bhraini Dinar (BD)"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JvM-Me-g1k">
-                                        <rect key="frame" x="83" y="99" width="75" height="39"/>
+                                        <rect key="frame" x="65" y="99" width="112" height="39"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Home page"/>
                                         <connections>
                                             <segue destination="YVc-oa-DQn" kind="presentation" modalPresentationStyle="fullScreen" id="JtA-Kq-44E"/>
                                         </connections>
