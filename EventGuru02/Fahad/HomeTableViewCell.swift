@@ -9,7 +9,7 @@ import UIKit
 
 class HomeTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var EventImage: UIImageView!
+  @IBOutlet weak var EventImage: UIImageView!
     
     
     @IBOutlet weak var EventName: UILabel!
@@ -19,7 +19,7 @@ class HomeTableViewCell: UITableViewCell {
    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+     
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

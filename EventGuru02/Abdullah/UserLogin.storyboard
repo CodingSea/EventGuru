@@ -189,16 +189,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUs-2V-PVB">
-                                <rect key="frame" x="156" y="409" width="81" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="signout"/>
-                                <connections>
-                                    <action selector="signout:" destination="1or-RT-tHo" eventType="touchUpInside" id="QEt-pU-5RZ"/>
-                                    <segue destination="g1x-Ge-Mtt" kind="presentation" identifier="Begin" modalPresentationStyle="fullScreen" id="sWJ-EU-d6M"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHE-Ci-qFX">
                                 <rect key="frame" x="159" y="562" width="75" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -206,6 +196,16 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Button"/>
                                 <connections>
                                     <segue destination="Et0-T7-fjd" kind="presentation" modalPresentationStyle="fullScreen" id="XOo-FI-emS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUs-2V-PVB">
+                                <rect key="frame" x="156" y="294" width="81" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="signout"/>
+                                <connections>
+                                    <action selector="signout:" destination="1or-RT-tHo" eventType="touchUpInside" id="QEt-pU-5RZ"/>
+                                    <segue destination="g1x-Ge-Mtt" kind="presentation" identifier="Begin" modalPresentationStyle="fullScreen" id="sWJ-EU-d6M"/>
                                 </connections>
                             </button>
                         </subviews>
