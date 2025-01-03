@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nOO-X0-cBm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nOO-X0-cBm">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -190,10 +190,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHE-Ci-qFX">
-                                <rect key="frame" x="159" y="562" width="75" height="39"/>
+                                <rect key="frame" x="132" y="562" width="129" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Event Posting"/>
                                 <connections>
                                     <segue destination="Et0-T7-fjd" kind="presentation" modalPresentationStyle="fullScreen" id="XOo-FI-emS"/>
                                 </connections>
@@ -236,7 +236,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9F8-6O-SK8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2959" y="-125"/>
+            <point key="canvasLocation" x="3456" y="52"/>
         </scene>
         <!--Test View Controller-->
         <scene sceneID="ASq-2f-lfv">
@@ -254,6 +254,15 @@
                                 <connections>
                                     <action selector="signout:" destination="E4n-ep-wzI" eventType="touchUpInside" id="Vjq-Zc-zz9"/>
                                     <segue destination="D3R-cl-q1b" kind="presentation" identifier="Begin" modalPresentationStyle="fullScreen" id="sdU-fk-29e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtm-pi-Rjz">
+                                <rect key="frame" x="132" y="407" width="129" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Event Posting"/>
+                                <connections>
+                                    <segue destination="Et0-T7-fjd" kind="presentation" id="Lmt-gL-HFc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -274,7 +283,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QUA-2o-y5E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2917.5572519083967" y="262.67605633802816"/>
+            <point key="canvasLocation" x="2728" y="97"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="18V-aD-bG1">
@@ -296,6 +305,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Lmt-gL-HFc"/>
         <segue reference="zvb-HO-407"/>
     </inferredMetricsTieBreakers>
     <resources>
