@@ -19,6 +19,7 @@
 		04E48D2D2D203F3900A08F87 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E48D272D203F3900A08F87 /* ExploreViewController.swift */; };
 		04E48D342D2043EF00A08F87 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = 04E48D332D2043EF00A08F87 /* Cloudinary */; };
 		29008DDC2D27FCA600C209E5 /* Fahad-Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29008DDB2D27FCA600C209E5 /* Fahad-Main.storyboard */; };
+		29008DDE2D28022900C209E5 /* Fahad-EventsPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29008DDD2D28022900C209E5 /* Fahad-EventsPage.storyboard */; };
 		29A1A5672D01C68E002009D6 /* Fahad-Event Posting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */; };
 		3F1252552D058A1700E25E5F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3F1252542D058A1700E25E5F /* FirebaseAuth */; };
 		3F1252592D058A1700E25E5F /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 3F1252582D058A1700E25E5F /* FirebaseCore */; };
@@ -61,6 +62,7 @@
 		04E48D252D203F3900A08F87 /* explorepage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = explorepage.storyboard; sourceTree = "<group>"; };
 		04E48D272D203F3900A08F87 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		29008DDB2D27FCA600C209E5 /* Fahad-Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Fahad-Main.storyboard"; sourceTree = "<group>"; };
+		29008DDD2D28022900C209E5 /* Fahad-EventsPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Fahad-EventsPage.storyboard"; sourceTree = "<group>"; };
 		29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Fahad-Event Posting.storyboard"; sourceTree = "<group>"; };
 		3F7FFE8A2CF7281900391A5F /* EventGuru02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventGuru02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7FFE8D2CF7281900391A5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				04092DD12D1FFF9300C95B34 /* HomeViewController.swift */,
 				04092DD32D1FFFAA00C95B34 /* HomeTableViewCell.swift */,
 				3F7FFED42CF72BF200391A5F /* Fahad-HomePage.storyboard */,
+				29008DDD2D28022900C209E5 /* Fahad-EventsPage.storyboard */,
 				29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */,
 				29008DDB2D27FCA600C209E5 /* Fahad-Main.storyboard */,
 			);
@@ -274,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E639D1552D2400830065F53F /* Admin-Main.storyboard in Resources */,
+				29008DDE2D28022900C209E5 /* Fahad-EventsPage.storyboard in Resources */,
 				04E48D2B2D203F3900A08F87 /* explorepage.storyboard in Resources */,
 				04E48D2C2D203F3900A08F87 /* dashboard.storyboard in Resources */,
 				3F7FFED52CF72BF200391A5F /* Fahad-HomePage.storyboard in Resources */,
