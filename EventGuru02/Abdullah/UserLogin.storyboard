@@ -208,6 +208,15 @@
                                     <segue destination="g1x-Ge-Mtt" kind="presentation" identifier="Begin" modalPresentationStyle="fullScreen" id="sWJ-EU-d6M"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gd5-zI-Q0U">
+                                <rect key="frame" x="132" y="640" width="129" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Events Page"/>
+                                <connections>
+                                    <segue destination="m79-96-cus" kind="presentation" modalPresentationStyle="fullScreen" id="njK-wW-Ixi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="njk-uQ-W3h"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -236,7 +245,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9F8-6O-SK8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3456" y="52"/>
+            <point key="canvasLocation" x="3398" y="55"/>
         </scene>
         <!--Test View Controller-->
         <scene sceneID="ASq-2f-lfv">
@@ -265,6 +274,15 @@
                                     <segue destination="Et0-T7-fjd" kind="presentation" id="Lmt-gL-HFc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H5Q-e4-5At">
+                                <rect key="frame" x="132" y="348" width="129" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Events Page"/>
+                                <connections>
+                                    <segue destination="m79-96-cus" kind="presentation" modalPresentationStyle="fullScreen" id="zKf-Cb-8Yf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="z2c-bR-TMt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -283,7 +301,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QUA-2o-y5E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2728" y="97"/>
+            <point key="canvasLocation" x="2690" y="55"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="18V-aD-bG1">
@@ -303,9 +321,20 @@
             </objects>
             <point key="canvasLocation" x="-1002.2900763358779" y="36.619718309859159"/>
         </scene>
+        <!--Fahad-EventsPage-->
+        <scene sceneID="ZV9-bx-YZH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Fahad-EventsPage" id="m79-96-cus" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="9Tz-uy-uzi"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jgv-qt-0v5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3040" y="55"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Lmt-gL-HFc"/>
+        <segue reference="zKf-Cb-8Yf"/>
+        <segue reference="XOo-FI-emS"/>
         <segue reference="zvb-HO-407"/>
     </inferredMetricsTieBreakers>
     <resources>

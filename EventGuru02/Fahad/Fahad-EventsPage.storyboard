@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Events View Controller-->
         <scene sceneID="QQw-fo-onZ">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" id="Vaa-ZO-gqC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="Vaa-ZO-gqC" customClass="EventsViewController" customModule="EventGuru02" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7bN-BR-Qb1">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +21,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="145" id="f5L-xe-ECd">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="145" id="f5L-xe-ECd" customClass="EventTableViewCell" customModule="EventGuru02" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="145"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f5L-xe-ECd" id="sCO-zU-YjW">
@@ -54,12 +54,18 @@
                                                     <buttonConfiguration key="configuration" style="plain" image="xmark.circle.fill" catalog="system" title="Delete">
                                                         <color key="baseForegroundColor" systemColor="systemRedColor"/>
                                                     </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="deleteBtn:" destination="f5L-xe-ECd" eventType="touchUpInside" id="sq8-D3-G2S"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drw-6O-e7p">
                                                     <rect key="frame" x="286" y="31" width="79" height="39"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="pencil.circle" catalog="system" title="Edit"/>
+                                                    <connections>
+                                                        <action selector="editBtn:" destination="f5L-xe-ECd" eventType="touchUpInside" id="cqD-hf-x93"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -76,7 +82,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="EventImage" destination="30H-bB-MFd" id="34W-19-wVI"/>
-                                            <outlet property="EventName" destination="DNY-GN-lNS" id="7z3-0h-I69"/>
+                                            <outlet property="EventName" destination="DNY-GN-lNS" id="DrP-5E-vLR"/>
                                             <outlet property="EventPrice" destination="bKY-IW-reX" id="5ZF-Pe-49T"/>
                                             <outlet property="imageView" destination="30H-bB-MFd" id="qnb-b9-d33"/>
                                         </connections>
@@ -111,7 +117,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="9NS-W7-yoe"/>
                     <connections>
-                        <outlet property="EventTable" destination="Mnj-Yq-wQ4" id="olI-Mi-GwR"/>
+                        <outlet property="EventTable" destination="Mnj-Yq-wQ4" id="7JE-cv-71u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vPi-a6-Fbv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

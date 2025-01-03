@@ -108,7 +108,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="4ol-xo-I4v"/>
                     <connections>
-                        <outlet property="EventTable" destination="CGx-9c-dyl" id="24l-tT-PPK"/>
+                        <outlet property="EventTable" destination="CGx-9c-dyl" id="HCI-Nq-I4G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GFe-jZ-epb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

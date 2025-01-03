@@ -20,6 +20,8 @@
 		04E48D342D2043EF00A08F87 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = 04E48D332D2043EF00A08F87 /* Cloudinary */; };
 		29008DDC2D27FCA600C209E5 /* Fahad-Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29008DDB2D27FCA600C209E5 /* Fahad-Main.storyboard */; };
 		29008DDE2D28022900C209E5 /* Fahad-EventsPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29008DDD2D28022900C209E5 /* Fahad-EventsPage.storyboard */; };
+		296DC0CA2D28040900615A0F /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296DC0C92D28040900615A0F /* EventsViewController.swift */; };
+		296DC0CC2D2806AC00615A0F /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296DC0CB2D2806AC00615A0F /* EventTableViewCell.swift */; };
 		29A1A5672D01C68E002009D6 /* Fahad-Event Posting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */; };
 		3F1252552D058A1700E25E5F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3F1252542D058A1700E25E5F /* FirebaseAuth */; };
 		3F1252592D058A1700E25E5F /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 3F1252582D058A1700E25E5F /* FirebaseCore */; };
@@ -63,6 +65,8 @@
 		04E48D272D203F3900A08F87 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		29008DDB2D27FCA600C209E5 /* Fahad-Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Fahad-Main.storyboard"; sourceTree = "<group>"; };
 		29008DDD2D28022900C209E5 /* Fahad-EventsPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Fahad-EventsPage.storyboard"; sourceTree = "<group>"; };
+		296DC0C92D28040900615A0F /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		296DC0CB2D2806AC00615A0F /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Fahad-Event Posting.storyboard"; sourceTree = "<group>"; };
 		3F7FFE8A2CF7281900391A5F /* EventGuru02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventGuru02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7FFE8D2CF7281900391A5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -134,7 +138,9 @@
 				66561A5C2D240746007A5DEC /* Post2ViewController.swift */,
 				66561A5A2D240742007A5DEC /* PostViewController.swift */,
 				04092DD12D1FFF9300C95B34 /* HomeViewController.swift */,
+				296DC0C92D28040900615A0F /* EventsViewController.swift */,
 				04092DD32D1FFFAA00C95B34 /* HomeTableViewCell.swift */,
+				296DC0CB2D2806AC00615A0F /* EventTableViewCell.swift */,
 				3F7FFED42CF72BF200391A5F /* Fahad-HomePage.storyboard */,
 				29008DDD2D28022900C209E5 /* Fahad-EventsPage.storyboard */,
 				29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */,
@@ -305,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66561A592D2406C4007A5DEC /* InterestViewController.swift in Sources */,
+				296DC0CC2D2806AC00615A0F /* EventTableViewCell.swift in Sources */,
 				3F7FFE922CF7281900391A5F /* ViewController.swift in Sources */,
 				3FAD45C92D1C2D660086476D /* RegisterViewController.swift in Sources */,
 				66561A5B2D240742007A5DEC /* PostViewController.swift in Sources */,
@@ -313,6 +320,7 @@
 				04092DD22D1FFF9300C95B34 /* HomeViewController.swift in Sources */,
 				046D4D082D2384E600BEE9AE /* EventEditingViewController.swift in Sources */,
 				04092DD42D1FFFAA00C95B34 /* HomeTableViewCell.swift in Sources */,
+				296DC0CA2D28040900615A0F /* EventsViewController.swift in Sources */,
 				E639D15F2D2420690065F53F /* EventHelper.swift in Sources */,
 				3F7FFE902CF7281900391A5F /* SceneDelegate.swift in Sources */,
 				3FAD45C72D1C24410086476D /* LoginViewController.swift in Sources */,
