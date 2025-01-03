@@ -4,7 +4,6 @@ import Foundation
 import UIKit
 import FirebaseFirestore
 import FirebaseAuth
-import NSComboBox
 
 class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -46,24 +45,24 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     
     @IBAction func selectPhotoTapped(_ sender: UIButton) {
-            let imagePickerController = UIImagePickerController()
-            imagePickerController.delegate = self
-            imagePickerController.sourceType = .photoLibrary
-            present(imagePickerController, animated: true, completion: nil)
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .photoLibrary
+            present(imagePicker, animated: true, completion: nil)
         }
     
     
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            if let selectedImage = info[.originalImage] as? UIImage {
-                imageView.image = selectedImage
-            }
-            picker.dismiss(animated: true, completion: nil)
+        if let selectedImage = info[.originalImage] as? UIImage {
+            imageView.image = selectedImage
         }
+        picker.dismiss(animated: true, completion: nil)
+    }
 
-        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-            picker.dismiss(animated: true, completion: nil)
-        }
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
     
     
     @IBAction func createEventBtn(_ sender: Any)
