@@ -4,6 +4,7 @@ import Foundation
 import UIKit
 import FirebaseFirestore
 import FirebaseAuth
+import NSComboBox
 
 class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
