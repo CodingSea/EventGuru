@@ -27,8 +27,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
            EventTable.delegate = self
            EventTable.dataSource = self
            
-           //fetchEvents() // Fetch all events initially
+           fetchEvents() // Fetch all events initially
            fetchUserInterestsAndFilter() // make it start with the filtered events
+           filterEvents()
        }
        
        // MARK: - Fetch Events from Firestore (All Events Initially)

@@ -18,6 +18,7 @@
 		04E48D2C2D203F3900A08F87 /* dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E48D232D203F3900A08F87 /* dashboard.storyboard */; };
 		04E48D2D2D203F3900A08F87 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E48D272D203F3900A08F87 /* ExploreViewController.swift */; };
 		04E48D342D2043EF00A08F87 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = 04E48D332D2043EF00A08F87 /* Cloudinary */; };
+		29008DDC2D27FCA600C209E5 /* Fahad-Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29008DDB2D27FCA600C209E5 /* Fahad-Main.storyboard */; };
 		29A1A5672D01C68E002009D6 /* Fahad-Event Posting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */; };
 		3F1252552D058A1700E25E5F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3F1252542D058A1700E25E5F /* FirebaseAuth */; };
 		3F1252592D058A1700E25E5F /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 3F1252582D058A1700E25E5F /* FirebaseCore */; };
@@ -59,6 +60,7 @@
 		04E48D232D203F3900A08F87 /* dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = dashboard.storyboard; sourceTree = "<group>"; };
 		04E48D252D203F3900A08F87 /* explorepage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = explorepage.storyboard; sourceTree = "<group>"; };
 		04E48D272D203F3900A08F87 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		29008DDB2D27FCA600C209E5 /* Fahad-Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Fahad-Main.storyboard"; sourceTree = "<group>"; };
 		29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Fahad-Event Posting.storyboard"; sourceTree = "<group>"; };
 		3F7FFE8A2CF7281900391A5F /* EventGuru02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventGuru02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7FFE8D2CF7281900391A5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				04092DD32D1FFFAA00C95B34 /* HomeTableViewCell.swift */,
 				3F7FFED42CF72BF200391A5F /* Fahad-HomePage.storyboard */,
 				29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */,
+				29008DDB2D27FCA600C209E5 /* Fahad-Main.storyboard */,
 			);
 			path = Fahad;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				E639D15D2D240E890065F53F /* User-Main.storyboard in Resources */,
 				E639D1532D23FF020065F53F /* Ali - Profile.storyboard in Resources */,
 				3F7FFED72CF72C9A00391A5F /* Ali.storyboard in Resources */,
+				29008DDC2D27FCA600C209E5 /* Fahad-Main.storyboard in Resources */,
 				D4C1CA9F2D01D22100555861 /* Register.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
