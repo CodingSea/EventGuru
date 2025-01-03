@@ -9,7 +9,7 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth
 
-class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, EventCellDelegate {
     
     @IBOutlet weak var EventTable: UITableView!
     
@@ -38,6 +38,8 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         cell?.EventName.text = event.eventName
         cell?.EventPrice.text = event.price
+        cell?.eventId = event.eventID
+        cell?.delegate = self
         
         return cell ?? UITableViewCell()
     }
@@ -53,6 +55,22 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         fetchUserEvents() // Fetch events created by the current user
     }
     
+    // Implement the EventCellDelegate method
+    func didTapDeleteButton(eventID: String) {
+        deleteEvent(eventID: eventID)
+    }
+    
+    func deleteEvent(eventID: String) {
+        db.collection("AddEvents").document(eventID).delete { error in
+            if let error = error {
+                print("Error deleting event: \(error.localizedDescription)")
+            } else {
+                // Remove the event from the local array and reload the table
+                self.events.removeAll { $0.eventID == eventID }
+                self.fetchUserEvents()
+            }
+        }
+    }
     
     
     // MARK: - Fetch User Events from Firestore
@@ -73,7 +91,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     let price = data["price"] as? String ?? ""
                     let imagePath = data["ImagePath"] as? String ?? ""
                     
-                    return Event(eventName: eventName, price: price, imagePath: imagePath)
+                    return Event(eventID: document.documentID, eventName: eventName, price: price, imagePath: imagePath, eventPage: self)
                 } ?? []
                 
                 // Set filtered events to the fetched events
@@ -118,9 +136,11 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     struct Event
     {
+        var eventID: String
         var eventName: String
         var price: String
         var imagePath: String
+        var eventPage: EventsViewController?
    }
 
 }

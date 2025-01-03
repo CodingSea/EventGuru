@@ -7,14 +7,20 @@
 
 import UIKit
 
+protocol EventCellDelegate: AnyObject
+{
+    func didTapDeleteButton(eventID: String)
+}
+
 class EventTableViewCell: UITableViewCell {
 
     @IBOutlet weak var EventImage: UIImageView!
-    
-    
     @IBOutlet weak var EventName: UILabel!
-    
     @IBOutlet weak var EventPrice: UILabel!
+    
+    var eventId: String?
+    
+    weak var delegate: EventCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,7 +33,11 @@ class EventTableViewCell: UITableViewCell {
     }
     
     
-    @IBAction func deleteBtn(_ sender: Any) {
+    @IBAction func deleteBtn(_ sender: Any)
+    {
+        guard let eventID = eventId else { return }
+        
+        delegate?.didTapDeleteButton(eventID: eventID)
     }
     
 

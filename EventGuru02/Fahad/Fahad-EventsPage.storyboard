@@ -38,7 +38,9 @@
                                                     <rect key="frame" x="20" y="8" width="162" height="129"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="129" id="7U1-Tm-wk2"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="129" id="J9F-5H-OkG"/>
                                                         <constraint firstAttribute="width" constant="162" id="QgZ-BR-XJr"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="162" id="hRy-hs-Jq9"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKY-IW-reX">
@@ -47,9 +49,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCC-wY-Olc">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCC-wY-Olc">
                                                     <rect key="frame" x="286" y="78" width="99" height="39"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="xmark.circle.fill" catalog="system" title="Delete">
                                                         <color key="baseForegroundColor" systemColor="systemRedColor"/>
@@ -58,9 +59,8 @@
                                                         <action selector="deleteBtn:" destination="f5L-xe-ECd" eventType="touchUpInside" id="sq8-D3-G2S"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drw-6O-e7p">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drw-6O-e7p">
                                                     <rect key="frame" x="286" y="31" width="79" height="39"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="pencil.circle" catalog="system" title="Edit"/>
                                                     <connections>
@@ -69,14 +69,20 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="bKY-IW-reX" firstAttribute="leading" secondItem="30H-bB-MFd" secondAttribute="trailing" constant="8" symbolic="YES" id="1fI-lg-vfG"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="hCC-wY-Olc" secondAttribute="trailing" constant="-12" id="2aG-vY-XzP"/>
                                                 <constraint firstItem="bKY-IW-reX" firstAttribute="top" secondItem="DNY-GN-lNS" secondAttribute="bottom" constant="30" id="3Yh-pk-20D"/>
                                                 <constraint firstItem="30H-bB-MFd" firstAttribute="top" secondItem="sCO-zU-YjW" secondAttribute="top" constant="8" id="4e0-FC-hdi"/>
                                                 <constraint firstItem="DNY-GN-lNS" firstAttribute="leading" secondItem="30H-bB-MFd" secondAttribute="trailing" constant="8" id="7z7-Nb-oyh"/>
-                                                <constraint firstItem="DNY-GN-lNS" firstAttribute="trailing" secondItem="sCO-zU-YjW" secondAttribute="trailingMargin" constant="-91" id="OGt-xx-Wy5"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="bKY-IW-reX" secondAttribute="trailing" constant="141.66666666666669" id="Y6G-5h-aLl"/>
+                                                <constraint firstItem="drw-6O-e7p" firstAttribute="top" secondItem="sCO-zU-YjW" secondAttribute="topMargin" constant="19" id="QrT-nw-86Q"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="hCC-wY-Olc" secondAttribute="bottom" constant="16" id="SgO-dk-0zC"/>
+                                                <constraint firstItem="hCC-wY-Olc" firstAttribute="leading" secondItem="bKY-IW-reX" secondAttribute="trailing" constant="54.666666666666657" id="Wc0-Xq-ubF"/>
                                                 <constraint firstItem="DNY-GN-lNS" firstAttribute="top" secondItem="sCO-zU-YjW" secondAttribute="topMargin" constant="24" id="csJ-zb-eC0"/>
+                                                <constraint firstItem="hCC-wY-Olc" firstAttribute="top" secondItem="drw-6O-e7p" secondAttribute="bottom" constant="8" symbolic="YES" id="fE6-g4-Loh"/>
                                                 <constraint firstAttribute="bottom" secondItem="30H-bB-MFd" secondAttribute="bottom" constant="8" id="jJb-cC-oSd"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="drw-6O-e7p" secondAttribute="trailing" constant="8" id="nJP-QU-pms"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="bKY-IW-reX" secondAttribute="bottom" constant="25" id="pm4-7j-sGf"/>
+                                                <constraint firstItem="drw-6O-e7p" firstAttribute="leading" secondItem="DNY-GN-lNS" secondAttribute="trailing" constant="4" id="sb3-lE-m8j"/>
                                                 <constraint firstItem="30H-bB-MFd" firstAttribute="leading" secondItem="sCO-zU-YjW" secondAttribute="leading" constant="20" symbolic="YES" id="vsW-t4-qE1"/>
                                             </constraints>
                                         </tableViewCellContentView>
