@@ -177,10 +177,10 @@
                     <connections>
                         <outlet property="Category" destination="jIB-T3-IPR" id="aen-LB-Dow"/>
                         <outlet property="Description" destination="vGb-64-eO7" id="bjt-rT-3c9"/>
+                        <outlet property="EventName" destination="5Ll-bs-BHC" id="kod-GV-8vA"/>
+                        <outlet property="Location" destination="r7p-WQ-sX3" id="OzZ-jI-pFk"/>
                         <outlet property="endDatePicker" destination="Lsg-qe-p0a" id="oHF-oR-lds"/>
-                        <outlet property="eventName" destination="5Ll-bs-BHC" id="kod-GV-8vA"/>
                         <outlet property="imageView" destination="Whg-ZT-HkZ" id="qAg-a4-16R"/>
-                        <outlet property="location" destination="r7p-WQ-sX3" id="OzZ-jI-pFk"/>
                         <outlet property="price" destination="H4Q-rn-d73" id="Jpu-Bj-nbL"/>
                         <outlet property="startDatePicker" destination="0Ku-zl-wd7" id="8z4-sC-R0Q"/>
                         <outlet property="textView" destination="vGb-64-eO7" id="hfO-oJ-4lq"/>
