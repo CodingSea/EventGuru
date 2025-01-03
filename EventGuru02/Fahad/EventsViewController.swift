@@ -55,6 +55,21 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         fetchUserEvents() // Fetch events created by the current user
     }
     
+    // Implement the EventCellDelegate method for edit
+    func didTapEditButton(eventID: String) {
+        // Perform the segue to the EventPosting view controller
+        performSegue(withIdentifier: "Fahad-EventEditing", sender: eventID)
+    }
+
+    // Prepare for segue to pass the eventID
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Fahad-EventEditing", let destinationVC = segue.destination as? EventEditViewController {
+            if let eventID = sender as? String {
+                destinationVC.eventID = eventID // Pass the eventID to the destination view controller
+            }
+        }
+    }
+    
     // Implement the EventCellDelegate method
     func didTapDeleteButton(eventID: String) {
         deleteEvent(eventID: eventID)

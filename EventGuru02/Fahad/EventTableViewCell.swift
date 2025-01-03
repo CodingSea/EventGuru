@@ -10,6 +10,7 @@ import UIKit
 protocol EventCellDelegate: AnyObject
 {
     func didTapDeleteButton(eventID: String)
+    func didTapEditButton(eventID: String)
 }
 
 class EventTableViewCell: UITableViewCell {
@@ -28,8 +29,10 @@ class EventTableViewCell: UITableViewCell {
     }
     
     
-    @IBAction func editBtn(_ sender: Any) {
-        
+    @IBAction func editBtn(_ sender: Any)
+    {
+        guard let eventID = eventId else { return }
+        delegate?.didTapEditButton(eventID: eventID)
     }
     
     
