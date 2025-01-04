@@ -1,6 +1,9 @@
 import UIKit
+import Firebase
 
 class BuyTicket: UIViewController {
+    
+    let db = Firestore.firestore()
     
     @IBOutlet weak var Like: UIImageView!
     @IBOutlet weak var Dislike: UIImageView!
@@ -41,11 +44,75 @@ class BuyTicket: UIViewController {
     @objc func handleLikeTap() {
         isThumbsUpFilled.toggle()
         Like.image = UIImage(systemName: isThumbsUpFilled ? "hand.thumbsup.fill" : "hand.thumbsup")
+        
+        if isThumbsUpFilled {
+            // Unfill Dislike if Like is selected
+            isDislikeFilled = false
+            Dislike.image = UIImage(systemName: "hand.thumbsdown")
+            
+            // Increment like count and decrement dislike count if needed
+            updateCounter(for: "likeCount", increment: true)
+            if isDislikeFilled {
+                updateCounter(for: "dislikeCount", increment: false)
+            }
+        } else {
+            // Decrement like count
+            updateCounter(for: "likeCount", increment: false)
+        }
     }
     
     @objc func handleDislikeTap() {
         isDislikeFilled.toggle()
         Dislike.image = UIImage(systemName: isDislikeFilled ? "hand.thumbsdown.fill" : "hand.thumbsdown")
+        
+        if isDislikeFilled {
+            // Unfill Like if Dislike is selected
+            isThumbsUpFilled = false
+            Like.image = UIImage(systemName: "hand.thumbsup")
+            
+            // Increment dislike count and decrement like count if needed
+            updateCounter(for: "dislikeCount", increment: true)
+            if isThumbsUpFilled {
+                updateCounter(for: "likeCount", increment: false)
+            }
+        } else {
+            // Decrement dislike count
+            updateCounter(for: "dislikeCount", increment: false)
+        }
+    }
+    
+    func updateCounter(for field: String, increment: Bool) {
+        let postID = "postID1" // Replace with the actual post ID
+        let postRef = db.collection("posts").document(postID)
+        
+        // Check if the document exists
+        postRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                // If the document exists, update the specified counter
+                postRef.updateData([
+                    field: FieldValue.increment(increment ? Int64(1) : Int64(-1))
+                ]) { error in
+                    if let error = error {
+                        print("Error updating \(field): \(error)")
+                    } else {
+                        print("\(field) successfully updated!")
+                    }
+                }
+            } else {
+                // If the document doesn't exist, create it with an initial likeCount and dislikeCount
+                let initialData: [String: Any] = [
+                    "likeCount": field == "likeCount" && increment ? 1 : 0,
+                    "dislikeCount": field == "dislikeCount" && increment ? 1 : 0
+                ]
+                postRef.setData(initialData) { error in
+                    if let error = error {
+                        print("Error creating document: \(error)")
+                    } else {
+                        print("Document created with initial data: \(initialData)")
+                    }
+                }
+            }
+        }
     }
     
     @objc func handleBookmarkTap() {
@@ -73,7 +140,6 @@ class BuyTicket: UIViewController {
     }
     
     @objc func reportIconTapped() {
-        // To avoid UI lag, ensure this is on the main thread
         DispatchQueue.main.async {
             let alertController = UIAlertController(
                 title: "Report Issue",
