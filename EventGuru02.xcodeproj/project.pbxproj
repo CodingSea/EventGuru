@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		21CDEAD72D286F7D006D54D8 /* Ali.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21CDEAD62D286F7D006D54D8 /* Ali.storyboard */; };
-		21CDEADB2D286FA5006D54D8 /* Notify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CDEADA2D286FA5006D54D8 /* Notify.swift */; };
-		21CDEADC2D286FA5006D54D8 /* BuyTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CDEAD82D286FA5006D54D8 /* BuyTicket.swift */; };
-		21CDEADD2D286FA5006D54D8 /* CancelTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CDEAD92D286FA5006D54D8 /* CancelTicket.swift */; };
-		21CDEADF2D286FAF006D54D8 /* Histroy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CDEADE2D286FAF006D54D8 /* Histroy.swift */; };
+		2137E46F2D27178700A6C7B4 /* CancelTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2137E46E2D27178700A6C7B4 /* CancelTicket.swift */; };
+		2137E4712D2717C700A6C7B4 /* Notify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2137E4702D2717C700A6C7B4 /* Notify.swift */; };
+		214A9EAC2D21D2890051C15D /* BuyTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214A9EAB2D21D2890051C15D /* BuyTicket.swift */; };
 		29A1A5672D01C68E002009D6 /* Fahad-Event Posting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */; };
 		29F005EC2D1F041E00F88FFC /* Post2ViewController 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F005EA2D1F041E00F88FFC /* Post2ViewController 2.swift */; };
 		29F005ED2D1F041E00F88FFC /* PostViewController 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F005EB2D1F041E00F88FFC /* PostViewController 2.swift */; };
@@ -26,6 +24,7 @@
 		3F7FFE9A2CF7281A00391A5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7FFE982CF7281A00391A5F /* LaunchScreen.storyboard */; };
 		3F7FFEA22CF7288E00391A5F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F7FFEA12CF7288E00391A5F /* GoogleService-Info.plist */; };
 		3F7FFED52CF72BF200391A5F /* Fahad-HomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7FFED42CF72BF200391A5F /* Fahad-HomePage.storyboard */; };
+		3F7FFED72CF72C9A00391A5F /* Ali.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7FFED62CF72C9A00391A5F /* Ali.storyboard */; };
 		3FAD45C72D1C24410086476D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD45C62D1C24410086476D /* LoginViewController.swift */; };
 		3FAD45C92D1C2D660086476D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD45C82D1C2D660086476D /* RegisterViewController.swift */; };
 		3FAD45CB2D1C44AA0086476D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD45CA2D1C44AA0086476D /* SettingsViewController.swift */; };
@@ -39,11 +38,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		21CDEAD62D286F7D006D54D8 /* Ali.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ali.storyboard; sourceTree = "<group>"; };
-		21CDEAD82D286FA5006D54D8 /* BuyTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyTicket.swift; sourceTree = "<group>"; };
-		21CDEAD92D286FA5006D54D8 /* CancelTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelTicket.swift; sourceTree = "<group>"; };
-		21CDEADA2D286FA5006D54D8 /* Notify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notify.swift; sourceTree = "<group>"; };
-		21CDEADE2D286FAF006D54D8 /* Histroy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Histroy.swift; sourceTree = "<group>"; };
+		2137E46E2D27178700A6C7B4 /* CancelTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelTicket.swift; sourceTree = "<group>"; };
+		2137E4702D2717C700A6C7B4 /* Notify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notify.swift; sourceTree = "<group>"; };
+		214A9EAB2D21D2890051C15D /* BuyTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyTicket.swift; sourceTree = "<group>"; };
 		29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Fahad-Event Posting.storyboard"; sourceTree = "<group>"; };
 		29F005EA2D1F041E00F88FFC /* Post2ViewController 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post2ViewController 2.swift"; sourceTree = "<group>"; };
 		29F005EB2D1F041E00F88FFC /* PostViewController 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostViewController 2.swift"; sourceTree = "<group>"; };
@@ -57,6 +54,7 @@
 		3F7FFE9B2CF7281A00391A5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F7FFEA12CF7288E00391A5F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3F7FFED42CF72BF200391A5F /* Fahad-HomePage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Fahad-HomePage.storyboard"; sourceTree = "<group>"; };
+		3F7FFED62CF72C9A00391A5F /* Ali.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ali.storyboard; sourceTree = "<group>"; };
 		3FAD45C62D1C24410086476D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3FAD45C82D1C2D660086476D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3FAD45CA2D1C44AA0086476D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -97,11 +95,10 @@
 		3F67A4682CFC48E2003FEAB2 /* Ali */ = {
 			isa = PBXGroup;
 			children = (
-				21CDEAD62D286F7D006D54D8 /* Ali.storyboard */,
-				21CDEAD82D286FA5006D54D8 /* BuyTicket.swift */,
-				21CDEAD92D286FA5006D54D8 /* CancelTicket.swift */,
-				21CDEADA2D286FA5006D54D8 /* Notify.swift */,
-				21CDEADE2D286FAF006D54D8 /* Histroy.swift */,
+				3F7FFED62CF72C9A00391A5F /* Ali.storyboard */,
+				214A9EAB2D21D2890051C15D /* BuyTicket.swift */,
+				2137E46E2D27178700A6C7B4 /* CancelTicket.swift */,
+				2137E4702D2717C700A6C7B4 /* Notify.swift */,
 			);
 			path = Ali;
 			sourceTree = "<group>";
@@ -231,8 +228,8 @@
 				3F7FFE972CF7281A00391A5F /* Assets.xcassets in Resources */,
 				29A1A5672D01C68E002009D6 /* Fahad-Event Posting.storyboard in Resources */,
 				3F7FFE952CF7281900391A5F /* Main.storyboard in Resources */,
-				21CDEAD72D286F7D006D54D8 /* Ali.storyboard in Resources */,
 				83FA8D9E2D005FF90012E4B5 /* UserLogin.storyboard in Resources */,
+				3F7FFED72CF72C9A00391A5F /* Ali.storyboard in Resources */,
 				D4C1CA9F2D01D22100555861 /* Register.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,18 +242,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0A9EF642D1B2F9D00CB69BE /* CellTableViewCell.swift in Sources */,
+				2137E46F2D27178700A6C7B4 /* CancelTicket.swift in Sources */,
 				3F7FFE922CF7281900391A5F /* ViewController.swift in Sources */,
 				3FAD45C92D1C2D660086476D /* RegisterViewController.swift in Sources */,
 				29F005EC2D1F041E00F88FFC /* Post2ViewController 2.swift in Sources */,
 				29F005ED2D1F041E00F88FFC /* PostViewController 2.swift in Sources */,
-				21CDEADB2D286FA5006D54D8 /* Notify.swift in Sources */,
-				21CDEADC2D286FA5006D54D8 /* BuyTicket.swift in Sources */,
-				21CDEADD2D286FA5006D54D8 /* CancelTicket.swift in Sources */,
-				21CDEADF2D286FAF006D54D8 /* Histroy.swift in Sources */,
 				3F7FFE8E2CF7281900391A5F /* AppDelegate.swift in Sources */,
 				3F7FFE902CF7281900391A5F /* SceneDelegate.swift in Sources */,
+				2137E4712D2717C700A6C7B4 /* Notify.swift in Sources */,
 				D0A9EF622D1B2F8C00CB69BE /* TableViewController.swift in Sources */,
 				3FAD45C72D1C24410086476D /* LoginViewController.swift in Sources */,
+				214A9EAC2D21D2890051C15D /* BuyTicket.swift in Sources */,
 				3FAD45CD2D1C5FB40086476D /* TestViewController.swift in Sources */,
 				3FAD45CB2D1C44AA0086476D /* SettingsViewController.swift in Sources */,
 			);

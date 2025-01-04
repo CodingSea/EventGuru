@@ -1,142 +1,71 @@
+//
+//  CancelTicket.swift
+//  EventGuru02
+//
+//  Created by Ali Juma on 02/01/2025.
+//
+
 import UIKit
-import Firebase
 
 class CancelTicket: UIViewController {
     
-    let db = Firestore.firestore()
-    
-    @IBOutlet weak var Like: UIImageView!
-    @IBOutlet weak var Dislike: UIImageView!
-    @IBOutlet weak var BookMark: UIImageView!
-    @IBOutlet weak var ReportIcon: UIImageView!
+    @IBOutlet weak var thumbsUpImageView: UIImageView!
+    @IBOutlet weak var bookmark: UIImageView!
+    @IBOutlet weak var reportIcon: UIImageView!
     
     var isThumbsUpFilled = false
-    var isDislikeFilled = false
     var isBookmarkFilled = false
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Initialize thumbs up image and gesture
+        thumbsUpImageView.image = UIImage(systemName: "hand.thumbsup")
+        thumbsUpImageView.isUserInteractionEnabled = true
+        let thumbsUpTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleThumbsUpTap))
+        thumbsUpImageView.addGestureRecognizer(thumbsUpTapGestureRecognizer)
         
-        // Initialize Like (thumbs up) image and gesture
-        Like.image = UIImage(systemName: "hand.thumbsup")
-        Like.isUserInteractionEnabled = true
-        let likeTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleLikeTap))
-        Like.addGestureRecognizer(likeTapGestureRecognizer)
-        
-        // Initialize Dislike image and gesture
-        Dislike.image = UIImage(systemName: "hand.thumbsdown")
-        Dislike.isUserInteractionEnabled = true
-        let dislikeTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleDislikeTap))
-        Dislike.addGestureRecognizer(dislikeTapGestureRecognizer)
-        
-        // Initialize Bookmark image and gesture
-        BookMark.image = UIImage(systemName: "bookmark")
-        BookMark.isUserInteractionEnabled = true
+        // Initialize bookmark image and gesture
+        bookmark.image = UIImage(systemName: "bookmark")
+        bookmark.isUserInteractionEnabled = true
         let bookmarkTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleBookmarkTap))
-        BookMark.addGestureRecognizer(bookmarkTapGestureRecognizer)
+        bookmark.addGestureRecognizer(bookmarkTapGestureRecognizer)
         
-        // Initialize ReportIcon gesture
-        ReportIcon.isUserInteractionEnabled = true
+        // Initialize report icon gesture
+        reportIcon.isUserInteractionEnabled = true
         let reportTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(reportIconTapped))
-        ReportIcon.addGestureRecognizer(reportTapGestureRecognizer)
+        reportIcon.addGestureRecognizer(reportTapGestureRecognizer)
     }
     
-    @objc func handleLikeTap() {
-        isThumbsUpFilled.toggle()
-        Like.image = UIImage(systemName: isThumbsUpFilled ? "hand.thumbsup.fill" : "hand.thumbsup")
-        
-        if isThumbsUpFilled {
-            // Unfill Dislike if Like is selected
-            isDislikeFilled = false
-            Dislike.image = UIImage(systemName: "hand.thumbsdown")
-            
-            // Update Firestore counters
-            updateCounter(for: "likeCount", increment: true)
-            if isDislikeFilled {
-                updateCounter(for: "dislikeCount", increment: false)
-            }
-        } else {
-            // Decrement the like counter
-            updateCounter(for: "likeCount", increment: false)
-        }
-    }
-    
-    @objc func handleDislikeTap() {
-        isDislikeFilled.toggle()
-        Dislike.image = UIImage(systemName: isDislikeFilled ? "hand.thumbsdown.fill" : "hand.thumbsdown")
-        
-        if isDislikeFilled {
-            // Unfill Like if Dislike is selected
-            isThumbsUpFilled = false
-            Like.image = UIImage(systemName: "hand.thumbsup")
-            
-            // Update Firestore counters
-            updateCounter(for: "dislikeCount", increment: true)
-            if isThumbsUpFilled {
-                updateCounter(for: "likeCount", increment: false)
-            }
-        } else {
-            // Decrement the dislike counter
-            updateCounter(for: "dislikeCount", increment: false)
-        }
-    }
-    
-    func updateCounter(for field: String, increment: Bool) {
-        let postID = "postID1" // Replace with the actual post ID
-        let postRef = db.collection("posts").document(postID)
-        
-        // Check if the document exists
-        postRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                // If the document exists, update the specified counter
-                postRef.updateData([
-                    field: FieldValue.increment(increment ? Int64(1) : Int64(-1))
-                ]) { error in
-                    if let error = error {
-                        print("Error updating \(field): \(error)")
-                    } else {
-                        print("\(field) successfully updated!")
-                    }
-                }
-            } else {
-                // If the document doesn't exist, create it with initial values
-                let initialData: [String: Any] = [
-                    "likeCount": field == "likeCount" && increment ? 1 : 0,
-                    "dislikeCount": field == "dislikeCount" && increment ? 1 : 0
-                ]
-                postRef.setData(initialData) { error in
-                    if let error = error {
-                        print("Error creating document: \(error)")
-                    } else {
-                        print("Document created with initial data: \(initialData)")
-                    }
-                }
-            }
-        }
-    }
-    
-    @objc func handleBookmarkTap() {
-        isBookmarkFilled.toggle()
-        BookMark.image = UIImage(systemName: isBookmarkFilled ? "bookmark.fill" : "bookmark")
-    }
-    
-    @IBAction func CancelTicket(_ sender: Any) {
+    @IBAction func cancelReservation(_ sender: Any) {
         let alertController = UIAlertController(
-            title: "Cancel Ticket",
+            title: "Cancel Reservation",
             message: "Are you sure you want to cancel this ticket?",
             preferredStyle: .alert
         )
         
         let confirmAction = UIAlertAction(title: "Yes", style: .default) { _ in
-            print("Ticket has been canceled successfully!")
+            print("Ticket canceled!")
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            print("Cancel reservation cancelled.")
+        }
         
         alertController.addAction(confirmAction)
         alertController.addAction(cancelAction)
         
         present(alertController, animated: true, completion: nil)
+    }
+    
+    @objc func handleThumbsUpTap() {
+        isThumbsUpFilled.toggle()
+        thumbsUpImageView.image = UIImage(systemName: isThumbsUpFilled ? "hand.thumbsup.fill" : "hand.thumbsup")
+    }
+
+    @objc func handleBookmarkTap() {
+        isBookmarkFilled.toggle()
+        bookmark.image = UIImage(systemName: isBookmarkFilled ? "bookmark.fill" : "bookmark")
     }
     
     @objc func reportIconTapped() {
@@ -146,9 +75,9 @@ class CancelTicket: UIViewController {
             preferredStyle: .alert
         )
         
+        // Add a text field to the alert
         alertController.addTextField { textField in
             textField.placeholder = "Describe the issue"
-            textField.font = UIFont.systemFont(ofSize: 14)
         }
         
         let submitAction = UIAlertAction(title: "Submit", style: .default) { _ in
