@@ -85,7 +85,7 @@
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="Ii7-WA-NeQ" kind="show" id="feC-vL-lEJ"/>
+                                    <segue destination="Ii7-WA-NeQ" kind="show" id="qAz-jn-FBu"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="gear" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="WoM-v5-XW0">
@@ -110,7 +110,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="optionCell" id="i12-KI-cPA">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="historyCell" id="i12-KI-cPA">
                                         <rect key="frame" x="0.0" y="50" width="393" height="47.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="i12-KI-cPA" id="zZd-By-qI8">
@@ -131,23 +131,22 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="6A4-Rt-Y4h"/>
                     <connections>
                         <outlet property="tableView" destination="38Y-50-rtA" id="WGZ-vC-BQr"/>
-                        <segue destination="PtM-kD-nT2" kind="show" identifier="showBuyTicket" id="zcx-3t-BFw"/>
-                        <segue destination="Kw7-eE-sw8" kind="push" identifier="showNotifyMe" id="VXy-Fe-uSk"/>
-                        <segue destination="3Wd-3y-T9h" kind="push" identifier="showCancelTicket" id="lOC-oi-bsr"/>
+                        <segue destination="PtM-kD-nT2" kind="show" identifier="showBuyTicket" id="lS8-l1-plb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1233" y="-917"/>
+            <point key="canvasLocation" x="2860.3053435114502" y="-1146.4788732394368"/>
         </scene>
         <!--Eventh-->
         <scene sceneID="Qs9-RW-L7K">
             <objects>
                 <viewController id="Ii7-WA-NeQ" customClass="Eventh" customModule="EventGuru02" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cjb-nU-sYO">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVJ-Kr-Olr">
@@ -265,18 +264,19 @@
                     <navigationItem key="navigationItem" id="Ddd-yA-pSB"/>
                     <connections>
                         <outlet property="tableView" destination="NuI-gf-HvF" id="YqQ-xR-ymN"/>
+                        <segue destination="3Wd-3y-T9h" kind="show" identifier="showCancelTicket" id="v7E-4Z-e4B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oVw-ci-jVW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2118" y="-918"/>
+            <point key="canvasLocation" x="4485" y="-548"/>
         </scene>
         <!--Cancel Ticket-->
         <scene sceneID="gBi-eI-Pwt">
             <objects>
-                <viewController storyboardIdentifier="CancelTicket" id="3Wd-3y-T9h" customClass="CancelTicket" customModule="EventGuru02" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CancelTicket" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3Wd-3y-T9h" customClass="CancelTicket" customModule="EventGuru02" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nJ3-BM-6Su">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="exclamationmark.bubble" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9c6-4W-zfN">
@@ -377,7 +377,7 @@
                                     <color key="baseBackgroundColor" red="0.86078912019999998" green="0.0" blue="0.03159954223" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="cancelTicket:" destination="3Wd-3y-T9h" eventType="touchUpInside" id="epO-Ns-pki"/>
+                                    <action selector="cancelTicket:" destination="3Wd-3y-T9h" eventType="touchUpInside" id="9fn-sj-gy6"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="bookmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="g7x-A2-quk">
@@ -419,14 +419,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KYj-MS-jp5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1233" y="-2"/>
+            <point key="canvasLocation" x="4485" y="180"/>
         </scene>
         <!--Buy Ticket-->
         <scene sceneID="kp5-2d-yZ7">
             <objects>
                 <viewController storyboardIdentifier="BuyTicket" id="PtM-kD-nT2" customClass="BuyTicket" customModule="EventGuru02" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AdB-D4-oPC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="exclamationmark.bubble" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Mto-4E-dRB">
@@ -576,7 +576,7 @@
             <objects>
                 <viewController storyboardIdentifier="Notify" id="Kw7-eE-sw8" customClass="Notify" customModule="EventGuru02" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="toO-BF-eF5">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8b2-Pg-wKM">
@@ -727,7 +727,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jSR-1A-Xk8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2001" y="-2"/>
+            <point key="canvasLocation" x="2521" y="525"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HGB-mQ-mcX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wb4-Uc-y8n" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JII-6i-0AB">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="omM-0X-baW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pd6-dy-kPB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1933.5877862595419" y="-1146.4788732394368"/>
         </scene>
     </scenes>
     <resources>

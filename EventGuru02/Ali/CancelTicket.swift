@@ -18,37 +18,31 @@ class CancelTicket: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Initialize gestures
         initializeGestures()
     }
     
     // MARK: - Initialize Gestures
     func initializeGestures() {
-        Like.image = UIImage(systemName: "hand.thumbsup")
-        Like.isUserInteractionEnabled = true
-        Like.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleLikeTap)))
-        
-        Dislike.image = UIImage(systemName: "hand.thumbsdown")
-        Dislike.isUserInteractionEnabled = true
-        Dislike.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleDislikeTap)))
-        
-        BookMark.image = UIImage(systemName: "bookmark")
-        BookMark.isUserInteractionEnabled = true
-        BookMark.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleBookmarkTap)))
-        
-        ReportIcon.isUserInteractionEnabled = true
-        ReportIcon.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(reportIconTapped)))
+        setupGesture(for: Like, action: #selector(handleLikeTap), defaultImage: "hand.thumbsup")
+        setupGesture(for: Dislike, action: #selector(handleDislikeTap), defaultImage: "hand.thumbsdown")
+        setupGesture(for: BookMark, action: #selector(handleBookmarkTap), defaultImage: "bookmark")
+        setupGesture(for: ReportIcon, action: #selector(reportIconTapped))
+    }
+    
+    func setupGesture(for imageView: UIImageView, action: Selector, defaultImage: String? = nil) {
+        if let defaultImage = defaultImage {
+            imageView.image = UIImage(systemName: defaultImage)
+        }
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: action))
     }
     
     // MARK: - Like and Dislike Actions
     @objc func handleLikeTap() {
-        isThumbsUpFilled.toggle()
-        Like.image = UIImage(systemName: isThumbsUpFilled ? "hand.thumbsup.fill" : "hand.thumbsup")
+        toggleIconState(for: &isThumbsUpFilled, imageView: Like, filledImage: "hand.thumbsup.fill", defaultImage: "hand.thumbsup")
         
         if isThumbsUpFilled {
-            isDislikeFilled = false
-            Dislike.image = UIImage(systemName: "hand.thumbsdown")
+            toggleIconState(for: &isDislikeFilled, imageView: Dislike, filledImage: "hand.thumbsdown.fill", defaultImage: "hand.thumbsdown", setTo: false)
             updateCounter(for: "likeCount", increment: true)
         } else {
             updateCounter(for: "likeCount", increment: false)
@@ -56,16 +50,19 @@ class CancelTicket: UIViewController {
     }
     
     @objc func handleDislikeTap() {
-        isDislikeFilled.toggle()
-        Dislike.image = UIImage(systemName: isDislikeFilled ? "hand.thumbsdown.fill" : "hand.thumbsdown")
+        toggleIconState(for: &isDislikeFilled, imageView: Dislike, filledImage: "hand.thumbsdown.fill", defaultImage: "hand.thumbsdown")
         
         if isDislikeFilled {
-            isThumbsUpFilled = false
-            Like.image = UIImage(systemName: "hand.thumbsup")
+            toggleIconState(for: &isThumbsUpFilled, imageView: Like, filledImage: "hand.thumbsup.fill", defaultImage: "hand.thumbsup", setTo: false)
             updateCounter(for: "dislikeCount", increment: true)
         } else {
             updateCounter(for: "dislikeCount", increment: false)
         }
+    }
+    
+    func toggleIconState(for state: inout Bool, imageView: UIImageView, filledImage: String, defaultImage: String, setTo: Bool? = nil) {
+        state = setTo ?? !state
+        imageView.image = UIImage(systemName: state ? filledImage : defaultImage)
     }
     
     // MARK: - Counter Update
@@ -89,8 +86,7 @@ class CancelTicket: UIViewController {
     
     // MARK: - Bookmark Action
     @objc func handleBookmarkTap() {
-        isBookmarkFilled.toggle()
-        BookMark.image = UIImage(systemName: isBookmarkFilled ? "bookmark.fill" : "bookmark")
+        toggleIconState(for: &isBookmarkFilled, imageView: BookMark, filledImage: "bookmark.fill", defaultImage: "bookmark")
     }
     
     // MARK: - Cancel Ticket Action
@@ -119,24 +115,7 @@ class CancelTicket: UIViewController {
                     print("Error canceling ticket: \(error.localizedDescription)")
                 } else {
                     print("Ticket canceled successfully!")
-                    
-                    // Remove from history
-                    self.db.collection("history").whereField("ticketID", isEqualTo: ticketID).getDocuments { snapshot, historyError in
-                        if let historyError = historyError {
-                            print("Error fetching history for deletion: \(historyError.localizedDescription)")
-                        } else {
-                            snapshot?.documents.forEach { document in
-                                document.reference.delete { deleteError in
-                                    if let deleteError = deleteError {
-                                        print("Error deleting history entry: \(deleteError.localizedDescription)")
-                                    } else {
-                                        print("History entry deleted successfully!")
-                                        self.navigationController?.popViewController(animated: true)
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    self.deleteFromHistory(ticketID)
                 }
             }
         }
@@ -146,6 +125,21 @@ class CancelTicket: UIViewController {
         alertController.addAction(cancelAction)
         present(alertController, animated: true, completion: nil)
     }
+    
+    func deleteFromHistory(_ ticketID: String) {
+        db.collection("history")
+            .whereField("ticketID", isEqualTo: ticketID)
+            .getDocuments { snapshot, error in
+                if let error = error {
+                    print("Error deleting from history: \(error.localizedDescription)")
+                } else {
+                    snapshot?.documents.forEach { $0.reference.delete() }
+                    print("Ticket deleted from history successfully!")
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
+    }
+    
     // MARK: - Report Issue Action
     @objc func reportIconTapped() {
         let alertController = UIAlertController(

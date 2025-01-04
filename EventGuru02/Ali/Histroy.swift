@@ -18,10 +18,6 @@ class Histroy: UIViewController {
            let destinationVC = segue.destination as? BuyTicket,
            let ticketID = sender as? String {
             destinationVC.ticketID = ticketID
-        } else if segue.identifier == "showCancelTicket",
-                  let destinationVC = segue.destination as? CancelTicket,
-                  let ticketID = sender as? String {
-            destinationVC.ticketID = ticketID
         }
     }
 }
@@ -29,16 +25,8 @@ class Histroy: UIViewController {
 // MARK: - UITableViewDelegate
 extension Histroy: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedTicketID = ticketIDs[indexPath.row] // Get the ticket ID
-        
-        switch indexPath.row {
-        case 0: // Buy Ticket
-            performSegue(withIdentifier: "showBuyTicket", sender: selectedTicketID)
-        case 1: // Cancel Ticket
-            performSegue(withIdentifier: "showCancelTicket", sender: selectedTicketID)
-        default:
-            break
-        }
+        let selectedTicketID = ticketIDs[indexPath.row]
+        performSegue(withIdentifier: "showBuyTicket", sender: selectedTicketID)
     }
 }
 
@@ -49,7 +37,7 @@ extension Histroy: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "optionCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "historyCell", for: indexPath)
         cell.textLabel?.text = options[indexPath.row]
         return cell
     }
