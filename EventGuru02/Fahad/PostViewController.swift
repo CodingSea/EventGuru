@@ -96,7 +96,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                 "eventName": eventName,
                 "description": description,
                 "location": location,
-                "price": priceText,  // Store price as a string
+                "price": priceText,  
                 "category": category,
                 "startDate": startDate,
                 "endDate": endDate,

@@ -9,9 +9,11 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth
 
-class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, EventCellDelegate {
+class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, EventCellDelegate, EventEditDelegate {
     
     @IBOutlet weak var EventTable: UITableView!
+    
+    var isSegueActive = false // Track if a segue is in progress
     
     var db: Firestore!
     var events = [Event]() // All events
@@ -57,18 +59,38 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     // Implement the EventCellDelegate method for edit
     func didTapEditButton(eventID: String) {
-        // Perform the segue to the EventPosting view controller
-        performSegue(withIdentifier: "Fahad-EventEditing", sender: eventID)
+        // Check if a segue is already active
+        if !isSegueActive {
+            isSegueActive = true
+            performSegue(withIdentifier: "Fahad-EventEditing", sender: eventID)
+        }
+    }
+    
+    func didUpdateEvent() {
+        fetchUserEvents() // Fetch events created by the current user
     }
 
     // Prepare for segue to pass the eventID
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Fahad-EventEditing", let destinationVC = segue.destination as? EventEditViewController {
             if let eventID = sender as? String {
+                destinationVC.delegate = self // Set the delegate
                 destinationVC.eventID = eventID // Pass the eventID to the destination view controller
             }
         }
     }
+    
+    // Reset the flag when returning from the segue
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        isSegueActive = false // Reset the flag
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        isSegueActive = false // Reset the flag when view disappears
+    }
+    
     
     // Implement the EventCellDelegate method
     func didTapDeleteButton(eventID: String) {

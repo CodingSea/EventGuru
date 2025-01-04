@@ -6,6 +6,10 @@ import FirebaseFirestore
 import FirebaseAuth
 import Cloudinary
 
+protocol EventEditDelegate: AnyObject {
+    func didUpdateEvent()
+}
+
 class EventEditViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var eventID: String?
@@ -23,6 +27,8 @@ class EventEditViewController: UIViewController, UIImagePickerControllerDelegate
     
     @IBOutlet weak var textView: UITextView!
     var selectedCategory: String?
+    
+    weak var delegate: EventEditDelegate?
     
     let validCategories = [
         "Entertainment",
@@ -44,9 +50,7 @@ class EventEditViewController: UIViewController, UIImagePickerControllerDelegate
         textView.layer.borderColor = UIColor.lightGray.cgColor
         
         if let eventID = eventID {
-            print(eventID)
-            EventName.text = eventID
-            // Load the existing event data for editing
+            
             loadEventData(eventID: eventID)
         }
     }
@@ -88,8 +92,13 @@ class EventEditViewController: UIViewController, UIImagePickerControllerDelegate
     func updateEvent(eventID: String) {
         let updatedEventData: [String: Any] = [
             "eventName": EventName.text ?? "",
+            "description": Description.text ?? "",
             "price": price.text ?? "",
-            // Add other fields as necessary
+            "location": Description.text ?? "",
+            "category": Category.text ?? "",
+            "startDate": startDatePicker.date,
+            "endDate": endDatePicker.date,
+            "ImagePath": EventHelper.getImagePath()
         ]
         
         db.collection("AddEvents").document(eventID).updateData(updatedEventData) { error in
@@ -97,7 +106,7 @@ class EventEditViewController: UIViewController, UIImagePickerControllerDelegate
                 print("Error updating event: \(error.localizedDescription)")
             } else {
                 print("Event updated successfully!")
-                // Optionally, navigate back or clear fields
+                self.delegate?.didUpdateEvent() // Notify delegate
                 self.navigationController?.popViewController(animated: true)
             }
         }
@@ -168,9 +177,58 @@ class EventEditViewController: UIViewController, UIImagePickerControllerDelegate
             
             // Load data into UI elements
             self?.EventName.text = data["eventName"] as? String
+            self?.Description.text = data["description"] as? String
             self?.price.text = data["price"] as? String
-            // Load other fields as necessary
+            self?.Location.text = data["location"] as? String
+            self?.Category.text = data["category"] as? String
+            
+            
+            // Get startDate and endDate from Firestore
+            if let startDateTimestamp = data["startDate"] as? Timestamp {
+                self?.startDatePicker.date = startDateTimestamp.dateValue()
+            }
+            
+            if let endDateTimestamp = data["endDate"] as? Timestamp {
+                self?.endDatePicker.date = endDateTimestamp.dateValue()
+            }
+            
+            
+            // Load the image from Cloudinary
+            if let imageUrl = URL(string: data["ImagePath"] as! String) {
+                self?.fetchImage(from: imageUrl) { image in
+                    DispatchQueue.main.async {
+                        self?.imageView.image = image // Assuming you have an IBOutlet for UIImageView
+                    }
+                }
+            }
+            
+            
         }
     }
+    
+    
+    
+    
+    // Function to fetch the image from Cloudinary
+    private func fetchImage(from url: URL, completion: @escaping (UIImage?) -> Void) {
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                print("Error fetching image: \(error.localizedDescription)")
+                completion(nil)
+                return
+            }
+            
+            guard let data = data, let image = UIImage(data: data) else {
+                completion(nil)
+                return
+            }
+            
+            completion(image)
+        }
+        
+        task.resume()
+    }
+    
+    
         
 }

@@ -29,9 +29,10 @@ class EventTableViewCell: UITableViewCell {
     }
     
     
-    @IBAction func editBtn(_ sender: Any)
+    @IBAction func editBtn(_ sender: UIButton)
     {
         guard let eventID = eventId else { return }
+        
         delegate?.didTapEditButton(eventID: eventID)
     }
     

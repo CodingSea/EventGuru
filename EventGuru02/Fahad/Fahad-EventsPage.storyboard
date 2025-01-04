@@ -251,6 +251,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="146" id="DY9-9N-WB5"/>
                                     <constraint firstAttribute="width" constant="363" id="IqM-It-lEa"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="363" id="RSa-iU-DtK"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jvI-Xo-dAQ">
