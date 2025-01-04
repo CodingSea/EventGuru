@@ -57,6 +57,13 @@ class EventEditViewController: UIViewController, UIImagePickerControllerDelegate
     
     @IBOutlet weak var imageView: UIImageView!
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let eventID = eventID {
+            loadEventData(eventID: eventID) // Load data every time the view appears
+        }
+    }
+    
     
     @IBAction func selectPhotoTapped(_ sender: UIButton) {
         let imagePicker = UIImagePickerController()
@@ -98,7 +105,7 @@ class EventEditViewController: UIViewController, UIImagePickerControllerDelegate
             "category": Category.text ?? "",
             "startDate": startDatePicker.date,
             "endDate": endDatePicker.date,
-            "ImagePath": EventHelper.getImagePath()
+            //"ImagePath": EventHelper.getImagePath()
         ]
         
         db.collection("AddEvents").document(eventID).updateData(updatedEventData) { error in
@@ -107,7 +114,7 @@ class EventEditViewController: UIViewController, UIImagePickerControllerDelegate
             } else {
                 print("Event updated successfully!")
                 self.delegate?.didUpdateEvent() // Notify delegate
-                self.navigationController?.popViewController(animated: true)
+                self.dismiss(animated: true, completion: nil)
             }
         }
     }

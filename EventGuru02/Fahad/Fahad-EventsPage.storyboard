@@ -65,7 +65,7 @@
                                                     <buttonConfiguration key="configuration" style="plain" image="pencil.circle" catalog="system" title="Edit"/>
                                                     <connections>
                                                         <action selector="editBtn:" destination="f5L-xe-ECd" eventType="touchUpInside" id="cqD-hf-x93"/>
-                                                        <segue destination="v9k-ZH-rdC" kind="presentation" identifier="Fahad-EventEditing" id="ais-gP-ALf"/>
+                                                        <segue destination="v9k-ZH-rdC" kind="presentation" identifier="Fahad-EventEditing" modalPresentationStyle="fullScreen" id="ais-gP-ALf"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -154,7 +154,7 @@
             <objects>
                 <viewController storyboardIdentifier="Fahad-EventEditing" id="v9k-ZH-rdC" customClass="EventEditViewController" customModule="EventGuru02" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mcd-K3-84S">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bni-Or-sWv">

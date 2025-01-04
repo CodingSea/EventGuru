@@ -23,6 +23,7 @@
 		296DC0CA2D28040900615A0F /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296DC0C92D28040900615A0F /* EventsViewController.swift */; };
 		296DC0CC2D2806AC00615A0F /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296DC0CB2D2806AC00615A0F /* EventTableViewCell.swift */; };
 		296DC0CE2D2846E900615A0F /* Fahad-EventEditing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 296DC0CD2D2846E900615A0F /* Fahad-EventEditing.storyboard */; };
+		2983CE552D29B0330082B7D0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2983CE542D29B0330082B7D0 /* LoginViewController.swift */; };
 		29A1A5672D01C68E002009D6 /* Fahad-Event Posting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */; };
 		3F1252552D058A1700E25E5F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3F1252542D058A1700E25E5F /* FirebaseAuth */; };
 		3F1252592D058A1700E25E5F /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 3F1252582D058A1700E25E5F /* FirebaseCore */; };
@@ -69,6 +70,7 @@
 		296DC0C92D28040900615A0F /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		296DC0CB2D2806AC00615A0F /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		296DC0CD2D2846E900615A0F /* Fahad-EventEditing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Fahad-EventEditing.storyboard"; sourceTree = "<group>"; };
+		2983CE542D29B0330082B7D0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Fahad-Event Posting.storyboard"; sourceTree = "<group>"; };
 		3F7FFE8A2CF7281900391A5F /* EventGuru02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventGuru02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7FFE8D2CF7281900391A5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 			children = (
 				83FA8D9D2D005FF90012E4B5 /* UserLogin.storyboard */,
 				83FA8D9F2D0068100012E4B5 /* Abdullah-Settings.storyboard */,
+				2983CE542D29B0330082B7D0 /* LoginViewController.swift */,
 				D4C1CA9E2D01D22100555861 /* Register.storyboard */,
 				D0A9EF5F2D1B2F6500CB69BE /* Interest.storyboard */,
 				66561A582D2406C4007A5DEC /* InterestViewController.swift */,
@@ -324,6 +327,7 @@
 				04092DD22D1FFF9300C95B34 /* HomeViewController.swift in Sources */,
 				046D4D082D2384E600BEE9AE /* EventEditingViewController.swift in Sources */,
 				04092DD42D1FFFAA00C95B34 /* HomeTableViewCell.swift in Sources */,
+				2983CE552D29B0330082B7D0 /* LoginViewController.swift in Sources */,
 				296DC0CA2D28040900615A0F /* EventsViewController.swift in Sources */,
 				E639D15F2D2420690065F53F /* EventHelper.swift in Sources */,
 				3F7FFE902CF7281900391A5F /* SceneDelegate.swift in Sources */,
