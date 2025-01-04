@@ -12,6 +12,7 @@
 		2156E7692D299C2F00604999 /* Histroy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2156E7682D299C2F00604999 /* Histroy.swift */; };
 		2156E76B2D299C3B00604999 /* Notify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2156E76A2D299C3700604999 /* Notify.swift */; };
 		2156E76D2D299C6000604999 /* CancelTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2156E76C2D299C6000604999 /* CancelTicket.swift */; };
+		2156E76F2D29A0C800604999 /* Eventh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2156E76E2D29A0C800604999 /* Eventh.swift */; };
 		29A1A5672D01C68E002009D6 /* Fahad-Event Posting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */; };
 		29F005EC2D1F041E00F88FFC /* Post2ViewController 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F005EA2D1F041E00F88FFC /* Post2ViewController 2.swift */; };
 		29F005ED2D1F041E00F88FFC /* PostViewController 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F005EB2D1F041E00F88FFC /* PostViewController 2.swift */; };
@@ -44,6 +45,7 @@
 		2156E7682D299C2F00604999 /* Histroy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Histroy.swift; sourceTree = "<group>"; };
 		2156E76A2D299C3700604999 /* Notify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notify.swift; sourceTree = "<group>"; };
 		2156E76C2D299C6000604999 /* CancelTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelTicket.swift; sourceTree = "<group>"; };
+		2156E76E2D29A0C800604999 /* Eventh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eventh.swift; sourceTree = "<group>"; };
 		29A1A5662D01C68E002009D6 /* Fahad-Event Posting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Fahad-Event Posting.storyboard"; sourceTree = "<group>"; };
 		29F005EA2D1F041E00F88FFC /* Post2ViewController 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post2ViewController 2.swift"; sourceTree = "<group>"; };
 		29F005EB2D1F041E00F88FFC /* PostViewController 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostViewController 2.swift"; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				2156E7612D299ABF00604999 /* BuyTicket.swift */,
 				2156E76C2D299C6000604999 /* CancelTicket.swift */,
 				2156E76A2D299C3700604999 /* Notify.swift */,
+				2156E76E2D29A0C800604999 /* Eventh.swift */,
 			);
 			path = Ali;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0A9EF642D1B2F9D00CB69BE /* CellTableViewCell.swift in Sources */,
+				2156E76F2D29A0C800604999 /* Eventh.swift in Sources */,
 				2156E7632D299ABF00604999 /* BuyTicket.swift in Sources */,
 				2156E76B2D299C3B00604999 /* Notify.swift in Sources */,
 				3F7FFE922CF7281900391A5F /* ViewController.swift in Sources */,

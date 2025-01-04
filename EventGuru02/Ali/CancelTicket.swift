@@ -1,8 +1,10 @@
 import UIKit
 import Firebase
+import FirebaseAuth
 
 class CancelTicket: UIViewController {
     
+    var ticketID: String?
     let db = Firestore.firestore()
     
     @IBOutlet weak var Like: UIImageView!
@@ -17,46 +19,38 @@ class CancelTicket: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Initialize Like (thumbs up) image and gesture
-        Like.image = UIImage(systemName: "hand.thumbsup")
-        Like.isUserInteractionEnabled = true
-        let likeTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleLikeTap))
-        Like.addGestureRecognizer(likeTapGestureRecognizer)
-        
-        // Initialize Dislike image and gesture
-        Dislike.image = UIImage(systemName: "hand.thumbsdown")
-        Dislike.isUserInteractionEnabled = true
-        let dislikeTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleDislikeTap))
-        Dislike.addGestureRecognizer(dislikeTapGestureRecognizer)
-        
-        // Initialize Bookmark image and gesture
-        BookMark.image = UIImage(systemName: "bookmark")
-        BookMark.isUserInteractionEnabled = true
-        let bookmarkTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleBookmarkTap))
-        BookMark.addGestureRecognizer(bookmarkTapGestureRecognizer)
-        
-        // Initialize ReportIcon gesture
-        ReportIcon.isUserInteractionEnabled = true
-        let reportTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(reportIconTapped))
-        ReportIcon.addGestureRecognizer(reportTapGestureRecognizer)
+        // Initialize gestures
+        initializeGestures()
     }
     
+    // MARK: - Initialize Gestures
+    func initializeGestures() {
+        Like.image = UIImage(systemName: "hand.thumbsup")
+        Like.isUserInteractionEnabled = true
+        Like.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleLikeTap)))
+        
+        Dislike.image = UIImage(systemName: "hand.thumbsdown")
+        Dislike.isUserInteractionEnabled = true
+        Dislike.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleDislikeTap)))
+        
+        BookMark.image = UIImage(systemName: "bookmark")
+        BookMark.isUserInteractionEnabled = true
+        BookMark.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleBookmarkTap)))
+        
+        ReportIcon.isUserInteractionEnabled = true
+        ReportIcon.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(reportIconTapped)))
+    }
+    
+    // MARK: - Like and Dislike Actions
     @objc func handleLikeTap() {
         isThumbsUpFilled.toggle()
         Like.image = UIImage(systemName: isThumbsUpFilled ? "hand.thumbsup.fill" : "hand.thumbsup")
         
         if isThumbsUpFilled {
-            // Unfill Dislike if Like is selected
             isDislikeFilled = false
             Dislike.image = UIImage(systemName: "hand.thumbsdown")
-            
-            // Update Firestore counters
             updateCounter(for: "likeCount", increment: true)
-            if isDislikeFilled {
-                updateCounter(for: "dislikeCount", increment: false)
-            }
         } else {
-            // Decrement the like counter
             updateCounter(for: "likeCount", increment: false)
         }
     }
@@ -66,61 +60,46 @@ class CancelTicket: UIViewController {
         Dislike.image = UIImage(systemName: isDislikeFilled ? "hand.thumbsdown.fill" : "hand.thumbsdown")
         
         if isDislikeFilled {
-            // Unfill Like if Dislike is selected
             isThumbsUpFilled = false
             Like.image = UIImage(systemName: "hand.thumbsup")
-            
-            // Update Firestore counters
             updateCounter(for: "dislikeCount", increment: true)
-            if isThumbsUpFilled {
-                updateCounter(for: "likeCount", increment: false)
-            }
         } else {
-            // Decrement the dislike counter
             updateCounter(for: "dislikeCount", increment: false)
         }
     }
     
+    // MARK: - Counter Update
     func updateCounter(for field: String, increment: Bool) {
-        let postID = "postID1" // Replace with the actual post ID
-        let postRef = db.collection("posts").document(postID)
+        guard let ticketID = ticketID else {
+            print("No ticket ID provided.")
+            return
+        }
+        let ticketRef = db.collection("tickets").document(ticketID)
         
-        // Check if the document exists
-        postRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                // If the document exists, update the specified counter
-                postRef.updateData([
-                    field: FieldValue.increment(increment ? Int64(1) : Int64(-1))
-                ]) { error in
-                    if let error = error {
-                        print("Error updating \(field): \(error)")
-                    } else {
-                        print("\(field) successfully updated!")
-                    }
-                }
+        ticketRef.updateData([
+            field: FieldValue.increment(increment ? Int64(1) : Int64(-1))
+        ]) { error in
+            if let error = error {
+                print("Error updating \(field): \(error.localizedDescription)")
             } else {
-                // If the document doesn't exist, create it with initial values
-                let initialData: [String: Any] = [
-                    "likeCount": field == "likeCount" && increment ? 1 : 0,
-                    "dislikeCount": field == "dislikeCount" && increment ? 1 : 0
-                ]
-                postRef.setData(initialData) { error in
-                    if let error = error {
-                        print("Error creating document: \(error)")
-                    } else {
-                        print("Document created with initial data: \(initialData)")
-                    }
-                }
+                print("\(field) successfully updated!")
             }
         }
     }
     
+    // MARK: - Bookmark Action
     @objc func handleBookmarkTap() {
         isBookmarkFilled.toggle()
         BookMark.image = UIImage(systemName: isBookmarkFilled ? "bookmark.fill" : "bookmark")
     }
     
-    @IBAction func CancelTicket(_ sender: Any) {
+    // MARK: - Cancel Ticket Action
+    @IBAction func cancelTicket(_ sender: Any) {
+        guard let ticketID = ticketID else {
+            print("No ticket ID provided.")
+            return
+        }
+        
         let alertController = UIAlertController(
             title: "Cancel Ticket",
             message: "Are you sure you want to cancel this ticket?",
@@ -128,17 +107,46 @@ class CancelTicket: UIViewController {
         )
         
         let confirmAction = UIAlertAction(title: "Yes", style: .default) { _ in
-            print("Ticket has been canceled successfully!")
+            print("User confirmed cancellation.")
+            
+            // Update ticket status in Firestore
+            self.db.collection("tickets").document(ticketID).setData([
+                "status": "available",
+                "userID": "",
+                "timestamp": FieldValue.serverTimestamp()
+            ], merge: true) { error in
+                if let error = error {
+                    print("Error canceling ticket: \(error.localizedDescription)")
+                } else {
+                    print("Ticket canceled successfully!")
+                    
+                    // Remove from history
+                    self.db.collection("history").whereField("ticketID", isEqualTo: ticketID).getDocuments { snapshot, historyError in
+                        if let historyError = historyError {
+                            print("Error fetching history for deletion: \(historyError.localizedDescription)")
+                        } else {
+                            snapshot?.documents.forEach { document in
+                                document.reference.delete { deleteError in
+                                    if let deleteError = deleteError {
+                                        print("Error deleting history entry: \(deleteError.localizedDescription)")
+                                    } else {
+                                        print("History entry deleted successfully!")
+                                        self.navigationController?.popViewController(animated: true)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         alertController.addAction(confirmAction)
         alertController.addAction(cancelAction)
-        
         present(alertController, animated: true, completion: nil)
     }
-    
+    // MARK: - Report Issue Action
     @objc func reportIconTapped() {
         let alertController = UIAlertController(
             title: "Report Issue",
@@ -148,19 +156,16 @@ class CancelTicket: UIViewController {
         
         alertController.addTextField { textField in
             textField.placeholder = "Describe the issue"
-            textField.font = UIFont.systemFont(ofSize: 14)
         }
         
         let submitAction = UIAlertAction(title: "Submit", style: .default) { _ in
-            let reportText = alertController.textFields?.first?.text
-            print("User submitted a report: \(reportText ?? "")")
+            let reportText = alertController.textFields?.first?.text ?? "No description provided"
+            print("User reported an issue: \(reportText)")
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         alertController.addAction(submitAction)
         alertController.addAction(cancelAction)
-        
         present(alertController, animated: true, completion: nil)
     }
 }
