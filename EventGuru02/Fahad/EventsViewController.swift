@@ -40,7 +40,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 DispatchQueue.main.async {
                     // Ensure the cell is still visible and matches the task identifier
                     if let updatedCell = tableView?.cellForRow(at: indexPath) as? EventTableViewCell, indexPath.row == taskIdentifier {
-                        updatedCell.EventImage.image = image // Set the loaded image
+                        cell?.EventImage.image = image // Set the loaded image
                     }
                 }
             }
