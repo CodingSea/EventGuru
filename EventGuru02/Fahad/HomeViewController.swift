@@ -30,6 +30,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
            fetchEvents() // Fetch all events initially
            fetchUserInterestsAndFilter() // make it start with the filtered events
            filterEvents()
+           EventTable.reloadData()
        }
        
        // MARK: - Fetch Events from Firestore (All Events Initially)
@@ -133,6 +134,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func filterButton(_ sender: Any) {
         
         fetchUserInterestsAndFilter()
+        EventTable.reloadData()
     }
     
     
@@ -146,8 +148,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
+    var imageCache = NSCache<NSString, UIImage>()
     // Function to fetch the image from Cloudinary
     private func fetchImage(from url: URL, completion: @escaping (UIImage?) -> Void) {
+        // Check the cache first
+        if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) {
+            completion(cachedImage)
+            return
+        }
+        
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
                 print("Error fetching image: \(error.localizedDescription)")
@@ -159,6 +168,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 completion(nil)
                 return
             }
+            
+            // Cache the image
+            self.imageCache.setObject(image, forKey: url.absoluteString as NSString)
             
             completion(image)
         }
