@@ -101,7 +101,7 @@ class EventEditViewController: UIViewController, UIImagePickerControllerDelegate
             "eventName": EventName.text ?? "",
             "description": Description.text ?? "",
             "price": price.text ?? "",
-            "location": Description.text ?? "",
+            "location": Location.text ?? "",
             "category": Category.text ?? "",
             "startDate": startDatePicker.date,
             "endDate": endDatePicker.date,
