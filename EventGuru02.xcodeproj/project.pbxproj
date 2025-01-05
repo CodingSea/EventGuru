@@ -46,6 +46,10 @@
 		66561A5D2D240746007A5DEC /* EventEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66561A5C2D240746007A5DEC /* EventEditViewController.swift */; };
 		83FA8D9E2D005FF90012E4B5 /* UserLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83FA8D9D2D005FF90012E4B5 /* UserLogin.storyboard */; };
 		83FA8DA02D0068100012E4B5 /* Abdullah-Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83FA8D9F2D0068100012E4B5 /* Abdullah-Settings.storyboard */; };
+		D0988AFD2D2B4AE900DB92F6 /* UsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0988AFB2D2B4AE900DB92F6 /* UsersListViewController.swift */; };
+		D0988AFE2D2B4AE900DB92F6 /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0988AFA2D2B4AE900DB92F6 /* UserDetailsViewController.swift */; };
+		D0988AFF2D2B4AE900DB92F6 /* AdminRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0988AF92D2B4AE900DB92F6 /* AdminRegisterViewController.swift */; };
+		D0988B002D2B4AE900DB92F6 /* AdminDash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0988AF82D2B4AE900DB92F6 /* AdminDash.storyboard */; };
 		D0A9EF602D1B2F6500CB69BE /* Interest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A9EF5F2D1B2F6500CB69BE /* Interest.storyboard */; };
 		D4C1CA9F2D01D22100555861 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4C1CA9E2D01D22100555861 /* Register.storyboard */; };
 		E639D1532D23FF020065F53F /* Ali - Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E639D1522D23FF020065F53F /* Ali - Profile.storyboard */; };
@@ -92,6 +96,10 @@
 		66561A5C2D240746007A5DEC /* EventEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventEditViewController.swift; sourceTree = "<group>"; };
 		83FA8D9D2D005FF90012E4B5 /* UserLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserLogin.storyboard; sourceTree = "<group>"; };
 		83FA8D9F2D0068100012E4B5 /* Abdullah-Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Abdullah-Settings.storyboard"; sourceTree = "<group>"; };
+		D0988AF82D2B4AE900DB92F6 /* AdminDash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminDash.storyboard; sourceTree = "<group>"; };
+		D0988AF92D2B4AE900DB92F6 /* AdminRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminRegisterViewController.swift; sourceTree = "<group>"; };
+		D0988AFA2D2B4AE900DB92F6 /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
+		D0988AFB2D2B4AE900DB92F6 /* UsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewController.swift; sourceTree = "<group>"; };
 		D0A9EF5F2D1B2F6500CB69BE /* Interest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interest.storyboard; sourceTree = "<group>"; };
 		D4C1CA9E2D01D22100555861 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		E639D1522D23FF020065F53F /* Ali - Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Ali - Profile.storyboard"; sourceTree = "<group>"; };
@@ -183,6 +191,7 @@
 		3F7FFE8C2CF7281900391A5F /* EventGuru02 */ = {
 			isa = PBXGroup;
 			children = (
+				D0988AFC2D2B4AE900DB92F6 /* Yousif */,
 				04E48D2A2D203F3900A08F87 /* Marwa */,
 				83FA8D9C2D005FE30012E4B5 /* Abdullah */,
 				3F67A4682CFC48E2003FEAB2 /* Ali */,
@@ -218,6 +227,17 @@
 				3FAD45CC2D1C5FB40086476D /* TestViewController.swift */,
 			);
 			path = Abdullah;
+			sourceTree = "<group>";
+		};
+		D0988AFC2D2B4AE900DB92F6 /* Yousif */ = {
+			isa = PBXGroup;
+			children = (
+				D0988AF82D2B4AE900DB92F6 /* AdminDash.storyboard */,
+				D0988AF92D2B4AE900DB92F6 /* AdminRegisterViewController.swift */,
+				D0988AFA2D2B4AE900DB92F6 /* UserDetailsViewController.swift */,
+				D0988AFB2D2B4AE900DB92F6 /* UsersListViewController.swift */,
+			);
+			path = Yousif;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0988B002D2B4AE900DB92F6 /* AdminDash.storyboard in Resources */,
 				E639D1552D2400830065F53F /* Admin-Main.storyboard in Resources */,
 				29008DDE2D28022900C209E5 /* Fahad-EventsPage.storyboard in Resources */,
 				04E48D2B2D203F3900A08F87 /* explorepage.storyboard in Resources */,
@@ -322,6 +343,9 @@
 				3F7FFE922CF7281900391A5F /* ViewController.swift in Sources */,
 				3FAD45C92D1C2D660086476D /* RegisterViewController.swift in Sources */,
 				66561A5B2D240742007A5DEC /* PostViewController.swift in Sources */,
+				D0988AFD2D2B4AE900DB92F6 /* UsersListViewController.swift in Sources */,
+				D0988AFE2D2B4AE900DB92F6 /* UserDetailsViewController.swift in Sources */,
+				D0988AFF2D2B4AE900DB92F6 /* AdminRegisterViewController.swift in Sources */,
 				04779CFE2D21A8E5004A349F /* DashboardTableViewCell.swift in Sources */,
 				3F7FFE8E2CF7281900391A5F /* AppDelegate.swift in Sources */,
 				04092DD22D1FFF9300C95B34 /* HomeViewController.swift in Sources */,
