@@ -81,7 +81,9 @@
                                                 <constraint firstItem="bKY-IW-reX" firstAttribute="top" secondItem="DNY-GN-lNS" secondAttribute="bottom" constant="30" id="3Yh-pk-20D"/>
                                                 <constraint firstItem="30H-bB-MFd" firstAttribute="top" secondItem="sCO-zU-YjW" secondAttribute="top" constant="31" id="4e0-FC-hdi"/>
                                                 <constraint firstItem="DNY-GN-lNS" firstAttribute="leading" secondItem="30H-bB-MFd" secondAttribute="trailing" constant="8" id="7z7-Nb-oyh"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="30H-bB-MFd" secondAttribute="bottom" constant="20" id="EJp-k4-1zv"/>
                                                 <constraint firstItem="drw-6O-e7p" firstAttribute="top" secondItem="sCO-zU-YjW" secondAttribute="topMargin" constant="19" id="QrT-nw-86Q"/>
+                                                <constraint firstItem="DNY-GN-lNS" firstAttribute="leading" secondItem="30H-bB-MFd" secondAttribute="trailing" constant="8" symbolic="YES" id="RmZ-kU-U1r"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="hCC-wY-Olc" secondAttribute="bottom" constant="16" id="SgO-dk-0zC"/>
                                                 <constraint firstItem="hCC-wY-Olc" firstAttribute="leading" secondItem="bKY-IW-reX" secondAttribute="trailing" id="Wc0-Xq-ubF"/>
                                                 <constraint firstItem="DNY-GN-lNS" firstAttribute="top" secondItem="sCO-zU-YjW" secondAttribute="topMargin" constant="23" id="csJ-zb-eC0"/>

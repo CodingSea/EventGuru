@@ -28,8 +28,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
            EventTable.dataSource = self
            
            fetchEvents() // Fetch all events initially
-           fetchUserInterestsAndFilter() // make it start with the filtered events
-           filterEvents()
+           //fetchUserInterestsAndFilter() // make it start with the filtered events
+           //filterEvents()
            EventTable.reloadData()
        }
        
