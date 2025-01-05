@@ -4,8 +4,8 @@ class Histroy: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    let options = ["Buy Ticket", "Cancel Ticket", "Notify Me if Available"]
-    let ticketIDs = ["ticket1", "ticket2", "ticket3"] // Example ticket IDs
+    let options = ["AWS", "MOVEON", "2025", "SWIFT BASICS", "Learn how to Read"]
+    let ticketIDs = ["ticket1", "ticket2", "ticket3", "ticket4", "ticket5"] // Adjusted to match options count
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,8 +16,9 @@ class Histroy: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showBuyTicket",
            let destinationVC = segue.destination as? BuyTicket,
-           let ticketID = sender as? String {
-            destinationVC.ticketID = ticketID
+           let data = sender as? (ticketID: String, eventName: String) {
+            destinationVC.ticketID = data.ticketID
+            destinationVC.eventName = data.eventName // Pass the event name
         }
     }
 }
@@ -26,7 +27,8 @@ class Histroy: UIViewController {
 extension Histroy: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedTicketID = ticketIDs[indexPath.row]
-        performSegue(withIdentifier: "showBuyTicket", sender: selectedTicketID)
+        let selectedEventName = options[indexPath.row] // Get the corresponding event name
+        performSegue(withIdentifier: "showBuyTicket", sender: (selectedTicketID, selectedEventName))
     }
 }
 

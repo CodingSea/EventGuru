@@ -9,7 +9,6 @@ class CancelTicket: UIViewController {
     
     @IBOutlet weak var Like: UIImageView!
     @IBOutlet weak var Dislike: UIImageView!
-    @IBOutlet weak var BookMark: UIImageView!
     @IBOutlet weak var ReportIcon: UIImageView!
     
     var isThumbsUpFilled = false
@@ -25,7 +24,7 @@ class CancelTicket: UIViewController {
     func initializeGestures() {
         setupGesture(for: Like, action: #selector(handleLikeTap), defaultImage: "hand.thumbsup")
         setupGesture(for: Dislike, action: #selector(handleDislikeTap), defaultImage: "hand.thumbsdown")
-        setupGesture(for: BookMark, action: #selector(handleBookmarkTap), defaultImage: "bookmark")
+    
         setupGesture(for: ReportIcon, action: #selector(reportIconTapped))
     }
     
@@ -84,10 +83,6 @@ class CancelTicket: UIViewController {
         }
     }
     
-    // MARK: - Bookmark Action
-    @objc func handleBookmarkTap() {
-        toggleIconState(for: &isBookmarkFilled, imageView: BookMark, filledImage: "bookmark.fill", defaultImage: "bookmark")
-    }
     
     // MARK: - Cancel Ticket Action
     @IBAction func cancelTicket(_ sender: Any) {

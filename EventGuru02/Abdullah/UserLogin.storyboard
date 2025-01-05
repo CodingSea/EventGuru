@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nOO-X0-cBm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nOO-X0-cBm">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -171,10 +171,10 @@
             </objects>
             <point key="canvasLocation" x="883" y="6"/>
         </scene>
-        <!--Abdullah-Settings-->
+        <!--Ali-->
         <scene sceneID="AC9-mH-34p">
             <objects>
-                <viewControllerPlaceholder storyboardName="Abdullah-Settings" id="DJN-PO-Hs1" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Ali" id="DJN-PO-Hs1" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="tNk-hS-ia8"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U0V-VY-1Zo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

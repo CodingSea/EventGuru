@@ -22,7 +22,6 @@ class Eventh: UIViewController {
     }
     
     func fetchHistory() {
-        // Add Firestore snapshot listener
         listener = db.collection("history")
             .order(by: "timestamp", descending: true)
             .addSnapshotListener { [weak self] snapshot, error in
@@ -33,18 +32,24 @@ class Eventh: UIViewController {
                     return
                 }
                 
+                guard let snapshot = snapshot else {
+                    print("No snapshot data found.")
+                    return
+                }
+                
                 self.historyData = [] // Reset history data
                 
-                snapshot?.documents.forEach { document in
+                for document in snapshot.documents {
                     let data = document.data()
+                    print("Fetched document data: \(data)")
+                    
                     if let action = data["action"] as? String,
-                       action == "Buy",
-                       let ticketID = data["ticketID"] as? String {
-                        self.historyData.append((action: action, ticketID: ticketID))
+                       let ticketID = data["ticketID"] as? String,
+                       let userName = data["userName"] as? String {
+                        self.historyData.append((action: "\(action) (Purchased by \(userName))", ticketID: ticketID))
                     }
                 }
                 
-                // Reload tableView data on the main thread
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
@@ -60,13 +65,13 @@ extension Eventh: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "historyCell") else {
-            fatalError("Cell with identifier 'historyCell' not found")
+            fatalError("Cell with identifier 'historyCell' not found.")
         }
         let history = historyData[indexPath.row]
-        cell.textLabel?.text = "\(history.action) Ticket (\(history.ticketID))"
+        cell.textLabel?.text = "\(history.action) - Ticket ID: \(history.ticketID)" // Display action and ticket details
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true) // Deselect row after tap
         let selectedTicket = historyData[indexPath.row]
