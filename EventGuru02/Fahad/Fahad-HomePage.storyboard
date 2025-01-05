@@ -74,21 +74,12 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kj9-lK-1fo">
-                                <rect key="frame" x="27" y="162" width="161" height="39"/>
+                                <rect key="frame" x="11" y="162" width="195" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Events By Interest"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Recommended Events"/>
                                 <connections>
                                     <action selector="filterButton:" destination="RhS-tR-DXT" eventType="touchUpInside" id="oiz-DY-ZfB"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWR-2O-WC8">
-                                <rect key="frame" x="214" y="162" width="163" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="All Events"/>
-                                <connections>
-                                    <action selector="allEvents:" destination="RhS-tR-DXT" eventType="touchUpInside" id="XyB-AM-bOq"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event guru" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFE-B3-Kad">
@@ -102,6 +93,15 @@
                                 <rect key="frame" x="5" y="103" width="69" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWR-2O-WC8">
+                                <rect key="frame" x="222" y="162" width="163" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="All Events"/>
+                                <connections>
+                                    <action selector="allEvents:" destination="RhS-tR-DXT" eventType="touchUpInside" id="XyB-AM-bOq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Kxy-L3-Cdq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

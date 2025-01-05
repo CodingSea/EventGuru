@@ -28,6 +28,12 @@ class EventTableViewCell: UITableViewCell {
      
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        EventImage.image = nil // Reset the image
+        EventName.text = nil // Reset the title
+        EventPrice.text = nil // Reset the price
+    }
     
     @IBAction func editBtn(_ sender: UIButton)
     {

@@ -29,11 +29,19 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let event = filteredEvents[indexPath.row]
         
+        // Set a placeholder image while loading
+        cell?.EventImage.image = UIImage(named: "pp") // Use a placeholder
+        
         // Load the image from Cloudinary
         if let imageUrl = URL(string: event.imagePath) {
-            fetchImage(from: imageUrl) { image in
+            // Use a unique identifier to avoid loading the wrong image
+            let taskIdentifier = indexPath.row
+            fetchImage(from: imageUrl) { [weak self, weak tableView] image in
                 DispatchQueue.main.async {
-                    cell?.EventImage.image = image // Assuming you have an IBOutlet for UIImageView
+                    // Ensure the cell is still visible and matches the task identifier
+                    if let updatedCell = tableView?.cellForRow(at: indexPath) as? EventTableViewCell, indexPath.row == taskIdentifier {
+                        updatedCell.EventImage.image = image // Set the loaded image
+                    }
                 }
             }
         }
@@ -94,7 +102,21 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     // Implement the EventCellDelegate method
     func didTapDeleteButton(eventID: String) {
-        deleteEvent(eventID: eventID)
+        // Show confirmation alert
+        let alert = UIAlertController(title: "Delete Event",
+                                      message: "Are you sure you want to delete this event?",
+                                      preferredStyle: .alert)
+
+        // Cancel action
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+        // Delete action
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
+            self.deleteEvent(eventID: eventID) // Call the delete method if confirmed
+        }))
+
+        // Present the alert
+        self.present(alert, animated: true, completion: nil)
     }
     
     func deleteEvent(eventID: String) {
@@ -151,8 +173,16 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     */
     
+    
+    var imageCache = NSCache<NSString, UIImage>()
     // Function to fetch the image from Cloudinary
     private func fetchImage(from url: URL, completion: @escaping (UIImage?) -> Void) {
+        // Check the cache first
+        if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) {
+            completion(cachedImage)
+            return
+        }
+        
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
                 print("Error fetching image: \(error.localizedDescription)")
@@ -164,6 +194,9 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 completion(nil)
                 return
             }
+            
+            // Cache the image
+            self.imageCache.setObject(image, forKey: url.absoluteString as NSString)
             
             completion(image)
         }
