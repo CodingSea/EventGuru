@@ -165,7 +165,7 @@ class UserDetailsViewController: UIViewController {
     // MARK: - Delete Button Action
     @IBAction func deleteButtonTapped(_ sender: UIButton) {
         guard let userId = userId else {
-            print("Error: User ID is nil")
+            print("Error: User ID is ni")
             return
         }
 
