@@ -17,7 +17,7 @@ class EventTableViewCell: UITableViewCell {
 
     @IBOutlet weak var EventImage: UIImageView!
     @IBOutlet weak var EventName: UILabel!
-    @IBOutlet weak var EventPrice: UILabel!
+    @IBOutlet weak var EventStatus: UILabel!
     
     var eventId: String?
     
@@ -32,7 +32,7 @@ class EventTableViewCell: UITableViewCell {
         super.prepareForReuse()
         EventImage.image = nil // Reset the image
         EventName.text = nil // Reset the title
-        EventPrice.text = nil // Reset the price
+        EventStatus.text = nil // Reset the price
     }
     
     @IBAction func editBtn(_ sender: UIButton)

@@ -47,7 +47,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
         cell?.EventName.text = event.eventName
-        cell?.EventPrice.text = event.price
+        cell?.EventStatus.text = event.status
         cell?.eventId = event.eventID
         cell?.delegate = self
         
@@ -147,10 +147,25 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self?.events = querySnapshot?.documents.compactMap { document -> Event? in
                     let data = document.data()
                     let eventName = data["eventName"] as? String ?? ""
-                    let price = data["price"] as? String ?? ""
                     let imagePath = data["ImagePath"] as? String ?? ""
                     
-                    return Event(eventID: document.documentID, eventName: eventName, price: price, imagePath: imagePath, eventPage: self)
+                    // Parse the start and end dates
+                    let startDate = (data["startDate"] as? Timestamp)?.dateValue() ?? Date()
+                    let endDate = (data["endDate"] as? Timestamp)?.dateValue() ?? Date()
+                    
+                    // Determine the status based on the current date
+                    let currentDate = Date()
+                    let status: String
+                    
+                    if currentDate < startDate {
+                        status = "coming-soon"
+                    } else if currentDate > endDate {
+                        status = "completed"
+                    } else {
+                        status = "on-going"
+                    }
+                    
+                    return Event(eventID: document.documentID, eventName: eventName, status: status, startDate: startDate, endDate: endDate, imagePath: imagePath)
                 } ?? []
                 
                 // Set filtered events to the fetched events
@@ -208,9 +223,10 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     {
         var eventID: String
         var eventName: String
-        var price: String
+        var status: String
+        var startDate: Date
+        var endDate: Date
         var imagePath: String
-        var eventPage: EventsViewController?
    }
 
 }
