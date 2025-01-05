@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GxJ-AF-G39">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vaa-ZO-gqC">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
@@ -114,7 +114,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event guru" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6R-FP-GYp">
-                                <rect key="frame" x="77" y="125" width="106" height="25"/>
+                                <rect key="frame" x="77" y="81" width="106" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="adt-lT-klc"/>
                                     <constraint firstAttribute="width" constant="106" id="lfy-fb-0e7"/>
@@ -124,7 +124,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="LU6-hI-iGo">
-                                <rect key="frame" x="0.0" y="109" width="69" height="50"/>
+                                <rect key="frame" x="0.0" y="65" width="69" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="jGS-fW-h5K"/>
                                     <constraint firstAttribute="width" constant="69" id="uBR-RZ-D5K"/>
@@ -144,7 +144,6 @@
                             <constraint firstItem="O6R-FP-GYp" firstAttribute="top" secondItem="uf2-FE-7o1" secondAttribute="top" constant="22" id="zgy-yx-FHq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="9NS-W7-yoe"/>
                     <connections>
                         <outlet property="EventTable" destination="Mnj-Yq-wQ4" id="7JE-cv-71u"/>
                     </connections>
@@ -152,24 +151,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vPi-a6-Fbv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3577.8625954198474" y="-279.57746478873241"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="6JD-a8-IaA">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GxJ-AF-G39" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RA8-gg-ZAb">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Vaa-ZO-gqC" kind="relationship" relationship="rootViewController" id="8AF-3a-yos"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mpE-Vw-IdX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2651.1450381679388" y="-279.57746478873241"/>
         </scene>
         <!--Event Edit View Controller-->
         <scene sceneID="MBg-t2-kXz">
