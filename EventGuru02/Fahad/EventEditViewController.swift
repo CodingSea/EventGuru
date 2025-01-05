@@ -150,7 +150,13 @@ class EventEditViewController: UIViewController, UIImagePickerControllerDelegate
             self.present(alert, animated: true, completion: nil)
         }
         
-        
+    
+    
+    @IBAction func back(_ sender: Any)
+    {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
         
         func uploadImage(image: UIImage, completion: @escaping (String?) -> Void) {
             guard let imageData = image.jpegData(compressionQuality: 0.8) else {

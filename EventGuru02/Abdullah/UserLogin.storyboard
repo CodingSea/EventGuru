@@ -305,10 +305,10 @@
         <!--Fahad-HomePage-->
         <scene sceneID="kll-3a-4xl">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="038-6J-cBn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="Fahad-HomePage" id="DU8-yx-aLb" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="A1a-0m-sK8"/>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="038-6J-cBn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3043" y="-520"/>
         </scene>
@@ -369,7 +369,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zWc-xP-Ztr">
-                                <rect key="frame" x="132" y="420" width="129" height="39"/>
+                                <rect key="frame" x="132" y="491" width="129" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Event Posting"/>
@@ -378,7 +378,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N64-8h-ybw">
-                                <rect key="frame" x="132" y="498" width="129" height="39"/>
+                                <rect key="frame" x="132" y="569" width="129" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Events Page"/>
@@ -387,12 +387,21 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4NQ-h5-8tI">
-                                <rect key="frame" x="132" y="573" width="129" height="39"/>
+                                <rect key="frame" x="132" y="644" width="129" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Home Page"/>
                                 <connections>
                                     <segue destination="DU8-yx-aLb" kind="presentation" modalPresentationStyle="fullScreen" id="wPk-rW-CGl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ez-u8-2s2">
+                                <rect key="frame" x="166" y="407" width="61" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Main"/>
+                                <connections>
+                                    <segue destination="Fjh-IP-HHX" kind="presentation" modalPresentationStyle="fullScreen" id="GgF-YK-XeT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -404,6 +413,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OgX-wb-l8z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2189" y="-996"/>
+        </scene>
+        <!--Fahad-Main-->
+        <scene sceneID="lEL-Fe-Vo8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Fahad-Main" id="Fjh-IP-HHX" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="sTX-dR-OWg"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GQY-wn-oPl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2790" y="-1031"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

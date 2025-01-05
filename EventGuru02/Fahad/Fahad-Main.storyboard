@@ -22,12 +22,14 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Jbe-x0-32S" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="e5g-9c-hFA">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="WcG-Dk-GiM" kind="relationship" relationship="viewControllers" id="BeA-xN-Fyw"/>
                         <segue destination="ybZ-xU-EqE" kind="relationship" relationship="viewControllers" id="7PB-99-zxw"/>
+                        <segue destination="bcD-Im-VoA" kind="relationship" relationship="viewControllers" id="tyz-hz-Mj7"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LK8-vu-LSg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -82,21 +84,21 @@
             </objects>
             <point key="canvasLocation" x="1288" y="482"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--Fahad-EventsPage-->
         <scene sceneID="BfI-WQ-rJg">
             <objects>
-                <viewControllerPlaceholder id="URH-Iz-wlS" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Fahad-EventsPage" id="URH-Iz-wlS" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="LG9-j9-Som"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fmg-M5-sHr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2132" y="1210"/>
         </scene>
-        <!--Item-->
+        <!--Events-->
         <scene sceneID="IkM-f9-F9w">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bcD-Im-VoA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="H1J-71-j1a"/>
+                    <tabBarItem key="tabBarItem" title="Events" image="calendar.circle" catalog="system" id="H1J-71-j1a"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="E72-pE-Psh">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -113,6 +115,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="calendar.circle" catalog="system" width="128" height="123"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="plus.circle" catalog="system" width="128" height="123"/>
     </resources>
