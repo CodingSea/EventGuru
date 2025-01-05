@@ -17,7 +17,6 @@ class Eventh: UIViewController {
     }
     
     deinit {
-        // Remove Firestore listener when the view controller is deallocated
         listener?.remove()
     }
     
@@ -38,6 +37,7 @@ class Eventh: UIViewController {
                 }
                 
                 self.historyData = [] // Reset history data
+                print("Fetched \(snapshot.documents.count) documents from history collection.")
                 
                 for document in snapshot.documents {
                     let data = document.data()
@@ -71,7 +71,7 @@ extension Eventh: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = "\(history.action) - Ticket ID: \(history.ticketID)" // Display action and ticket details
         return cell
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true) // Deselect row after tap
         let selectedTicket = historyData[indexPath.row]

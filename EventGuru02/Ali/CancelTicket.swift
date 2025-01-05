@@ -120,7 +120,7 @@ class CancelTicket: UIViewController {
         alertController.addAction(cancelAction)
         present(alertController, animated: true, completion: nil)
     }
-    
+
     func deleteFromHistory(_ ticketID: String) {
         db.collection("history")
             .whereField("ticketID", isEqualTo: ticketID)
@@ -134,7 +134,6 @@ class CancelTicket: UIViewController {
                 }
             }
     }
-    
     // MARK: - Report Issue Action
     @objc func reportIconTapped() {
         let alertController = UIAlertController(

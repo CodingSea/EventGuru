@@ -3,25 +3,72 @@ import Firebase
 import FirebaseAuth
 
 class BuyTicket: UIViewController {
+    // MARK: - Properties
     var ticketID: String? // Ticket ID passed dynamically
     var eventName: String?
+    var eventData: [String: Any]?
+
     let db = Firestore.firestore()
     
+    // MARK: - Outlets
+    
+    
+    @IBOutlet weak var eventNameLabel: UILabel!
     @IBOutlet weak var Like: UIImageView!
     @IBOutlet weak var Dislike: UIImageView!
     @IBOutlet weak var ReportIcon: UIImageView!
-    
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+
     var isThumbsUpFilled = false
     var isDislikeFilled = false
-    var isBookmarkFilled = false
+    
+    // MARK: - Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        displayEventData()
+        initializeGestures()
+        print("Ticket ID: \(ticketID ?? "None")")
+        print("Event Name: \(eventName ?? "None")")
+    }
+    
+    // MARK: - Display Event Data
+    func displayEventData() {
+        guard let eventData = eventData else {
+            print("No event data provided.")
+            return
+        }
+        
+        // Extract and display data
+        let eventName = eventData["eventName"] as? String ?? "Event"
+        let location = eventData["location"] as? String ?? "No location"
+        let description = eventData["description"] as? String ?? "No description"
+        let category = eventData["category"] as? String ?? "No category"
+        let price = eventData["price"] as? String ?? "0"
+        let endDate = formatDate(eventData["startDate"] as? Timestamp)
+        
+        eventNameLabel.text = eventName
+        locationLabel.text = location
+        descriptionLabel.text = description
+        categoryLabel.text = category
+        dateLabel.text = endDate
+        priceLabel.text = price
+    }
     
   
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    // MARK: - Format Date
+    func formatDate(_ timestamp: Timestamp?) -> String {
+        guard let timestamp = timestamp else { return "No date available" }
         
-        // Initialize gestures
-        initializeGestures()
+        let date = timestamp.dateValue()
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        return formatter.string(from: date)
     }
     
     // MARK: - Initialize Gestures
@@ -33,8 +80,6 @@ class BuyTicket: UIViewController {
         Dislike.image = UIImage(systemName: "hand.thumbsdown")
         Dislike.isUserInteractionEnabled = true
         Dislike.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleDislikeTap)))
-        
-        
         
         ReportIcon.isUserInteractionEnabled = true
         ReportIcon.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(reportIconTapped)))
@@ -86,8 +131,6 @@ class BuyTicket: UIViewController {
         }
     }
     
-  
-    
     // MARK: - Buy Ticket Action
     @IBAction func buyTicket(_ sender: Any) {
         guard let ticketID = ticketID, let eventName = eventName else {
@@ -100,24 +143,17 @@ class BuyTicket: UIViewController {
             return
         }
 
-        // Fetch user details from Firestore
         let userDocRef = db.collection("users").document(currentUser.uid)
-        userDocRef.getDocument { document, error in
+        userDocRef.getDocument { [weak self] document, error in
+            guard let self = self else { return }
+            
             if let error = error {
                 print("Error fetching user details: \(error.localizedDescription)")
                 return
             }
 
-            var userName = currentUser.displayName ?? "Unknown User"
-            var userEmail = currentUser.email ?? "No Email"
-
-            if let document = document, document.exists {
-                let userData = document.data()
-                userName = userData?["name"] as? String ?? userName
-                userEmail = userData?["email"] as? String ?? userEmail
-            } else {
-                print("User document does not exist. Using fallback user details.")
-            }
+            let userName = document?.data()?["name"] as? String ?? currentUser.displayName ?? "Unknown User"
+            let userEmail = document?.data()?["email"] as? String ?? currentUser.email ?? "No Email"
 
             let alertController = UIAlertController(
                 title: "Ticket Purchase",
@@ -125,46 +161,43 @@ class BuyTicket: UIViewController {
                 preferredStyle: .alert
             )
 
-            let confirmAction = UIAlertAction(title: "Yes", style: .default) { _ in
-                print("User confirmed purchase.")
-
-                // Save ticket purchase in Firestore
-                self.db.collection("tickets").document(ticketID).setData([
-                    "status": "bought",
-                    "userID": currentUser.uid,
-                    "userName": userName,
-                    "userEmail": userEmail,
-                    "timestamp": FieldValue.serverTimestamp()
-                ], merge: true) { error in
-                    if let error = error {
-                        print("Error saving ticket: \(error.localizedDescription)")
-                        return
-                    }
-                    print("Ticket saved successfully.")
-
-                    // Save purchase to history
-                    self.db.collection("history").addDocument(data: [
-                        "action": eventName,
-                        "ticketID": ticketID,
-                        "userID": currentUser.uid,
-                        "userName": userName,
-                        "userEmail": userEmail,
-                        "timestamp": FieldValue.serverTimestamp()
-                    ]) { historyError in
-                        if let historyError = historyError {
-                            print("Error saving history: \(historyError.localizedDescription)")
-                        } else {
-                            print("History saved successfully.")
-                            self.navigationController?.popViewController(animated: true)
-                        }
-                    }
+            alertController.addAction(UIAlertAction(title: "Yes", style: .default) { _ in
+                self.saveTicketPurchase(ticketID: ticketID, eventName: eventName, userName: userName, userEmail: userEmail)
+            })
+            alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+            self.present(alertController, animated: true)
+        }
+    }
+    
+    // MARK: - Save Ticket Purchase
+    func saveTicketPurchase(ticketID: String, eventName: String, userName: String, userEmail: String) {
+        db.collection("tickets").document(ticketID).setData([
+            "status": "bought",
+            "userID": Auth.auth().currentUser?.uid ?? "Unknown User",
+            "userName": userName,
+            "userEmail": userEmail,
+            "timestamp": FieldValue.serverTimestamp()
+        ], merge: true) { error in
+            if let error = error {
+                print("Error saving ticket: \(error.localizedDescription)")
+                return
+            }
+            print("Ticket saved successfully.")
+            
+            self.db.collection("history").addDocument(data: [
+                "action": "Bought \(eventName)",
+                "ticketID": ticketID,
+                "userID": Auth.auth().currentUser?.uid ?? "Unknown User",
+                "userName": userName,
+                "timestamp": FieldValue.serverTimestamp()
+            ]) { error in
+                if let error = error {
+                    print("Error saving to history: \(error.localizedDescription)")
+                } else {
+                    print("Purchase history saved successfully.")
+                    self.navigationController?.popViewController(animated: true)
                 }
             }
-
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-            alertController.addAction(confirmAction)
-            alertController.addAction(cancelAction)
-            self.present(alertController, animated: true, completion: nil)
         }
     }
     
@@ -180,14 +213,11 @@ class BuyTicket: UIViewController {
             textField.placeholder = "Describe the issue"
         }
         
-        let submitAction = UIAlertAction(title: "Submit", style: .default) { _ in
+        alertController.addAction(UIAlertAction(title: "Submit", style: .default) { _ in
             let reportText = alertController.textFields?.first?.text ?? "No description provided"
             print("User reported an issue: \(reportText)")
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        alertController.addAction(submitAction)
-        alertController.addAction(cancelAction)
-        present(alertController, animated: true, completion: nil)
+        })
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(alertController, animated: true)
     }
 }
