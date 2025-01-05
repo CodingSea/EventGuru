@@ -124,7 +124,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
            }
            
            cell?.EventName.text = event.eventName
-           cell?.EventPrice.text = event.price
+           cell?.EventStatus.text = event.price
            
            return cell ?? UITableViewCell()
        }

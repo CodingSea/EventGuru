@@ -123,7 +123,15 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                 return false
             }
             
-            // No need to validate price as a number anymore, it's stored as a string
+            // Check start and end dates
+            let startDate = startDatePicker.date
+            let endDate = endDatePicker.date
+            
+            if endDate < startDate {
+                showAlert(title: "Validation Error", message: "End date cannot be before start date.")
+                return false
+            }
+            
             return true
         }
         

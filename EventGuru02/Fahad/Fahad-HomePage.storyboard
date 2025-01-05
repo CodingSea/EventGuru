@@ -34,7 +34,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LDn-ux-ooQ">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pp" translatesAutoresizingMaskIntoConstraints="NO" id="LDn-ux-ooQ">
                                                     <rect key="frame" x="20" y="8" width="192" height="129"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="129" id="fFo-SS-s0Z"/>
@@ -63,7 +63,7 @@
                                         <connections>
                                             <outlet property="EventImage" destination="LDn-ux-ooQ" id="0FB-Sr-waL"/>
                                             <outlet property="EventName" destination="UpU-YA-n9K" id="kAl-1C-8C6"/>
-                                            <outlet property="EventPrice" destination="tl3-0k-Laq" id="WZI-dK-6p4"/>
+                                            <outlet property="EventStatus" destination="tl3-0k-Laq" id="WZI-dK-6p4"/>
                                             <outlet property="imageView" destination="LDn-ux-ooQ" id="IzT-ah-Pps"/>
                                         </connections>
                                     </tableViewCell>
@@ -136,6 +136,7 @@
     </scenes>
     <resources>
         <image name="Logo" width="202" height="162"/>
+        <image name="pp" width="1600" height="800"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

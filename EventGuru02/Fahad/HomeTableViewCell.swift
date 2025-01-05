@@ -14,7 +14,7 @@ class HomeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var EventName: UILabel!
     
-    @IBOutlet weak var EventPrice: UILabel!
+    @IBOutlet weak var EventStatus: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

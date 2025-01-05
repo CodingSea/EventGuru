@@ -121,19 +121,27 @@ class EventEditViewController: UIViewController, UIImagePickerControllerDelegate
     
     
     
-        func validateFields() -> Bool {
-            guard let eventName = EventName.text, !eventName.isEmpty,
-                  let description = Description.text, !description.isEmpty,
-                  let location = Location.text, !location.isEmpty,
-                  let priceText = price.text, !priceText.isEmpty,
-                  let category = Category.text, !category.isEmpty else {
-                showAlert(title: "Validation Error", message: "All fields are required.")
-                return false
-            }
-            
-            // No need to validate price as a number anymore, it's stored as a string
-            return true
+    func validateFields() -> Bool {
+        guard let eventName = EventName.text, !eventName.isEmpty,
+              let description = Description.text, !description.isEmpty,
+              let location = Location.text, !location.isEmpty,
+              let priceText = price.text, !priceText.isEmpty,
+              let category = Category.text, !category.isEmpty else {
+            showAlert(title: "Validation Error", message: "All fields are required.")
+            return false
         }
+        
+        // Check start and end dates
+        let startDate = startDatePicker.date
+        let endDate = endDatePicker.date
+        
+        if endDate < startDate {
+            showAlert(title: "Validation Error", message: "End date cannot be before start date.")
+            return false
+        }
+        
+        return true
+    }
         
         // Helper function to show alerts
         func showAlert(title: String, message: String) {
