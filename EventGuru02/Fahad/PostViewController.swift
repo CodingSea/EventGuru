@@ -169,6 +169,21 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             })
         }
         
-        
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        resetFields()
+    }
+    
+    func resetFields() {
+        EventName.text = ""
+        Description.text = ""
+        Location.text = ""
+        price.text = ""
+        Category.text = ""
+        selectedCategory = nil // Clear the selected category
+        imageView.image = nil // Clear the image
+        startDatePicker.date = Date() // Reset to current date
+        endDatePicker.date = Date() // Reset to current date
+    }
         
 }
