@@ -1,31 +1,189 @@
-//
-//  PostViewController.swift
-//  EventGuru02
-//
-//  Created by Fahad on 15/12/2024.
-//
 
+
+import Foundation
 import UIKit
+import FirebaseFirestore
+import FirebaseAuth
+import Cloudinary
 
-class PostViewController: UIViewController {
-
+class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    var db: Firestore!
+    var uid = Auth.auth().currentUser?.uid
+    
+    @IBOutlet weak var Description: UITextView!
+    @IBOutlet weak var EventName: UITextField!
+    @IBOutlet weak var price: UITextField!
+    @IBOutlet weak var Location: UITextField!
+    @IBOutlet weak var Category: UITextField!
+    @IBOutlet weak var startDatePicker: UIDatePicker!
+    @IBOutlet weak var endDatePicker: UIDatePicker!
+    
     @IBOutlet weak var textView: UITextView!
-    override func viewDidLoad() {
+    var selectedCategory: String?
+    
+    let validCategories = [
+        "Entertainment",
+        "Social Gatherings",
+        "Outdoor Activities",
+        "Personal Development",
+        "Technology",
+        "Fitness",
+        "Gaming",
+        "Sports"
+    ]
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-
-        self.textView.layer.borderColor = UIColor.lightGray.cgColor
-        self.textView.layer.borderWidth = 1
+        db = Firestore.firestore()
+        
+        textView.layer.borderWidth = 1
+        textView.layer.borderColor = UIColor.lightGray.cgColor
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBOutlet weak var imageView: UIImageView!
+    
+    
+    @IBAction func selectPhotoTapped(_ sender: UIButton) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
     }
-    */
-
+    
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let selectedImage = info[.originalImage] as? UIImage {
+            imageView.image = selectedImage
+        }
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func createEventBtn(_ sender: Any)
+    {
+        guard validateFields() else { return }
+        
+        // Gather the data from the fields
+        guard let eventName = EventName.text,
+              let description = Description.text,
+              let location = Location.text,
+              let priceText = price.text,
+              let category = Category.text,
+              let image = imageView.image else {
+            showAlert(title: "Validation Error", message: "Please fill all fields correctly.")
+            return
+        }
+        
+        // Validate the category (it must be one of the predefined valid categories)
+        if !validCategories.contains(category) {
+            showAlert(title: "Invalid Category", message: "Please choose a valid category.")
+            return
+        }
+        
+        // Convert the dates to timestamps
+        let startDate = startDatePicker.date
+        let endDate = endDatePicker.date
+            
+            // Create the event data to store in Firestore
+            let eventData: [String: Any] = [
+                "eventName": eventName,
+                "description": description,
+                "location": location,
+                "price": priceText,  
+                "category": category,
+                "startDate": startDate,
+                "endDate": endDate,
+                "ImagePath": EventHelper.getImagePath(),
+                "uid": uid ?? ""  // Use the current user's UID
+            ]
+            
+            // Save the event in Firestore under the "AddEvents" collection
+            db.collection("AddEvents").addDocument(data: eventData) { error in
+                if let error = error {
+                    self.showAlert(title: "Error", message: "Failed to create event: \(error.localizedDescription)")
+                } else {
+                    self.showAlert(title: "Success", message: "Event created successfully!")
+                }
+            }
+        }
+        func validateFields() -> Bool {
+            guard let eventName = EventName.text, !eventName.isEmpty,
+                  let description = Description.text, !description.isEmpty,
+                  let location = Location.text, !location.isEmpty,
+                  let priceText = price.text, !priceText.isEmpty,
+                  let category = Category.text, !category.isEmpty else {
+                showAlert(title: "Validation Error", message: "All fields are required.")
+                return false
+            }
+            
+            // Check start and end dates
+            let startDate = startDatePicker.date
+            let endDate = endDatePicker.date
+            
+            if endDate < startDate {
+                showAlert(title: "Validation Error", message: "End date cannot be before start date.")
+                return false
+            }
+            
+            return true
+        }
+        
+        // Helper function to show alerts
+        func showAlert(title: String, message: String) {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        
+        
+        func uploadImage(image: UIImage, completion: @escaping (String?) -> Void) {
+            guard let imageData = image.jpegData(compressionQuality: 0.8) else {
+                completion(nil)
+                return
+            }
+            
+            let uploadParams = CLDUploadRequestParams().setResourceType(.image)
+            
+            cloudinary.createUploader().upload(data: imageData, uploadPreset: "ml_default", completionHandler:  { result, error in
+                if let error = error {
+                    print("Error uploading image: \(error.localizedDescription)")
+                    completion(nil)
+                    return
+                }
+                
+                if let secureUrl = result?.secureUrl {
+                    print("Uploaded image URL: \(secureUrl)")
+                    completion(secureUrl)
+                    
+                } else {
+                    completion(nil)
+                }
+            })
+        }
+        
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        resetFields()
+    }
+    
+    func resetFields() {
+        EventName.text = ""
+        Description.text = ""
+        Location.text = ""
+        price.text = ""
+        Category.text = ""
+        selectedCategory = nil // Clear the selected category
+        imageView.image = nil // Clear the image
+        startDatePicker.date = Date() // Reset to current date
+        endDatePicker.date = Date() // Reset to current date
+    }
+        
 }

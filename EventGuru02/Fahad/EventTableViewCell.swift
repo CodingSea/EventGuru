@@ -1,0 +1,61 @@
+//
+//  ExploreTableViewCell.swift
+//  EventGuru02
+//
+//  Created by Mac on 22/12/2024.
+//
+
+import UIKit
+
+protocol EventCellDelegate: AnyObject
+{
+    func didTapDeleteButton(eventID: String)
+    func didTapEditButton(eventID: String)
+}
+
+class EventTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var EventImage: UIImageView!
+    @IBOutlet weak var EventName: UILabel!
+    @IBOutlet weak var EventStatus: UILabel!
+    
+    var eventId: String?
+    
+    weak var delegate: EventCellDelegate?
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+     
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        EventImage.image = nil // Reset the image
+        EventName.text = nil // Reset the title
+        EventStatus.text = nil // Reset the price
+    }
+    
+    @IBAction func editBtn(_ sender: UIButton)
+    {
+        guard let eventID = eventId else { return }
+        
+        delegate?.didTapEditButton(eventID: eventID)
+    }
+    
+    
+    @IBAction func deleteBtn(_ sender: Any)
+    {
+        guard let eventID = eventId else { return }
+        
+        delegate?.didTapDeleteButton(eventID: eventID)
+    }
+    
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+
+    
+}

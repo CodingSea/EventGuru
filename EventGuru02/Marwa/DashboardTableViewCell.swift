@@ -1,17 +1,27 @@
 //
-//  CellTableViewCell.swift
+//  DashboardTableViewCell.swift
 //  EventGuru02
 //
-//  Created by BP-36-201-17 on 24/12/2024.
+//  Created by Mac on 29/12/2024.
 //
 
 import UIKit
 
-class CellTableViewCell: UITableViewCell {
+class DashboardTableViewCell: UITableViewCell {
 
     
-    @IBOutlet weak var Label: UILabel!
-    @IBOutlet weak var Switchs: UISwitch!
+    @IBOutlet weak var eventImage: UIImageView!
+    
+    @IBOutlet weak var eventName: UILabel!
+    
+    @IBOutlet weak var price: UILabel!
+    
+    
+    @IBOutlet weak var reuse: UIButton!
+    
+    
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
