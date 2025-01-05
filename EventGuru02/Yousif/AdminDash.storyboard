@@ -256,6 +256,7 @@
                         <outlet property="nameTextField" destination="eel-tf-Xdv" id="PfL-WT-Aa7"/>
                         <outlet property="roleTextField" destination="XGT-ft-AOH" id="mcY-po-tTf"/>
                         <outlet property="saveButton" destination="xfl-hb-oZt" id="Tfd-sz-Tj7"/>
+                        <outlet property="userIcon" destination="FKy-dn-8sW" id="V2F-eZ-aeS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Qk-VM-hn7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -278,7 +279,7 @@
             </objects>
             <point key="canvasLocation" x="744" y="4"/>
         </scene>
-        <!--Users List-->
+        <!--Users List View Controller-->
         <scene sceneID="1rb-35-BJv">
             <objects>
                 <tableViewController storyboardIdentifier="AdminDash" id="Vqw-EH-Rlu" customClass="UsersListViewController" customModule="EventGuru02" customModuleProvider="target" sceneMemberID="viewController">
@@ -341,7 +342,17 @@
                             <outlet property="delegate" destination="Vqw-EH-Rlu" id="9wh-AH-clM"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Users List" id="Sr1-96-6O3">
+                    <navigationItem key="navigationItem" id="Sr1-96-6O3">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="iCr-dy-Lr5">
+                            <rect key="frame" x="159" y="3" width="75" height="38.333333333333336"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Create Account"/>
+                            <connections>
+                                <segue destination="Guk-Bk-4Cv" kind="push" id="zou-Sf-OsN"/>
+                            </connections>
+                        </button>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="rfj-wQ-ZJV">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="rfS-ye-Ns4">
                                 <rect key="frame" x="334" y="2.6666666666666679" width="43" height="39"/>

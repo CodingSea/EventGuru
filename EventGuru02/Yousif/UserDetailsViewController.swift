@@ -10,7 +10,9 @@ class UserDetailsViewController: UIViewController {
     @IBOutlet weak var joinDateTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
-
+    @IBOutlet weak var userIcon: UIImageView!
+    
+    
     // MARK: - Properties
     var userId: String?
     let db = Firestore.firestore()
@@ -29,6 +31,19 @@ class UserDetailsViewController: UIViewController {
 
         // Fetch user details from Firestore
         fetchUserDetails()
+        
+        // Use a default system image (SF Symbol)
+              if let defaultImage = UIImage(systemName: "person.crop.square") {
+                  userIcon.image = defaultImage
+                  userIcon.tintColor = .gray // Set a tint color for the system image
+              }
+              
+              // Configure the appearance
+              userIcon.contentMode = .scaleAspectFit // Ensures the image fits nicely within the bounds
+              
+              // Optional: Add a border
+              userIcon.layer.borderWidth = 2.0
+              userIcon.layer.borderColor = UIColor.lightGray.cgColor
     }
 
     // MARK: - Configure Editing Mode
