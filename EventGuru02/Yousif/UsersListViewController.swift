@@ -114,17 +114,20 @@ class UsersListViewController: UIViewController, UITableViewDataSource, UITableV
         }
 
         if let editButton = cell.viewWithTag(3) as? UIButton {
-            editButton.tag = indexPath.row
-            editButton.addTarget(self, action: #selector(editButtonTapped(_:)), for: .touchUpInside)
+            // Remove all existing targets to avoid duplicates
+            editButton.removeTarget(nil, action: nil, for: .allEvents)
+            // Add action specific to the current index path
+            editButton.addAction(UIAction { _ in
+                self.editButtonTapped(at: indexPath.row)
+            }, for: .touchUpInside)
         }
 
         return cell
     }
 
     // MARK: - Edit Button Action
-    @objc func editButtonTapped(_ sender: UIButton) {
-        let rowIndex = sender.tag
-        let user = filteredUsers[rowIndex]
+    func editButtonTapped(at index: Int) {
+        let user = filteredUsers[index]
         if let userId = user["uid"] as? String {
             print("Navigating to details with userId: \(userId)")
 
