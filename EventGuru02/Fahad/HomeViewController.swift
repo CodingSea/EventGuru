@@ -32,6 +32,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
            //filterEvents()
            EventTable.reloadData()
        }
+    
+        // Reset the flag when returning from the segue
+        override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+            fetchEvents() // Fetch events every time the view appears
+        }
        
        // MARK: - Fetch Events from Firestore (All Events Initially)
        func fetchEvents() {

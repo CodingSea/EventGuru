@@ -92,6 +92,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         isSegueActive = false // Reset the flag
+        fetchUserEvents() // Fetch events every time the view appears
     }
     
     override func viewDidDisappear(_ animated: Bool) {
