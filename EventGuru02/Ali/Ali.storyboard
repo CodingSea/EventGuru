@@ -85,7 +85,7 @@
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="Ii7-WA-NeQ" kind="show" id="qAz-jn-FBu"/>
+                                    <segue destination="Ii7-WA-NeQ" kind="show" identifier="" id="qAz-jn-FBu"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="gear" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="WoM-v5-XW0">
@@ -139,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2860.3053435114502" y="-1146.4788732394368"/>
+            <point key="canvasLocation" x="3543" y="-1291"/>
         </scene>
         <!--Eventh-->
         <scene sceneID="Qs9-RW-L7K">
@@ -250,7 +250,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oVw-ci-jVW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4485" y="-548"/>
+            <point key="canvasLocation" x="4404" y="-1042"/>
         </scene>
         <!--Cancel Ticket-->
         <scene sceneID="gBi-eI-Pwt">
@@ -278,7 +278,7 @@
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AWS Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPL-K9-8yb">
-                                <rect key="frame" x="152" y="118" width="89" height="21"/>
+                                <rect key="frame" x="143" y="118" width="175" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -347,7 +347,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Category Music" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekq-W2-xDW">
-                                <rect key="frame" x="62" y="574" width="120" height="21"/>
+                                <rect key="frame" x="62" y="574" width="307" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -358,7 +358,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10 BD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uvv-mg-Cd3">
-                                <rect key="frame" x="62" y="619" width="45" height="21"/>
+                                <rect key="frame" x="62" y="619" width="307" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -380,11 +380,17 @@
                         <outlet property="Dislike" destination="2gS-Hj-okN" id="Qob-2m-XOh"/>
                         <outlet property="Like" destination="xQE-of-7ft" id="kf6-hJ-OTD"/>
                         <outlet property="ReportIcon" destination="9c6-4W-zfN" id="xB2-3a-JQm"/>
+                        <outlet property="categoryLabel" destination="ekq-W2-xDW" id="AVx-C6-3jn"/>
+                        <outlet property="dateLabel" destination="YAL-Ad-xYh" id="xiR-so-WDl"/>
+                        <outlet property="descriptionLabel" destination="Ee8-HB-g1h" id="mWc-cd-UzN"/>
+                        <outlet property="eventNameLabel" destination="WPL-K9-8yb" id="iB5-LQ-B9i"/>
+                        <outlet property="locationLabel" destination="Ccx-dp-9sH" id="RA2-Sl-qm5"/>
+                        <outlet property="priceLabel" destination="Uvv-mg-Cd3" id="R2p-5I-d79"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KYj-MS-jp5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4485" y="180"/>
+            <point key="canvasLocation" x="4402.2900763358775" y="-56.338028169014088"/>
         </scene>
         <!--Buy Ticket-->
         <scene sceneID="kp5-2d-yZ7">
@@ -499,7 +505,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2u-Zr-2ON">
-                                <rect key="frame" x="53" y="612" width="67" height="21"/>
+                                <rect key="frame" x="53" y="612" width="286" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -524,7 +530,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9k8-Sv-dei" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="519.84732824427476" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="3543" y="-56"/>
         </scene>
         <!--Notify-->
         <scene sceneID="JKY-dB-HhW">
@@ -666,7 +672,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jSR-1A-Xk8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2519.8473282442746" y="524.64788732394368"/>
+            <point key="canvasLocation" x="-12550" y="404"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HGB-mQ-mcX">
@@ -684,7 +690,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pd6-dy-kPB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1933.5877862595419" y="-1146.4788732394368"/>
+            <point key="canvasLocation" x="2425" y="-1292"/>
         </scene>
     </scenes>
     <resources>

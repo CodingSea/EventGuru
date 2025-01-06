@@ -49,7 +49,13 @@ class Histroy: UIViewController {
             destinationVC.eventData = eventData
             destinationVC.ticketID = eventData["ticketID"] as? String
             destinationVC.eventName = eventData["eventName"] as? String
+            
         }
+        if segue.identifier == "showCancelTicket",
+            let destinationVC = segue.destination as? CancelTicket, // Ensure
+            let ticketID = sender as? String { // Pass the ticketID
+             destinationVC.ticketID = ticketID
+         }
     }
 }
 
@@ -99,4 +105,5 @@ extension Histroy: UITableViewDataSource {
         cell.textLabel?.text = options[indexPath.row]
         return cell
     }
+    
 }

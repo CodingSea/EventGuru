@@ -2,16 +2,19 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
+
+
 class BuyTicket: UIViewController {
     // MARK: - Properties
     var ticketID: String? // Ticket ID passed dynamically
     var eventName: String?
     var eventData: [String: Any]?
-
+    
     let db = Firestore.firestore()
     
     // MARK: - Outlets
     
+    @IBOutlet weak var eventImageView: UIImageView!
     
     @IBOutlet weak var eventNameLabel: UILabel!
     @IBOutlet weak var Like: UIImageView!
@@ -22,7 +25,7 @@ class BuyTicket: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-
+    
     var isThumbsUpFilled = false
     var isDislikeFilled = false
     
@@ -50,6 +53,7 @@ class BuyTicket: UIViewController {
         let price = eventData["price"] as? String ?? "0"
         let endDate = formatDate(eventData["startDate"] as? Timestamp)
         
+        
         eventNameLabel.text = eventName
         locationLabel.text = location
         descriptionLabel.text = description
@@ -58,7 +62,7 @@ class BuyTicket: UIViewController {
         priceLabel.text = price
     }
     
-  
+    
     
     // MARK: - Format Date
     func formatDate(_ timestamp: Timestamp?) -> String {
@@ -137,12 +141,12 @@ class BuyTicket: UIViewController {
             print("No ticket ID or event name provided.")
             return
         }
-
+        
         guard let currentUser = Auth.auth().currentUser else {
             print("User not authenticated.")
             return
         }
-
+        
         let userDocRef = db.collection("users").document(currentUser.uid)
         userDocRef.getDocument { [weak self] document, error in
             guard let self = self else { return }
@@ -151,16 +155,16 @@ class BuyTicket: UIViewController {
                 print("Error fetching user details: \(error.localizedDescription)")
                 return
             }
-
+            
             let userName = document?.data()?["name"] as? String ?? currentUser.displayName ?? "Unknown User"
             let userEmail = document?.data()?["email"] as? String ?? currentUser.email ?? "No Email"
-
+            
             let alertController = UIAlertController(
                 title: "Ticket Purchase",
                 message: "Are you sure you want to buy the ticket for \(eventName)?",
                 preferredStyle: .alert
             )
-
+            
             alertController.addAction(UIAlertAction(title: "Yes", style: .default) { _ in
                 self.saveTicketPurchase(ticketID: ticketID, eventName: eventName, userName: userName, userEmail: userEmail)
             })
@@ -213,11 +217,60 @@ class BuyTicket: UIViewController {
             textField.placeholder = "Describe the issue"
         }
         
-        alertController.addAction(UIAlertAction(title: "Submit", style: .default) { _ in
+        // Submit action to save the report
+        let submitAction = UIAlertAction(title: "Submit", style: .default) { [weak self] _ in
+            guard let self = self else { return }
+            
+            
             let reportText = alertController.textFields?.first?.text ?? "No description provided"
             print("User reported an issue: \(reportText)")
-        })
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+            
+            
+            self.saveReport(reportText)
+        }
+        
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        
+        alertController.addAction(submitAction)
+        alertController.addAction(cancelAction)
+        
+        
         present(alertController, animated: true)
+    }
+    
+    // MARK: - Save Report to Firestore
+    func saveReport(_ report: String) {
+        guard let ticketID = ticketID else {
+            print("No ticket ID provided.")
+            return
+        }
+        
+        let currentUserID = Auth.auth().currentUser?.uid ?? "Unknown User"
+        let reportData: [String: Any] = [
+            "ticketID": ticketID,
+            "userID": currentUserID,
+            "report": report,
+            "timestamp": FieldValue.serverTimestamp()
+        ]
+        
+        // Save the report as a new document in the "reports" collection
+        db.collection("reports").addDocument(data: reportData) { error in
+            if let error = error {
+                print("Error saving report: \(error.localizedDescription)")
+            } else {
+                print("Report saved successfully.")
+                
+                // Show confirmation alert
+                let confirmationAlert = UIAlertController(
+                    title: "Thank You",
+                    message: "Your report has been submitted successfully.",
+                    preferredStyle: .alert
+                )
+                confirmationAlert.addAction(UIAlertAction(title: "OK", style: .default))
+                self.present(confirmationAlert, animated: true)
+            }
+        }
     }
 }

@@ -11,6 +11,11 @@ import Firebase
 class Notify: UIViewController {
     let db = Firestore.firestore()
     
+    
+    
+    
+    
+    
     @IBOutlet weak var Like: UIImageView!
     @IBOutlet weak var Dislike: UIImageView!
     @IBOutlet weak var BookMark: UIImageView!

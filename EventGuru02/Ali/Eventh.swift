@@ -46,7 +46,7 @@ class Eventh: UIViewController {
                     if let action = data["action"] as? String,
                        let ticketID = data["ticketID"] as? String,
                        let userName = data["userName"] as? String {
-                        self.historyData.append((action: "\(action) (Purchased by \(userName))", ticketID: ticketID))
+                        self.historyData.append((action: "\(action) )", ticketID: ticketID))
                     }
                 }
                 
