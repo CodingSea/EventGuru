@@ -11,7 +11,9 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var db: Firestore!
     var events = [Event]() // All events
     var filteredEvents = [Event]() // Filtered events
-    var userUID = Auth.auth().currentUser?.uid
+    var userUID: String? {
+        return Auth.auth().currentUser?.uid
+    }
     var userRole: String? // User role (e.g., "Administrator" or "User")
     
     override func viewDidLoad() {
@@ -31,10 +33,12 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // MARK: - Fetch User Role
     func fetchUserRole(completion: @escaping (String?) -> Void) {
         guard let userUID = userUID else {
+            print("Error: User UID is nil.")
             completion(nil)
             return
         }
         
+        print("Fetching user role for UID: \(userUID)")
         db.collection("users").document(userUID).getDocument { document, error in
             if let error = error {
                 print("Error fetching user role: \(error.localizedDescription)")
@@ -42,7 +46,14 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 return
             }
             
-            let role = document?.data()?["role"] as? String
+            guard let data = document?.data() else {
+                print("No data found for user.")
+                completion(nil)
+                return
+            }
+
+            let role = data["role"] as? String
+            print("User role: \(role ?? "Unknown")")
             completion(role)
         }
     }
@@ -54,13 +65,17 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             return
         }
         
-        // Fetch all events if the user is an Administrator
         let query: Query
         if userRole == "Administrator" {
-            query = db.collection("AddEvents") // Fetch all events
+            print("Fetching all events for Administrator.")
+            query = db.collection("AddEvents") // Fetch all events for admins
         } else {
-            guard let userUID = userUID else { return }
-            query = db.collection("AddEvents").whereField("uid", isEqualTo: userUID) // Fetch only user's events
+            guard let userUID = userUID else {
+                print("Error: User UID is nil.")
+                return
+            }
+            print("Fetching events for User UID: \(userUID)")
+            query = db.collection("AddEvents").whereField("uid", isEqualTo: userUID) // Fetch user's events
         }
         
         query.getDocuments { [weak self] (querySnapshot, error) in
@@ -69,10 +84,21 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 return
             }
             
-            self?.events = querySnapshot?.documents.compactMap { document -> Event? in
+            self?.events = []
+            
+            let group = DispatchGroup() // To handle asynchronous calls
+            
+            querySnapshot?.documents.forEach { document in
                 let data = document.data()
                 let eventName = data["eventName"] as? String ?? ""
                 let imagePath = data["ImagePath"] as? String ?? ""
+                let uid = data["uid"] as? String ?? ""
+                
+                // Ignore events with empty uid
+                if uid.isEmpty {
+                    print("Skipping event with empty UID: \(document.documentID)")
+                    return
+                }
                 
                 // Parse the start and end dates
                 let startDate = (data["startDate"] as? Timestamp)?.dateValue() ?? Date()
@@ -81,7 +107,6 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 // Determine the status based on the current date
                 let currentDate = Date()
                 let status: String
-                
                 if currentDate < startDate {
                     status = "coming-soon"
                 } else if currentDate > endDate {
@@ -90,17 +115,38 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     status = "on-going"
                 }
                 
-                return Event(eventID: document.documentID, eventName: eventName, status: status, startDate: startDate, endDate: endDate, imagePath: imagePath)
-            } ?? []
+                group.enter() // Enter the dispatch group for each event
+                
+                // Fetch the creator's username using the uid
+                self?.db.collection("users").document(uid).getDocument { userDoc, error in
+                    if let error = error {
+                        print("Error fetching user info for UID (\(uid)): \(error.localizedDescription)")
+                        group.leave()
+                        return
+                    }
+                    
+                    let creatorName = userDoc?.data()?["username"] as? String ?? "Unknown"
+                    let event = Event(
+                        eventID: document.documentID,
+                        eventName: eventName,
+                        status: status,
+                        startDate: startDate,
+                        endDate: endDate,
+                        imagePath: imagePath,
+                        creatorName: creatorName
+                    )
+                    
+                    self?.events.append(event)
+                    group.leave() // Leave the dispatch group after fetching the username
+                }
+            }
             
-            // Set filtered events to the fetched events
-            self?.filteredEvents = self?.events ?? []
-            
-            // Reload table with events
-            self?.EventTable.reloadData()
+            group.notify(queue: .main) { // Notify when all async calls are done
+                self?.filteredEvents = self?.events ?? []
+                self?.EventTable.reloadData()
+            }
         }
     }
-    
     // MARK: - Table View Data Source and Delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredEvents.count
@@ -111,36 +157,56 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let event = filteredEvents[indexPath.row]
         
-        // Set a placeholder image while loading
-        cell?.EventImage.image = UIImage(named: "pp") // Use a placeholder
-        
-        // Load the image from Cloudinary
+        // Set the existing connected elements
+        cell?.EventImage.image = UIImage(named: "pp") // Placeholder image
         if let imageUrl = URL(string: event.imagePath) {
-            // Use a unique identifier to avoid loading the wrong image
-            let taskIdentifier = indexPath.row
-            fetchImage(from: imageUrl) { [weak self, weak tableView] image in
+            fetchImage(from: imageUrl) { [weak tableView] image in
                 DispatchQueue.main.async {
-                    // Ensure the cell is still visible and matches the task identifier
-                    if let updatedCell = tableView?.cellForRow(at: indexPath) as? EventTableViewCell, indexPath.row == taskIdentifier {
-                        updatedCell.EventImage.image = image // Set the loaded image
+                    if let updatedCell = tableView?.cellForRow(at: indexPath) as? EventTableViewCell {
+                        updatedCell.EventImage.image = image
                     }
                 }
             }
         }
-        
         cell?.EventName.text = event.eventName
         cell?.EventStatus.text = event.status
         cell?.eventId = event.eventID
         cell?.delegate = self
+       
+        let tagForCreatorName = 1001 
+        if let creatorNameLabel = cell?.contentView.viewWithTag(tagForCreatorName) as? UILabel {
+            // If the label already exists (cell reused), just update its text
+            creatorNameLabel.text = "Created by: \(event.creatorName)"
+        } else {
+            // Create and add the CreatorName label dynamically
+            let creatorNameLabel = UILabel()
+            creatorNameLabel.tag = tagForCreatorName // Assign a unique tag
+            creatorNameLabel.translatesAutoresizingMaskIntoConstraints = false
+            creatorNameLabel.font = UIFont.systemFont(ofSize: 14)
+            creatorNameLabel.textColor = .gray
+            creatorNameLabel.text = "Created by: \(event.creatorName)"
+            cell?.contentView.addSubview(creatorNameLabel)
+            
+            // Set constraints for the label
+            NSLayoutConstraint.activate([
+                creatorNameLabel.leadingAnchor.constraint(equalTo: cell!.EventName.leadingAnchor), // Align with EventName label
+                creatorNameLabel.topAnchor.constraint(equalTo: cell!.EventStatus.bottomAnchor, constant: 5), // Below EventStatus label
+                creatorNameLabel.trailingAnchor.constraint(equalTo: cell!.contentView.trailingAnchor, constant: -10),
+                creatorNameLabel.bottomAnchor.constraint(lessThanOrEqualTo: cell!.contentView.bottomAnchor, constant: -10) // Avoid overlap
+            ])
+        }
         
         return cell ?? UITableViewCell()
     }
     
     // MARK: - Edit Event
     func didTapEditButton(eventID: String) {
-        // Check if a segue is already active
         if !isSegueActive {
             isSegueActive = true
+            if eventID.isEmpty {
+                print("Error: eventID is empty.")
+                return
+            }
             performSegue(withIdentifier: "Fahad-EventEditing", sender: eventID)
         }
     }
@@ -149,24 +215,23 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         fetchUserEvents() // Fetch events after updating
     }
 
-    // Prepare for segue to pass the eventID
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Fahad-EventEditing", let destinationVC = segue.destination as? EventEditViewController {
             if let eventID = sender as? String {
-                destinationVC.delegate = self // Set the delegate
-                destinationVC.eventID = eventID // Pass the eventID to the destination view controller
+                destinationVC.delegate = self
+                destinationVC.eventID = eventID
             }
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        isSegueActive = false // Reset the flag
+        isSegueActive = false
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        isSegueActive = false // Reset the flag when view disappears
+        isSegueActive = false
     }
     
     // MARK: - Delete Event
@@ -226,5 +291,6 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         var startDate: Date
         var endDate: Date
         var imagePath: String
+        var creatorName: String // New field for creator's username
     }
 }

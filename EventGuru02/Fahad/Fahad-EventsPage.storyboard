@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vaa-ZO-gqC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vaa-ZO-gqC">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -43,12 +43,6 @@
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="98" id="hRy-hs-Jq9"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKY-IW-reX">
-                                                    <rect key="frame" x="126" y="86" width="160" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCC-wY-Olc">
                                                     <rect key="frame" x="286" y="78" width="99" height="39"/>
                                                     <constraints>
@@ -74,6 +68,18 @@
                                                         <segue destination="v9k-ZH-rdC" kind="presentation" identifier="Fahad-EventEditing" modalPresentationStyle="fullScreen" id="ais-gP-ALf"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created By:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Kz-pn-3Rx">
+                                                    <rect key="frame" x="126" y="112" width="90" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKY-IW-reX">
+                                                    <rect key="frame" x="126" y="78" width="160" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="bKY-IW-reX" firstAttribute="leading" secondItem="30H-bB-MFd" secondAttribute="trailing" constant="8" id="1fI-lg-vfG"/>
@@ -82,9 +88,11 @@
                                                 <constraint firstItem="30H-bB-MFd" firstAttribute="top" secondItem="sCO-zU-YjW" secondAttribute="top" constant="31" id="4e0-FC-hdi"/>
                                                 <constraint firstItem="DNY-GN-lNS" firstAttribute="leading" secondItem="30H-bB-MFd" secondAttribute="trailing" constant="8" id="7z7-Nb-oyh"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="30H-bB-MFd" secondAttribute="bottom" constant="20" id="EJp-k4-1zv"/>
+                                                <constraint firstItem="8Kz-pn-3Rx" firstAttribute="leading" secondItem="bKY-IW-reX" secondAttribute="leading" id="Hgx-o2-KHR"/>
                                                 <constraint firstItem="drw-6O-e7p" firstAttribute="top" secondItem="sCO-zU-YjW" secondAttribute="topMargin" constant="19" id="QrT-nw-86Q"/>
                                                 <constraint firstItem="DNY-GN-lNS" firstAttribute="leading" secondItem="30H-bB-MFd" secondAttribute="trailing" constant="8" symbolic="YES" id="RmZ-kU-U1r"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="hCC-wY-Olc" secondAttribute="bottom" constant="16" id="SgO-dk-0zC"/>
+                                                <constraint firstItem="8Kz-pn-3Rx" firstAttribute="bottom" secondItem="sCO-zU-YjW" secondAttribute="bottomMargin" id="W5v-Fz-TaY"/>
                                                 <constraint firstItem="hCC-wY-Olc" firstAttribute="leading" secondItem="bKY-IW-reX" secondAttribute="trailing" id="Wc0-Xq-ubF"/>
                                                 <constraint firstItem="DNY-GN-lNS" firstAttribute="top" secondItem="sCO-zU-YjW" secondAttribute="topMargin" constant="23" id="csJ-zb-eC0"/>
                                                 <constraint firstItem="hCC-wY-Olc" firstAttribute="top" secondItem="drw-6O-e7p" secondAttribute="bottom" constant="8" symbolic="YES" id="fE6-g4-Loh"/>
@@ -362,10 +370,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
