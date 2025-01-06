@@ -266,7 +266,7 @@
         <!--Navigation Controller-->
         <scene sceneID="GWj-Yd-dgV">
             <objects>
-                <navigationController id="o4J-Cy-xnx" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AdminDashb" id="o4J-Cy-xnx" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Frz-aL-cuc">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -345,7 +345,7 @@
                     <navigationItem key="navigationItem" id="Sr1-96-6O3">
                         <nil key="title"/>
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="iCr-dy-Lr5">
-                            <rect key="frame" x="159" y="3" width="75" height="38.333333333333336"/>
+                            <rect key="frame" x="125.33333333333333" y="3" width="142.33333333333337" height="38.333333333333336"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Create Account"/>
